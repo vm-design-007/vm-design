@@ -1,0 +1,1 @@
+.v-rate{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.v-rate__list{display:inline-flex}.v-rate__list .v-rate__star{cursor:pointer;transition:.4s;position:relative}.v-rate__list .v-rate__star:hover{transform:scale(1.25)}.v-rate__list .v-rate__star.v-rate-star-readonly:hover{transform:scale(1)}.v-rate .v-text{margin-left:8px}

@@ -1,0 +1,53 @@
+{
+  "name": "vm-design",
+  "version": "v-0.0.3",
+  "description": "Vm design can quickly build interactive interfaces in vue3 applications, which looks good.",
+  "keywords": [
+    "vm",
+    "design",
+    "vm-design",
+    "vuejs",
+    "components",
+    "ui",
+    "vite",
+    "vue3",
+    "css",
+    "setup",
+    "typescript",
+    "javascript"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./lib/index.js",
+      "types": "./es/index.d.ts"
+    },
+    "./dist": "./dist/",
+    "./theme": "./theme/",
+    "./es": "./es/index.js",
+    "./es/*": "./es/*.js",
+    "./es/*.js": "./es/*.js",
+    "./lib": "./lib/index.js",
+    "./lib/*": "./lib/*.js",
+    "./lib/*.js": "./lib/*.js",
+    "./*": "./*"
+  },
+  "unpkg": "dist/index.umd.js",
+  "style": "dist/index.css",
+  "sideEffects": [
+    "dist/index.css",
+    "theme/*",
+    "*.css"
+  ],
+  "author": {
+    "name": "don.xander"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vm-design-007/vm-design/issues"
+  },
+  "repository": "https://github.com/vm-design-007/vm-design"
+}

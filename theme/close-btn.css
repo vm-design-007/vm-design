@@ -1,0 +1,1 @@
+.v-close-btn{display:inline-flex;justify-content:center;align-items:center;cursor:pointer;padding:2px;box-sizing:border-box;transition:.3s;color:#2d5af1}.v-close-btn.v-close-btn__round{border-radius:30px}.v-close-btn:hover{background:#eee;color:#5d80f4}.v-close-btn:active{color:#0f3edc}.v-close-btn__disabled{cursor:not-allowed;color:#8da5f7}
