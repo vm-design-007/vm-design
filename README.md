@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="160px" src="https://tianyuhao.cn/images/vm-design/VmDesign.svg">
+  <img height="160px" src="http://www.vm-design.cn/images/logo.png">
   <h2 align="center" style="font-weight: 600">Vm Design</h2>
 </p>
 
@@ -14,7 +14,7 @@
 <p align="center">
   <a href="https://github.com/VmDesign/vm-design/stargazers"><img src="https://img.shields.io/github/stars/VmDesign/vm-design" /></a>
   <a href="https://www.npmjs.com/package/vm-design"><img src="https://badgen.net/npm/v/vm-design" /></a>
-  <a href="https://vm.tianyuhao.cn"><img src="https://img.shields.io/badge/Vm%20Design-Docs-blue" /></a>
+  <a href="https://www.vm-design.cn"><img src="https://img.shields.io/badge/Vm%20Design-Docs-blue" /></a>
   <a href="https://github.com/VmDesign/vm-design/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Vm%20Design-CHANGELOG-blue" /></a>
 </p>
 
@@ -64,13 +64,35 @@ yarn add --save-dev vm-Design
 在 `main.ts` 中引入下面内容
 
 ```ts
-import { createApp } from "vue";
-import App from "./App.vue";
-import VmDesign from "vm-design";
-import "vm-design/dist/index.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import VmDesign from 'vm-design'
+import 'vm-design/dist/index.css'
 
-createApp(App).use(VmDesign).mount("#app");
+createApp(App).use(VmDesign).mount('#app')
 ```
+
+## 🐳 相关链接
+
+- [官方文档](https://www.vm-design.cn)
+- [演练场](https://sfc.vm-design.cn)
+- [NPM](https://www.npmjs.com/package/vm-design)
+- [贡献指南](https://github.com/VmDesign/vm-design/blob/master/CONTRIBUTING.md)
+- [更新日志](https://github.com/VmDesign/vm-design/blob/master/CHANGELOG.md)
+
+## 🌈 加入 Vm Design
+
+添加微信请备注 `Github` 用户名
+
+![](http://www.vm-design.cn/images/auto/weixin.png)
+
+## 💌 特别感谢
+
+感谢所有已经为 `Vm Design` [做出贡献的人](https://github.com/VmDesign/vm-design/graphs/contributors)！
+
+<a href="https://github.com/VmDesign/vm-design/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=VmDesign/vm-design" />
+</a>
 
 ## 💬 执照
 
