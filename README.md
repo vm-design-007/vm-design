@@ -1,143 +1,99 @@
 <p align="center">
-  <img height="160px" src="http://www.vm-design.cn/images/vm-design/VmDesign.svg">
-  <h2 align="center" style="font-weight: 600">vm Design</h2>
+  <img height="160px" src="http://www.vm-design.cn/images/logo.png">
+  <h2 align="center" style="font-weight: 600">Vm Design</h2>
 </p>
 
 <p align="center">
-  vm design can quickly build interactive interfaces in vue3 applications, which looks good.
+  Vm Design 可在 vue3 应用程序中快速构建交互界面，看起来还不错。
 </p>
 
 <p align="center">
-  <a href="https://github.com/vm-design-007/vm-design/blob/master/README.zh-CN.md">Chinese</a> | English 
+  中文 | <a href="https://github.com/VmDesign/vm-design/blob/master/README.en-US.md">English</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/vm-design-007/vm-design/stargazers"><img src="https://img.shields.io/github/stars/VmDesign/vm-design" /></a>
+  <a href="https://github.com/VmDesign/vm-design/stargazers"><img src="https://img.shields.io/github/stars/VmDesign/vm-design" /></a>
   <a href="https://www.npmjs.com/package/vm-design"><img src="https://badgen.net/npm/v/vm-design" /></a>
-  <a href="https://vm.tianyuhao.cn"><img src="https://img.shields.io/badge/vm%20Design-Docs-blue" /></a>
-  <a href="https://github.com/vm-design-007/vm-design/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/vm%20Design-CHANGELOG-blue" /></a>
+  <a href="https://www.vm-design.cn"><img src="https://img.shields.io/badge/Vm%20Design-Docs-blue" /></a>
+  <a href="https://github.com/VmDesign/vm-design/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Vm%20Design-CHANGELOG-blue" /></a>
 </p>
 
-## ✨ Features
+## ✨ 特性
 
-- 🪐 60+ common components
-- 💪 Developed with the latest features of Vue.js
-- 🐆 Fully based on Vite, fast enough
-- 🤟 Ultimate development experience
-- 🥇 Ultra detailed JSDoc comments
-- 🦩 Zero third party dependency
-- 🪐 Different packaging modes which compatible with different projects
-- 🏆 Support full import and on-demand import
-- ✅ Written with TypeScript & Template
-- 🖍️ Strict TypeScript Type
-- 🤟 Global no any type
-- ✔️ Easy to configure and easy to use
-- 🚩 Complete and adequate unit tests
-- 👍 Maintained by the community team
-- ❤️ Developed according to actual demand
-- 📃 High quality detailed documentation
-- 📌 Improve RFC
-- ☝️ Put forward demands and keep improving
-- 🌍 More configuration options & flexible components
-- 🛠 More features are under development
+- 💪 使用 Vue.js 最新特性开发
+- 🐆 全面基于 Vite，速度够快
+- 🦩 零第三方依赖
+- ✂️ 完善的代码提示
+- 🪐 不同打包模式，兼容不同项目
+- 🏆 支持完整引入和按需引入
+- ✅ 使用 TypeScript + Template 编写
+- 🖍️ 严格的 TypeScript 类型
+- 🤟 全局无 any 类型
+- ✔️ 配置简单，上手容易
+- 🚩 单元测试
+- 👍 社区团队维护
+- ❤️ 根据实际需求开发
+- 📃 优质详细的文档
+- 📌 完善 RFC
+- ☝️ 提出需求，不断完善
+- 🌍 更多配置项，灵活组件
+- 🛠 更多特性开发中
 
-## 🔑 Install
+## 🔑 安装
 
-Use `pnpm` install
+使用 `pnpm` 安装
 
 ```shell
 pnpm add --save-dev vm-design
 ```
 
-Use `npm` install
+使用 `npm` 安装
 
 ```shell
 npm install --save-dev vm-design
 ```
 
-Use `yarn` install
+使用 `yarn` 安装
 
 ```shell
-yarn add --save-dev vm-design
+yarn add --save-dev vm-Design
 ```
 
-## 🎉 Quick Start
+## 🎉 快速上手
 
-Put the following code into `main.ts`
+在 `main.ts` 中引入下面内容
 
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-
 import VmDesign from 'vm-design'
 import 'vm-design/dist/index.css'
 
 createApp(App).use(VmDesign).mount('#app')
 ```
 
-## 🪂 Quick experience
+## 🐳 相关链接
 
-```html
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vm-design/dist/index.css" />
-</head>
-
-<body>
-  <div id="app">
-    <v-space>
-      <v-button round type="default">默认按钮</v-button>
-      <v-button round type="primary">主要按钮</v-button>
-      <v-button round type="success">成功按钮</v-button>
-      <v-button round type="danger">危险按钮</v-button>
-      <v-button round type="warning">警告按钮</v-button>
-    </v-space>
-
-    <v-divider>华丽的分隔线</v-divider>
-
-    <v-button type="primary" @click="visible = true">打开 Dialog</v-button>
-    <v-dialog title="Title" v-model:visible="visible"> 欢迎使用 vm Design！ </v-dialog>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vm-design/dist/index.umd.js"></script>
-  <script>
-    const { createApp, ref } = Vue
-
-    const app = createApp({
-      setup() {
-        const visible = ref(false)
-
-        return { visible }
-      }
-    })
-
-    app.use(VmDesign.default)
-    app.mount('#app')
-  </script>
-</body>
-```
-
-## 🐳 Related links
-
-- [Official documents](https://vm.tianyuhao.cn)
+- [官方文档](https://www.vm-design.cn)
+- [演练场](https://sfc.vm-design.cn)
 - [NPM](https://www.npmjs.com/package/vm-design)
-- [CONTRIBUTING](https://github.com/vm-design-007/vm-design/blob/master/CONTRIBUTING.md)
-- [CHANGELOG](https://github.com/vm-design-007/vm-design/blob/master/CHANGELOG.md)
+- [贡献指南](https://github.com/VmDesign/vm-design/blob/master/CONTRIBUTING.md)
+- [更新日志](https://github.com/VmDesign/vm-design/blob/master/CHANGELOG.md)
 
-## 🌈 Join vm Design
+## 🌈 加入 Vm Design
 
-Add WeChat & please note the `Github` username
+添加微信请备注 `Github` 用户名
 
-![WeChat](http://www.vm-design.cn/images/auto/weixin.png)
+![](http://www.vm-design.cn/images/auto/weixin.png)
 
-## 💌 Special Thanks
+## 💌 特别感谢
 
-Thanks to [everyone](https://github.com/vm-design-007/vm-design/graphs/contributors) who has already contributed to `vm Design`!
+感谢所有已经为 `Vm Design` [做出贡献的人](https://github.com/VmDesign/vm-design/graphs/contributors)！
 
-<a href="https://github.com/vm-design-007/vm-design/graphs/contributors">
+<a href="https://github.com/VmDesign/vm-design/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VmDesign/vm-design" />
 </a>
 
-## 💬 LICENSE
+## 💬 执照
 
-[MIT](https://github.com/vm-design-007/vm-design/blob/master/LICENSE)
+[MIT](https://github.com/VmDesign/vm-design/blob/master/LICENSE)
