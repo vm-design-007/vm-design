@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as l } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const f = r(o);
+import { install as r } from "../_utils/install/index.js";
+import "vue";
+const i = r(o);
 export {
-  f as VToolbar,
-  l as default
+  i as VToolbar,
+  i as default
 };

@@ -1,182 +1,46 @@
-import type { UtilsSizeChangeInterface } from '../_interface';
-import type { ProgressTIsShowPercentageInterface } from './src/interface';
-import type { LooseRequired } from '@vue/shared';
-import type { ProgressType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, Ref, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { VmType } from '..';
+import type { ProgressState } from './src/interface';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Progress from "./src/progress";
-export declare const VProgress: DefineComponent<{
-    readonly percentage: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly type: {
-        readonly type: PropType<ProgressType>;
-        readonly default: () => ProgressType;
-        readonly validator: (val: ProgressType) => boolean;
-    };
-    readonly square: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly linear: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly showText: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly height: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly stripe: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textInside: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly percentage: {
-            readonly type: NumberConstructor;
-            readonly default: () => number;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly type: {
-            readonly type: PropType<ProgressType>;
-            readonly default: () => ProgressType;
-            readonly validator: (val: ProgressType) => boolean;
-        };
-        readonly square: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly linear: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly showText: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly textColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly width: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly height: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly stripe: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly textInside: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-    }>> & {}>>;
-    isShow: Ref<boolean>;
-    fillRef: Ref<HTMLDivElement>;
-    progressStyle: ComputedRef<CSSProperties>;
-    progressFillStyle: ComputedRef<CSSProperties>;
-    isShowPercentage: ProgressTIsShowPercentageInterface;
-    sizeChange: UtilsSizeChangeInterface;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly percentage: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly type: {
-        readonly type: PropType<ProgressType>;
-        readonly default: () => ProgressType;
-        readonly validator: (val: ProgressType) => boolean;
-    };
-    readonly square: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly linear: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly showText: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly height: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly stripe: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textInside: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
+export declare const VProgress: Install<DefineComponent<{
+    readonly percentage: BasicType<NumberConstructor, number | null>;
+    readonly state: BasicType<PropType<ProgressState>, ProgressState | null>;
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly showText: BasicType<BooleanConstructor, boolean>;
+    readonly diameter: BasicType<NumberConstructor, number | null>;
+    readonly outsideText: BasicType<BooleanConstructor, boolean>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly stripe: BasicType<BooleanConstructor, boolean>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly percentage: BasicType<NumberConstructor, number | null>;
+    readonly state: BasicType<PropType<ProgressState>, ProgressState | null>;
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly showText: BasicType<BooleanConstructor, boolean>;
+    readonly diameter: BasicType<NumberConstructor, number | null>;
+    readonly outsideText: BasicType<BooleanConstructor, boolean>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly stripe: BasicType<BooleanConstructor, boolean>;
 }>>, {
-    readonly type: ProgressType;
+    readonly type: VmType;
     readonly background: string;
     readonly color: string;
-    readonly width: string | number;
-    readonly textColor: string;
     readonly height: string | number;
+    readonly state: ProgressState;
+    readonly textColor: string;
     readonly percentage: number;
-    readonly square: boolean;
-    readonly linear: boolean;
     readonly showText: boolean;
+    readonly diameter: number;
+    readonly outsideText: boolean;
     readonly stripe: boolean;
-    readonly textInside: boolean;
-}>;
-export default Progress;
+}>>;
+/** progress 组件实例类型 */
+export type ProgressInstance = InstanceType<typeof Progress>;
+export * from './src/interface';
+export default VProgress;

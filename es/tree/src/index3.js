@@ -1,9 +1,8 @@
-const t = {
-  data: {
-    type: Array,
-    default: () => []
-  }
+import "vue";
+import { setArrayProp as r } from "../../_utils/props/index.js";
+const p = {
+  data: r([])
 };
 export {
-  t as Props
+  p as Props
 };

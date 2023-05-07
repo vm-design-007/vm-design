@@ -1,27 +1,24 @@
-import { defineComponent as o, computed as d, openBlock as p, createElementBlock as c, normalizeStyle as l, unref as i, renderSlot as m } from "vue";
-import { Props as h } from "./index3.js";
-import { sizeChange as r } from "../../_utils/index3.js";
-const f = o({
+import { defineComponent as e, openBlock as a, createElementBlock as l, normalizeStyle as p, unref as m, renderSlot as c } from "vue";
+import { Props as i } from "./index3.js";
+import { useList as d } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const f = e({
   name: "VHeader"
-}), v = /* @__PURE__ */ o({
+}), B = /* @__PURE__ */ e({
   ...f,
-  props: h,
-  setup(n) {
-    const a = n, s = d(() => {
-      const { height: e, padding: t } = a;
-      return {
-        "--v-header-height": r(e),
-        "--v-header-padding": r(t)
-      };
-    });
-    return (e, t) => (p(), c("header", {
+  props: i,
+  setup(t) {
+    const r = t, { styles: o } = d(r, "header"), s = o(["height", "padding"]);
+    return (n, u) => (a(), l("header", {
+      role: "banner",
       class: "v-header",
-      style: l(i(s))
+      style: p(m(s))
     }, [
-      m(e.$slots, "default")
+      c(n.$slots, "default")
     ], 4));
   }
 });
 export {
-  v as default
+  B as default
 };

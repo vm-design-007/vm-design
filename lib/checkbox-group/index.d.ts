@@ -1,160 +1,44 @@
-import type { ClassListInterface } from '../_interface';
-import type { ChangeEventInterface } from './src/interface';
-import type { LooseRequired } from '@vue/shared';
-import type { CheckboxGroupLabelType, CheckboxGroupSizeType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { CheckboxGroupChange } from './src/interface';
+import type { VmSize, CheckboxLabel } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import CheckboxGroup from "./src/checkbox-group";
-export declare const VCheckboxGroup: DefineComponent<{
-    readonly modelValue: {
-        readonly type: PropType<CheckboxGroupLabelType>;
-        readonly default: () => [];
-    };
-    readonly disabled: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly vertical: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly label: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly changeEvent: {
-        readonly type: FunctionConstructor;
-        readonly default: () => null;
-    };
-    readonly border: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly size: {
-        readonly type: PropType<CheckboxGroupSizeType>;
-        readonly default: () => CheckboxGroupSizeType;
-        readonly validator: (val: CheckboxGroupSizeType) => boolean;
-    };
-    readonly columnGap: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly rowGap: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly modelValue: {
-            readonly type: PropType<CheckboxGroupLabelType>;
-            readonly default: () => [];
-        };
-        readonly disabled: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly vertical: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly label: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly changeEvent: {
-            readonly type: FunctionConstructor;
-            readonly default: () => null;
-        };
-        readonly border: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly size: {
-            readonly type: PropType<CheckboxGroupSizeType>;
-            readonly default: () => CheckboxGroupSizeType;
-            readonly validator: (val: CheckboxGroupSizeType) => boolean;
-        };
-        readonly columnGap: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly rowGap: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        onChange?: ((val: CheckboxGroupLabelType) => any) | undefined;
-        "onUpdate:modelValue"?: ((val: CheckboxGroupLabelType) => any) | undefined;
-    }>>;
-    emit: ((event: "update:modelValue", val: CheckboxGroupLabelType) => void) & ((event: "change", val: CheckboxGroupLabelType) => void);
-    changeEvent: ChangeEventInterface;
-    checkboxGroupProps: {
-        readonly changeEvent: ChangeEventInterface;
-        readonly size: CheckboxGroupSizeType;
-        readonly disabled: boolean;
-        readonly onChange: ((val: CheckboxGroupLabelType) => any) | undefined;
-        readonly vertical: boolean;
-        readonly border: boolean;
-        readonly "onUpdate:modelValue": ((val: CheckboxGroupLabelType) => any) | undefined;
-        readonly modelValue: CheckboxGroupLabelType;
-        readonly label: string;
-        readonly columnGap: string | number;
-        readonly rowGap: string | number;
-    };
-    styleList: ComputedRef<CSSProperties>;
-    classList: ComputedRef<ClassListInterface>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly 'update:modelValue': (val: CheckboxGroupLabelType) => boolean;
-    readonly change: (val: CheckboxGroupLabelType) => boolean;
+export declare const VCheckboxGroup: Install<DefineComponent<{
+    readonly modelValue: BasicType<PropType<string[]>, string[] | null>;
+    readonly disabled: BasicType<BooleanConstructor, boolean>;
+    readonly vertical: BasicType<BooleanConstructor, boolean>;
+    readonly label: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<BooleanConstructor, boolean>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly columnGap: BasicType<PropType<string | number>, string | number | null>;
+    readonly rowGap: BasicType<PropType<string | number>, string | number | null>;
+    readonly onChange: BasicType<PropType<CheckboxGroupChange>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
+    "update:modelValue": (val: string[] | CheckboxLabel) => boolean;
 }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly modelValue: {
-        readonly type: PropType<CheckboxGroupLabelType>;
-        readonly default: () => [];
-    };
-    readonly disabled: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly vertical: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly label: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly changeEvent: {
-        readonly type: FunctionConstructor;
-        readonly default: () => null;
-    };
-    readonly border: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly size: {
-        readonly type: PropType<CheckboxGroupSizeType>;
-        readonly default: () => CheckboxGroupSizeType;
-        readonly validator: (val: CheckboxGroupSizeType) => boolean;
-    };
-    readonly columnGap: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly rowGap: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
+    readonly modelValue: BasicType<PropType<string[]>, string[] | null>;
+    readonly disabled: BasicType<BooleanConstructor, boolean>;
+    readonly vertical: BasicType<BooleanConstructor, boolean>;
+    readonly label: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<BooleanConstructor, boolean>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly columnGap: BasicType<PropType<string | number>, string | number | null>;
+    readonly rowGap: BasicType<PropType<string | number>, string | number | null>;
+    readonly onChange: BasicType<PropType<CheckboxGroupChange>, null>;
 }>> & {
-    onChange?: ((val: CheckboxGroupLabelType) => any) | undefined;
-    "onUpdate:modelValue"?: ((val: CheckboxGroupLabelType) => any) | undefined;
+    "onUpdate:modelValue"?: ((val: string[] | CheckboxLabel) => any) | undefined;
 }, {
-    readonly size: CheckboxGroupSizeType;
+    readonly background: boolean;
+    readonly size: VmSize;
     readonly disabled: boolean;
     readonly vertical: boolean;
-    readonly border: boolean;
-    readonly modelValue: CheckboxGroupLabelType;
+    readonly modelValue: string[];
     readonly label: string;
-    readonly changeEvent: Function;
+    readonly onChange: CheckboxGroupChange;
     readonly columnGap: string | number;
     readonly rowGap: string | number;
-}>;
-export default CheckboxGroup;
+}>>;
+/** check-box-group 组件实例类型 */
+export type CheckboxGroupInstance = InstanceType<typeof CheckboxGroup>;
+export * from './src/interface';
+export default VCheckboxGroup;

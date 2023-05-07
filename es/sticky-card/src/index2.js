@@ -1,67 +1,47 @@
-import { defineComponent as k, ref as h, computed as r, unref as t, openBlock as l, createElementBlock as d, normalizeStyle as C, renderSlot as i, createCommentVNode as g, createElementVNode as c, normalizeClass as _, withModifiers as p, toDisplayString as b } from "vue";
-import { Props as $ } from "./index3.js";
-import { sizeChange as x } from "../../_utils/index3.js";
-const E = {
+import { defineComponent as p, ref as k, computed as C, unref as s, openBlock as a, createElementBlock as l, normalizeStyle as x, renderSlot as i, createCommentVNode as h, createElementVNode as n, createVNode as T, withCtx as V, normalizeClass as g, toDisplayString as S } from "vue";
+import { Props as b } from "./index3.js";
+import { useList as L } from "../../_hooks/use-list/index.js";
+import { useRun as N } from "../../_hooks/use-run/index.js";
+import { useGlobal as $ } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+import { VCollapseAnimation as z } from "../../collapse-animation/index.js";
+const B = {
   key: 0,
   class: "v-sticky-card__source"
-}, S = { class: "v-sticky-card__content" }, z = ["onClick"], L = { class: "v-sticky-card__option-left" }, T = ["onClick"], V = { class: "v-sticky-card__option-right" }, B = k({
+}, E = { class: "v-sticky-card__box" }, O = { class: "v-sticky-card__option-text" }, w = p({
   name: "VStickyCard"
-}), H = /* @__PURE__ */ k({
-  ...B,
-  props: $,
-  setup(u) {
-    const n = u, s = h(n.open), a = () => {
-      s.value = !t(s);
-      const { openEnd: o, closeEnd: e } = n;
-      t(s) ? o(!0) : e(!1);
-    }, y = r(() => {
-      const { openText: o, closeText: e } = n;
-      return `${t(s) ? o : e}`;
-    }), f = r(() => {
-      const { background: o, openHeight: e, borderColor: v } = n;
-      return {
-        "--sticky-card-content-background": o,
-        "--sticky-card-border-color": v,
-        "--sticky-card-max-height": x(e)
-      };
-    }), m = r(() => [
-      "v-sticky-card__box",
-      {
-        "v-sticky-card__box-open": t(s)
-      }
-    ]);
-    return (o, e) => (l(), d("div", {
+}), H = /* @__PURE__ */ p({
+  ...w,
+  props: b,
+  setup(d) {
+    const o = d, { getLang: u } = $(), { run: m } = N(), { styles: _ } = L(o, "sticky-card"), e = k(o.open), v = () => {
+      e.value = !e.value, m(e.value ? o.onClose : o.onOpen, e.value);
+    }, y = C(() => {
+      const { openText: t, closeText: r } = o, c = u("stickyCard").value;
+      return s(e) ? t || c.openText : r || c.closeText;
+    }), f = _(["borderColor"]);
+    return (t, r) => (a(), l("div", {
       class: "v-sticky-card",
-      style: C(t(f))
+      style: x(s(f))
     }, [
-      o.$slots.source ? (l(), d("div", E, [
-        i(o.$slots, "source")
-      ])) : g("", !0),
-      c("div", {
-        class: _(t(m))
+      t.$slots.source ? (a(), l("div", B, [
+        i(t.$slots, "source")
+      ])) : h("", !0),
+      n("div", E, [
+        T(s(z), { opened: e.value }, {
+          default: V(() => [
+            i(t.$slots, "default")
+          ]),
+          _: 3
+        }, 8, ["opened"])
+      ]),
+      n("div", {
+        class: g(["v-sticky-card__option", { "v-sticky-card__option-open": e.value }]),
+        onClick: v
       }, [
-        c("div", S, [
-          i(o.$slots, "default")
-        ])
-      ], 2),
-      c("div", {
-        class: _([
-          "v-sticky-card__option",
-          { "v-sticky-card__option-open": s.value }
-        ]),
-        onClick: p(a, ["self"])
-      }, [
-        c("span", L, [
-          i(o.$slots, "optionLeft")
-        ]),
-        c("span", {
-          class: "v-sticky-card__option-text",
-          onClick: p(a, ["self"])
-        }, b(t(y)), 9, T),
-        c("span", V, [
-          i(o.$slots, "optionRight")
-        ])
-      ], 10, z)
+        n("span", O, S(s(y)), 1)
+      ], 2)
     ], 4));
   }
 });

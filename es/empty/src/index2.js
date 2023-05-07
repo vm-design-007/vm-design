@@ -1,48 +1,46 @@
-import { defineComponent as i, computed as y, openBlock as o, createElementBlock as t, normalizeStyle as s, createElementVNode as n, renderSlot as m, Fragment as u, createBlock as a, unref as c, toDisplayString as f, createCommentVNode as g } from "vue";
-import k from "../../_components/index.js";
-import { Props as S } from "./index3.js";
-import { VImage as _ } from "../../image/index.js";
-const v = { class: "v-empty__pic-wrap" }, h = {
+import { defineComponent as c, computed as f, openBlock as t, createElementBlock as n, normalizeStyle as y, unref as o, createElementVNode as s, renderSlot as m, Fragment as _, createBlock as i, toDisplayString as g, createCommentVNode as S } from "vue";
+import { Props as k } from "./index3.js";
+import v from "../../_svg/v-icon-full-sharp/index.js";
+import { useList as h } from "../../_hooks/use-list/index.js";
+import { useGlobal as z } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+import { VSvgIcon as V } from "../../svg-icon/index.js";
+import { VImage as $ } from "../../image/index.js";
+const w = { class: "v-empty__wrapper" }, B = { class: "v-empty__content" }, C = {
   key: 0,
   class: "v-empty__footer"
-}, V = i({
+}, E = c({
   name: "VEmpty"
-}), B = /* @__PURE__ */ i({
-  ...V,
-  props: S,
+}), q = /* @__PURE__ */ c({
+  ...E,
+  props: k,
   setup(l) {
-    const p = l, d = y(
-      () => {
-        const { contentColor: e, contentSize: r } = p;
-        return {
-          color: e,
-          fontSize: r
-        };
-      }
-    );
-    return (e, r) => (o(), t("div", {
+    const r = l, { styles: p } = h(r, "empty"), { getLang: a } = z(), d = f(() => r.content || a("empty").value.content), u = p(["contentColor", "contentSize", "background"]);
+    return (e, I) => (t(), n("div", {
       class: "v-empty",
-      style: s({ background: e.background })
+      style: y(o(u))
     }, [
-      n("div", v, [
-        e.$slots.image ? m(e.$slots, "image", { key: 0 }) : (o(), t(u, { key: 1 }, [
-          e.imageSrc ? (o(), a(c(_), {
+      s("div", w, [
+        e.$slots.default ? m(e.$slots, "default", { key: 0 }) : (t(), n(_, { key: 1 }, [
+          e.imageSrc ? (t(), i(o($), {
             key: 0,
             src: e.imageSrc,
             width: e.imageSize
-          }, null, 8, ["src", "width"])) : (o(), a(k, { key: 1 }))
+          }, null, 8, ["src", "width"])) : (t(), i(o(V), {
+            key: 1,
+            icon: o(v),
+            size: e.iconSize
+          }, null, 8, ["icon", "size"]))
         ], 64))
       ]),
-      n("span", {
-        class: "v-empty__desc",
-        style: s(c(d))
-      }, f(e.content), 5),
-      e.$slots.footer ? (o(), t("div", h, [
+      s("span", B, g(o(d)), 1),
+      e.$slots.footer ? (t(), n("div", C, [
         m(e.$slots, "footer")
-      ])) : g("", !0)
+      ])) : S("", !0)
     ], 4));
   }
 });
 export {
-  B as default
+  q as default
 };

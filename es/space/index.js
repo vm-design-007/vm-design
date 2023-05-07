@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as e } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const f = r(o);
+import { install as t } from "../_utils/install/index.js";
+import "vue";
+const i = t(o);
 export {
-  f as VSpace,
-  e as default
+  i as VSpace,
+  i as default
 };

@@ -1,38 +1,19 @@
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Footer from "./src/footer";
-export declare const VFooter: DefineComponent<{
-    readonly height: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly height: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly padding: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {}>>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly height: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
+export declare const VFooter: Install<DefineComponent<{
+    /** footer 组件实例类型 */
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    /** footer 组件实例类型 */
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
 }>>, {
     readonly padding: string | number;
     readonly height: string | number;
-}>;
-export default Footer;
+}>>;
+/** footer 组件实例类型 */
+export type FooterInstance = InstanceType<typeof Footer>;
+export * from './src/interface';
+export default VFooter;

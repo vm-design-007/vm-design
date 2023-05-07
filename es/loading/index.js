@@ -1,8 +1,11 @@
-import o from "./src/index2.js";
-import { default as n } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const f = r(o);
+import "vue";
+import { install as i, installDirective as o } from "../_utils/install/index.js";
+import { useLoading as t } from "../_hooks/use-loading/index.js";
+import "../_hooks/use-message/index.js";
+const m = i({
+  directive: o(t(), "loading")
+});
 export {
-  f as VLoading,
-  n as default
+  m as VLoading,
+  m as default
 };

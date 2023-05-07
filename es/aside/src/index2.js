@@ -1,27 +1,23 @@
-import { defineComponent as s, computed as d, openBlock as i, createElementBlock as p, normalizeStyle as c, unref as l, renderSlot as m } from "vue";
-import { Props as f } from "./index3.js";
-import { sizeChange as o } from "../../_utils/index3.js";
-const u = s({
+import { defineComponent as e, openBlock as i, createElementBlock as a, normalizeStyle as p, unref as l, renderSlot as c } from "vue";
+import { Props as d } from "./index3.js";
+import { useList as m } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const f = e({
   name: "VAside"
-}), v = /* @__PURE__ */ s({
-  ...u,
-  props: f,
-  setup(n) {
-    const r = n, a = d(() => {
-      const { width: e, padding: t } = r;
-      return {
-        "--v-aside-width": o(e),
-        "--v-aside-padding": o(t)
-      };
-    });
-    return (e, t) => (i(), p("aside", {
+}), B = /* @__PURE__ */ e({
+  ...f,
+  props: d,
+  setup(t) {
+    const o = t, { styles: s } = m(o, "aside"), r = s(["width", "padding", "background"]);
+    return (n, u) => (i(), a("aside", {
       class: "v-aside",
-      style: c(l(a))
+      style: p(l(r))
     }, [
-      m(e.$slots, "default")
+      c(n.$slots, "default")
     ], 4));
   }
 });
 export {
-  v as default
+  B as default
 };

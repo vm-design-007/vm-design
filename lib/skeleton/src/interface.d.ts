@@ -1,3 +1,1 @@
-export type { SkeletonPropsType } from './skeleton'
-
-export type SkeletonSizeType = 'default' | 'small' | 'large'
+export type { SkeletonProps } from './props';

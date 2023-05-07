@@ -1,29 +1,22 @@
-import { defineComponent as a, computed as s, useSlots as p, unref as l, openBlock as u, createElementBlock as d, Fragment as _, renderList as k, mergeProps as f, renderSlot as v } from "vue";
-import { Props as g } from "./index3.js";
-const y = a({
+import { defineComponent as n, computed as m, useSlots as p, unref as o, openBlock as s, createElementBlock as r, Fragment as d, renderList as f, normalizeClass as k, renderSlot as _ } from "vue";
+import { Props as y } from "./index3.js";
+import { useList as L } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const S = n({
   name: "VSkeleton"
-}), B = /* @__PURE__ */ a({
-  ...y,
-  props: g,
-  setup(c) {
-    const r = c, i = s(() => {
-      const { rounded: e, animated: n, circled: o, size: t } = r;
-      return [
-        "v-skeleton",
-        {
-          "v-skeleton__rounded": e,
-          "v-skeleton__animated": n,
-          "v-skeleton__circled": o,
-          [`v-skeleton__${t}`]: t
-        }
-      ];
-    }), m = s(() => p().default ? r.loading === !0 : !0);
-    return (e, n) => l(m) ? (u(!0), d(_, { key: 0 }, k(e.rows, (o, t) => (u(), d("div", f({
-      key: t,
-      class: l(i)
-    }, e.$attrs), null, 16))), 128)) : v(e.$slots, "default", { key: 1 });
+}), w = /* @__PURE__ */ n({
+  ...S,
+  props: y,
+  setup(l) {
+    const t = l, { classes: u } = L(t, "skeleton"), a = u(["round", "animated", "size"], "v-skeleton"), i = m(() => p().default ? t.loading === !0 : !0);
+    return (e, g) => o(i) ? (s(!0), r(d, { key: 0 }, f(e.rows, (c) => (s(), r("div", {
+      key: c,
+      role: "section",
+      class: k(o(a))
+    }, null, 2))), 128)) : _(e.$slots, "default", { key: 1 });
   }
 });
 export {
-  B as default
+  w as default
 };

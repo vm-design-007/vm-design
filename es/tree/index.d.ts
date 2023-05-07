@@ -1,28 +1,15 @@
-import type { TreeAddLevelReturnInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { TreeDataInterface } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { TreeData } from './src/interface';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Tree from "./src/tree";
-export declare const VTree: DefineComponent<{
-    readonly data: {
-        readonly type: PropType<TreeDataInterface>;
-        readonly default: () => [];
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly data: {
-            readonly type: PropType<TreeDataInterface>;
-            readonly default: () => [];
-        };
-    }>> & {}>>;
-    treeData: ComputedRef<TreeAddLevelReturnInterface[]>;
-    handleClick: (item: TreeAddLevelReturnInterface, index: number) => void;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly data: {
-        readonly type: PropType<TreeDataInterface>;
-        readonly default: () => [];
-    };
+export declare const VTree: Install<DefineComponent<{
+    readonly data: BasicType<PropType<TreeData>, TreeData | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly data: BasicType<PropType<TreeData>, TreeData | null>;
 }>>, {
-    readonly data: TreeDataInterface;
-}>;
-export default Tree;
+    readonly data: TreeData;
+}>>;
+/** tree 组件实例类型 */
+export type TreeInstance = InstanceType<typeof Tree>;
+export * from './src/interface';
+export default VTree;

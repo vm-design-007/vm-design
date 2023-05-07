@@ -1,55 +1,21 @@
-const t = {
-  type: {
-    type: String,
-    default: () => "primary",
-    validator: (e) => ["default", "primary", "success", "danger", "warning"].includes(e)
-  },
-  href: {
-    type: String,
-    default: () => ""
-  },
-  size: {
-    type: [String, Number],
-    default: () => ""
-  },
-  state: {
-    type: String,
-    default: () => "",
-    validator: (e) => ["line", "bag", ""].includes(e)
-  },
-  prohibit: {
-    type: Boolean,
-    default: () => !1
-  },
-  target: {
-    type: String,
-    default: () => "",
-    validator: (e) => ["_self", "_blank", "_parent", "_top", ""].includes(e)
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  noCopy: {
-    type: Boolean,
-    default: () => !1
-  },
-  noLink: {
-    type: Boolean,
-    default: () => !1
-  },
-  beforeIcon: {
-    type: Object,
-    default: () => null
-  },
-  afterIcon: {
-    type: Object,
-    default: () => null
-  }
-}, a = {
-  click: (e) => e
+import "vue";
+import { setStringProp as o, setStringNumberProp as n, setBooleanProp as e, setObjectProp as t, setFunctionProp as i } from "../../_utils/props/index.js";
+import { VM_TYPE as l, VM_TARGET as s } from "../../_tokens/attrs/index.js";
+const P = {
+  type: o(null, (r) => l.includes(r)),
+  href: o(),
+  size: n(),
+  state: o(null, (r) => ["line", "background"].includes(r)),
+  disabled: e(),
+  target: o("_self", (r) => s.includes(r)),
+  color: o(),
+  hoverColor: o(),
+  noCopy: e(),
+  noLink: e(),
+  beforeIcon: t(),
+  afterIcon: t(),
+  onClick: i()
 };
 export {
-  a as Emits,
-  t as Props
+  P as Props
 };

@@ -1,28 +1,14 @@
-const t = {
-  size: {
-    type: [String, Number],
-    default: () => ""
-  },
-  round: {
-    type: Boolean,
-    default: () => !1
-  },
-  disabled: {
-    type: Boolean,
-    default: () => !1
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  icon: {
-    type: Object,
-    default: () => null
-  }
-}, l = {
-  click: (e) => e
+import "vue";
+import { setStringNumberProp as t, setBooleanProp as o, setStringProp as r, setObjectProp as e, setFunctionProp as i } from "../../_utils/props/index.js";
+const s = {
+  size: t(),
+  round: o(),
+  disabled: o(),
+  color: r(),
+  hoverColor: r(),
+  icon: e(),
+  onClick: i()
 };
 export {
-  l as Emits,
-  t as Props
+  s as Props
 };

@@ -1,116 +1,29 @@
-import type { PropType, ExtractPropTypes } from 'vue';
-import type { BadgeType } from './interface';
-export declare const Props: {
-    readonly value: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly max: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-    };
-    readonly dot: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly show: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly type: {
-        readonly type: PropType<BadgeType>;
-        readonly default: () => BadgeType;
-        readonly validator: (val: BadgeType) => boolean;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-};
-export declare type BadgePropsType = ExtractPropTypes<typeof Props>;
- StringConstructor;
-        readonly default: () => string;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly value: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly max: {
-            readonly type: NumberConstructor;
-            readonly default: () => number;
-        };
-        readonly dot: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly show: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly type: {
-            readonly type: PropType<BadgeType>;
-            readonly default: () => BadgeType;
-            readonly validator: (val: BadgeType) => boolean;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly textColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-    }>> & {}>>;
-    classList: ComputedRef<a>;
-    content: ComputedRef<string>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly value: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly max: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-    };
-    readonly dot: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly show: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly type: {
-        readonly type: PropType<BadgeType>;
-        readonly default: () => BadgeType;
-        readonly validator: (val: BadgeType) => boolean;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
+import type { VmType } from '../..';
+import type { BasicType } from '../../_utils';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+declare const _sfc_main: DefineComponent<{
+    readonly value: BasicType<PropType<string | number>, string | number | null>;
+    readonly max: BasicType<NumberConstructor, number | null>;
+    readonly dot: BasicType<BooleanConstructor, boolean>;
+    readonly show: BasicType<BooleanConstructor, boolean>;
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly value: BasicType<PropType<string | number>, string | number | null>;
+    readonly max: BasicType<NumberConstructor, number | null>;
+    readonly dot: BasicType<BooleanConstructor, boolean>;
+    readonly show: BasicType<BooleanConstructor, boolean>;
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
 }>>, {
-    readonly type: BadgeType;
+    readonly type: VmType;
+    readonly background: string;
     readonly color: string;
     readonly value: string | number;
     readonly max: number;
     readonly dot: boolean;
     readonly show: boolean;
-    readonly textColor: string;
 }>;
 export default _sfc_main;

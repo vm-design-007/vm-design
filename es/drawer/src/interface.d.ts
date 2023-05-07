@@ -1,7 +1,3 @@
-export type { DrawerPropsType } from './drawer'
-
-export type DrawerDirectionType = 'left' | 'top' | 'right' | 'bottom'
-
-export interface DrawerCallbackInterface {
-  (evt: MouseEvent): void
-}
+export type { DrawerProps } from './props';
+/** 不同的弹出位置 */
+export type DrawerDirection = 'left' | 'top' | 'right' | 'bottom';

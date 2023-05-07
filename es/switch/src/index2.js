@@ -1,70 +1,54 @@
-import { defineComponent as h, computed as d, openBlock as s, createElementBlock as r, normalizeClass as t, toDisplayString as m, createCommentVNode as n, createElementVNode as p, unref as a, normalizeStyle as u, createBlock as f } from "vue";
-import { Props as k, Emits as y } from "./index3.js";
-import { VSvgIcon as g } from "../../svg-icon/index.js";
-const z = h({
+import { defineComponent as p, openBlock as o, createElementBlock as l, normalizeClass as s, normalizeStyle as k, unref as r, toDisplayString as a, createCommentVNode as c, createElementVNode as n, createBlock as y } from "vue";
+import { Props as C } from "./index3.js";
+import { VSvgIcon as z } from "../../svg-icon/index.js";
+import { EMIT_UPDATE as m } from "../../_tokens/emits/index.js";
+import { useList as g } from "../../_hooks/use-list/index.js";
+import { useRun as S } from "../../_hooks/use-run/index.js";
+import { useGlobal as T } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const b = p({
   name: "VSwitch"
-}), E = /* @__PURE__ */ h({
-  ...z,
-  props: k,
-  emits: y,
-  setup(_, { emit: c }) {
-    const o = _, v = () => {
-      o.disabled || (c("update:modelValue", !o.modelValue), c("change", !o.modelValue));
-    }, w = d(() => {
-      const { modelValue: e, closeColor: l, openColor: i, size: C } = o;
-      return {
-        right: e ? "0px" : {
-          large: "24px",
-          middle: "20px",
-          small: "16px"
-        }[C],
-        borderColor: e ? i : l
-      };
-    }), V = d(() => {
-      const { size: e, modelValue: l, square: i } = o;
-      return [
-        "v-switch__input",
-        {
-          [`v-switch__${e}`]: e,
-          "v-switch__close": !l,
-          "v-switch__square": i
-        }
-      ];
-    });
-    return (e, l) => (s(), r("div", {
+}), M = /* @__PURE__ */ p({
+  ...b,
+  props: C,
+  emits: {
+    [m]: (i) => String(i)
+  },
+  setup(i, { emit: u }) {
+    const t = i, { run: d } = S(), { getProp: v } = T(t), { styles: h, classes: _ } = g(v(["size"]), "switch"), f = () => {
+      t.disabled || (u(m, !t.modelValue), d(t.onChange, !t.modelValue));
+    }, w = h(["closeColor", "activeColor"]), V = _(["size", "square"], "v-switch__input");
+    return (e, E) => (o(), l("div", {
       role: "switch",
-      class: t(["v-switch", { "v-switch__disabled": e.disabled }])
+      class: s(["v-switch", { "v-switch__disabled": e.disabled }]),
+      style: k(r(w))
     }, [
-      e.closeText ? (s(), r("span", {
+      e.closeText ? (o(), l("span", {
         key: 0,
-        class: t([
-          "v-switch__right-text",
-          { "v-switch__text-active": !e.modelValue }
-        ])
-      }, m(e.closeText), 3)) : n("", !0),
-      p("div", {
-        class: t(a(V)),
-        style: u({ background: e.modelValue ? e.openColor : e.closeColor }),
-        onClick: v
+        class: s(["v-switch__right-text", { "v-switch__text-active": !e.modelValue }])
+      }, a(e.closeText), 3)) : c("", !0),
+      n("div", {
+        class: s([r(V), { "v-switch__active": e.modelValue }]),
+        onClick: f
       }, [
-        p("span", {
-          class: "v-switch__roll",
-          style: u(a(w))
+        n("span", {
+          class: s(["v-switch__roll", { "v-switch__roll-active": e.modelValue }])
         }, [
-          e.icon ? (s(), f(a(g), {
+          e.icon ? (o(), y(r(z), {
             key: 0,
             icon: e.icon,
-            size: 14
-          }, null, 8, ["icon"])) : n("", !0)
-        ], 4)
-      ], 6),
-      e.openText ? (s(), r("span", {
+            size: e.iconSize
+          }, null, 8, ["icon", "size"])) : c("", !0)
+        ], 2)
+      ], 2),
+      e.activeText ? (o(), l("span", {
         key: 1,
-        class: t(["v-switch__left-text", { "v-switch__text-active": e.modelValue }])
-      }, m(e.openText), 3)) : n("", !0)
-    ], 2));
+        class: s(["v-switch__left-text", { "v-switch__text-active": e.modelValue }])
+      }, a(e.activeText), 3)) : c("", !0)
+    ], 6));
   }
 });
 export {
-  E as default
+  M as default
 };

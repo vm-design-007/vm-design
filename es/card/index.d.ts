@@ -1,69 +1,42 @@
-import type { ClassListInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { CardShadowType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { CardShadow, CardClose } from './src/interface';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Card from "./src/card";
-export declare const VCard: DefineComponent<{
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly padding: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly shadow: {
-        readonly type: PropType<CardShadowType>;
-        readonly default: () => CardShadowType;
-        readonly validator: (val: CardShadowType) => boolean;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly title: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly padding: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly shadow: {
-            readonly type: PropType<CardShadowType>;
-            readonly default: () => CardShadowType;
-            readonly validator: (val: CardShadowType) => boolean;
-        };
-    }>> & {}>>;
-    classList: ComputedRef<ClassListInterface>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly padding: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly shadow: {
-        readonly type: PropType<CardShadowType>;
-        readonly default: () => CardShadowType;
-        readonly validator: (val: CardShadowType) => boolean;
-    };
+export declare const VCard: Install<DefineComponent<{
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly shadow: BasicType<PropType<CardShadow>, CardShadow | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly titleColor: BasicType<PropType<string>, string | null>;
+    readonly titleBold: BasicType<BooleanConstructor, boolean>;
+    readonly close: BasicType<BooleanConstructor, boolean>;
+    readonly onClose: BasicType<PropType<CardClose>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly shadow: BasicType<PropType<CardShadow>, CardShadow | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly titleColor: BasicType<PropType<string>, string | null>;
+    readonly titleBold: BasicType<BooleanConstructor, boolean>;
+    readonly close: BasicType<BooleanConstructor, boolean>;
+    readonly onClose: BasicType<PropType<CardClose>, null>;
 }>>, {
+    readonly close: boolean;
     readonly title: string;
     readonly round: boolean;
-    readonly padding: string;
-    readonly shadow: CardShadowType;
-}>;
-export default Card;
+    readonly background: string;
+    readonly titleColor: string;
+    readonly onClose: CardClose;
+    readonly padding: string | number;
+    readonly shadow: CardShadow;
+    readonly borderColor: string;
+    readonly titleBold: boolean;
+}>>;
+/** card 组件实例类型 */
+export type CardInstance = InstanceType<typeof Card>;
+export * from './src/interface';
+export default VCard;

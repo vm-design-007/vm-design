@@ -1,1 +1,1 @@
-export type { FooterPropsType } from './footer'
+export type { FooterProps } from './props';

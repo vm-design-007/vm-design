@@ -1,78 +1,31 @@
-import type { HandleEventInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { BreadcrumbPropsType } from '..';
-import type { DefineComponent, Ref, VNode, RendererNode, RendererElement, Component, ComputedOptions, MethodOptions, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { BreadcrumbItemTo } from './src/interface';
+import type { VmIcon } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import BreadcrumbItem from "./src/breadcrumb-item";
-export declare const VBreadcrumbItem: DefineComponent<{}, {
-    breadcrumbContext: BreadcrumbPropsType;
-    separator: Ref<VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-    itemColor: Ref<string>;
-    separatorColor: Ref<string>;
-    VSvgIcon: DefineComponent<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }>>;
-        emit: (event: "click", evt: MouseEvent) => void;
-        handleClick: HandleEventInterface;
-        styleList: ComputedRef<CSSProperties>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly click: (evt: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }, {
-        readonly color: string;
-        readonly size: string | number;
-        readonly icon: VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    }>;
-    VIconChevronRightVue: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}>;
-}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}>;
-export default BreadcrumbItem;
+export declare const VBreadcrumbItem: Install<DefineComponent<{
+    fontColor: BasicType<PropType<string>, string | null>;
+    iconColor: BasicType<PropType<string>, string | null>;
+    separator: BasicType<PropType<VmIcon>, null>;
+    to: {
+        type: PropType<string | BreadcrumbItemTo>;
+        default: () => null;
+    };
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    fontColor: BasicType<PropType<string>, string | null>;
+    iconColor: BasicType<PropType<string>, string | null>;
+    separator: BasicType<PropType<VmIcon>, null>;
+    to: {
+        type: PropType<string | BreadcrumbItemTo>;
+        default: () => null;
+    };
+}>>, {
+    fontColor: string;
+    separator: VmIcon;
+    iconColor: string;
+    to: string | BreadcrumbItemTo;
+}>>;
+/** breadcrumb-item 组件实例类型 */
+export type BreadcrumbItemInstance = InstanceType<typeof BreadcrumbItem>;
+export * from './src/interface';
+export default VBreadcrumbItem;

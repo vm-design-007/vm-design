@@ -1,35 +1,18 @@
-const e = {
-  position: {
-    type: String,
-    default: () => "center",
-    validator: (t) => ["left", "center", "right"].includes(t)
-  },
-  vertical: {
-    type: Boolean,
-    default: () => !1
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  fontColor: {
-    type: String,
-    default: () => ""
-  },
-  margin: {
-    type: String,
-    default: () => ""
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  type: {
-    type: String,
-    validator: (t) => ["dashed", "dotted", "double", "solid"].includes(t),
-    default: () => "solid"
-  }
+import "vue";
+import { setStringProp as o, setBooleanProp as e, setStringNumberProp as t } from "../../_utils/props/index.js";
+const s = {
+  position: o(
+    "center",
+    (r) => ["left", "center", "right"].includes(r)
+  ),
+  vertical: e(),
+  color: o(),
+  fontColor: o(),
+  margin: t(),
+  height: t(),
+  background: o(),
+  type: o("solid", (r) => ["dashed", "dotted", "double", "solid"].includes(r))
 };
 export {
-  e as Props
+  s as Props
 };

@@ -1,13 +1,10 @@
-const t = {
-  width: {
-    type: [String, Number],
-    default: () => "200px"
-  },
-  padding: {
-    type: [String, Number],
-    default: () => 0
-  }
+import "vue";
+import { setStringNumberProp as r, setStringProp as o } from "../../_utils/props/index.js";
+const i = {
+  width: r(),
+  padding: r(),
+  background: o()
 };
 export {
-  t as Props
+  i as Props
 };

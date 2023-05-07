@@ -1,22 +1,12 @@
-const e = {
-  separator: {
-    type: Object,
-    default: () => null
-  },
-  itemColor: {
-    type: String,
-    default: () => ""
-  },
-  separatorColor: {
-    type: String,
-    default: () => ""
-  },
-  fontSize: {
-    type: [String, Number],
-    default: () => ""
-  }
-}, t = Symbol("BreadcrumbPropsKey");
+import "vue";
+import { setObjectProp as r, setStringProp as o, setStringNumberProp as t } from "../../_utils/props/index.js";
+const s = {
+  separator: r(),
+  fontColor: o(),
+  iconColor: o(),
+  fontSize: t()
+}, n = Symbol("breadcrumb-props-key");
 export {
-  t as BreadcrumbPropsKey,
-  e as Props
+  n as BREADCRUMB_PROPS_KEY,
+  s as Props
 };

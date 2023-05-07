@@ -1,43 +1,40 @@
-import { defineComponent as a, ref as c, onMounted as i, openBlock as u, createElementBlock as p, normalizeClass as d, normalizeStyle as k, renderSlot as f } from "vue";
-import { Props as g } from "./index3.js";
-import { createBase64 as h } from "../../_utils/index6.js";
-import { useFilterProps as w } from "../../_hooks/use-filter-props/index.js";
-const _ = a({
+import { defineComponent as n, ref as u, computed as a, onMounted as p, openBlock as d, createElementBlock as k, normalizeClass as f, normalizeStyle as g, renderSlot as v } from "vue";
+import { Props as h } from "./index3.js";
+import { useProps as _ } from "../../_hooks/use-props/index.js";
+import { useCanvas as b } from "../../_hooks/use-canvas/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const w = n({
   name: "VWatermark"
-}), $ = /* @__PURE__ */ a({
-  ..._,
-  props: g,
-  setup(n) {
-    const r = n, o = c(
-      null
-    ), m = () => {
-      const e = w(r, [
+}), x = /* @__PURE__ */ n({
+  ...w,
+  props: h,
+  setup(m) {
+    const r = m, { filter: s } = _(r), t = u({}), l = a(() => ({ backgroundImage: `url(${b().createWatermark(
+      s([
         "content",
         "width",
         "height",
         "fontSize",
         "fontColor"
-      ]);
-      return {
-        backgroundImage: `url(${h(e)})`
-      };
-    }, s = () => {
-      const { image: e, width: t, height: l } = r;
+      ])
+    )})` })), c = a(() => {
+      const { image: e, width: o, height: i } = r;
       return {
         backgroundImage: `url(${e})`,
-        backgroundSize: `${t}px ${l}px`
+        backgroundSize: `${o}px ${i}px`
       };
-    };
-    return i(() => {
-      o.value = r.image ? s() : m();
-    }), (e, t) => (u(), p("div", {
-      class: d(["v-watermark", { "v-watermark__block": e.block }]),
-      style: k([o.value, { zIndex: e.zIndex }])
+    });
+    return p(() => {
+      t.value = r.image ? c.value : l.value;
+    }), (e, o) => (d(), k("div", {
+      class: f(["v-watermark", { "v-watermark__block": e.block }]),
+      style: g([t.value, { zIndex: e.zIndex }])
     }, [
-      f(e.$slots, "default")
+      v(e.$slots, "default")
     ], 6));
   }
 });
 export {
-  $ as default
+  x as default
 };

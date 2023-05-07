@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as a } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const p = r(o);
+import { install as t } from "../_utils/install/index.js";
+import "vue";
+const i = t(o);
 export {
-  p as VPopup,
-  a as default
+  i as VPopup,
+  i as default
 };

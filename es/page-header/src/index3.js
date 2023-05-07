@@ -1,40 +1,16 @@
-const t = {
-  icon: {
-    type: Object,
-    default: () => null
-  },
-  iconSize: {
-    type: [String, Number],
-    default: () => "16px"
-  },
-  backText: {
-    type: String,
-    default: () => "\u8FD4\u56DE"
-  },
-  title: {
-    type: String,
-    default: () => ""
-  },
-  titleBold: {
-    type: Boolean,
-    default: () => !1
-  },
-  titleColor: {
-    type: String,
-    default: () => ""
-  },
-  titleCenter: {
-    type: Boolean,
-    default: () => !1
-  },
-  subtitle: {
-    type: String,
-    default: () => ""
-  }
-}, e = {
-  back: () => !0
+import "vue";
+import { setObjectProp as e, setStringNumberProp as r, setStringProp as t, setBooleanProp as o, setFunctionProp as i } from "../../_utils/props/index.js";
+const l = {
+  icon: e(),
+  iconSize: r("16px"),
+  backText: t(),
+  title: t(),
+  titleBold: o(),
+  titleColor: t(),
+  titleCenter: o(),
+  subtitle: t(),
+  onBack: i()
 };
 export {
-  e as Emits,
-  t as Props
+  l as Props
 };

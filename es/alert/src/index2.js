@@ -1,94 +1,91 @@
-import { defineComponent as k, ref as S, computed as d, openBlock as t, createElementBlock as u, normalizeClass as m, unref as o, normalizeStyle as V, createBlock as v, withCtx as _, renderSlot as s, createCommentVNode as l, createElementVNode as g, createTextVNode as w, toDisplayString as B, withModifiers as E } from "vue";
-import { Props as L, Emits as N } from "./index3.js";
-import { VCloseBtn as A } from "../../close-btn/index.js";
-import { VSvgIcon as D } from "../../svg-icon/index.js";
-import { sizeChange as p } from "../../_utils/index3.js";
-const M = {
+import { defineComponent as d, ref as f, onMounted as I, openBlock as t, createBlock as a, Transition as S, withCtx as c, createElementBlock as r, normalizeClass as V, unref as l, normalizeStyle as $, renderSlot as n, createCommentVNode as s, createElementVNode as z, createTextVNode as B, toDisplayString as m, Fragment as E, renderList as N } from "vue";
+import { Props as M } from "./index3.js";
+import { VCloseBtn as w } from "../../close-btn/index.js";
+import { VSvgIcon as A } from "../../svg-icon/index.js";
+import { isNumber as P } from "../../_utils/is/index.js";
+import { useList as T } from "../../_hooks/use-list/index.js";
+import { useRun as D } from "../../_hooks/use-run/index.js";
+import { useGlobal as F } from "../../_hooks/use-global/index.js";
+import { useAlertList as G } from "../../_hooks/use-alert-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const R = { class: "v-alert__content" }, j = {
   key: 0,
   class: "v-alert__title"
-}, P = {
+}, q = {
   key: 1,
   class: "v-alert__sub-title"
-}, T = k({
+}, H = d({
   name: "VAlert"
-}), J = /* @__PURE__ */ k({
-  ...T,
-  props: L,
-  emits: N,
-  setup(C, { emit: y }) {
-    const n = C, f = S(!0), b = d(() => {
-      const { type: e, bold: r, simple: i, center: a, round: c, fixed: I } = n;
-      return [
-        "v-alert",
-        {
-          [`v-alert__${e}`]: e,
-          "v-alert__bold": r,
-          "v-alert__simple": i,
-          "v-alert__center": a,
-          "v-alert__round": c,
-          "v-alert__fixed": I
-        }
-      ];
-    }), h = d(() => {
-      const { overflow: e } = n;
-      return [
-        "v-alert__content",
-        {
-          [`v-alert__content-${e}`]: e
-        }
-      ];
-    }), $ = d(() => {
-      const { fontSize: e, color: r, background: i, titleSize: a, titleColor: c } = n;
-      return {
-        "--v-alert-color": r,
-        "--v-alert-title-color": c,
-        "--v-alert-background": i,
-        "--v-alert-font-size": p(e),
-        "--v-alert-title-size": p(a)
-      };
-    }), z = (e) => {
-      f.value = !1, y("close-end", e);
+}), oe = /* @__PURE__ */ d({
+  ...H,
+  props: M,
+  setup(p) {
+    const o = p, { getProp: v } = F(o), { run: y } = D(), { styles: k, classes: L } = T(v(["type"]), "alert"), u = f(!0), i = f(), _ = L(
+      ["type", "bold", "simple", "center", "round", "fixed"],
+      "v-alert"
+    ), b = k(["fontSize", "color", "background", "titleSize", "titleColor"]), h = (e) => {
+      u.value = !1, y(o.onClose, e);
     };
-    return (e, r) => f.value ? (t(), u("div", {
-      key: 0,
-      role: "alert",
-      class: m(o(b)),
-      style: V(o($))
-    }, [
-      e.$slots.beforeIcon || e.beforeIcon ? (t(), v(o(D), {
-        key: 0,
-        icon: e.beforeIcon
-      }, {
-        default: _(() => [
-          s(e.$slots, "beforeIcon")
-        ]),
-        _: 3
-      }, 8, ["icon"])) : l("", !0),
-      g("div", {
-        class: m(o(h))
-      }, [
-        e.title ? (t(), u("div", M, [
-          s(e.$slots, "title", {}, () => [
-            w(B(e.title), 1)
-          ])
-        ])) : l("", !0),
-        e.$slots.default ? (t(), u("div", P, [
-          s(e.$slots, "default")
-        ])) : l("", !0)
-      ], 2),
-      e.close ? (t(), v(o(A), {
-        key: 1,
-        icon: e.closeIcon,
-        onClick: E(z, ["stop"])
-      }, {
-        default: _(() => [
-          s(e.$slots, "closeIcon")
-        ]),
-        _: 3
-      }, 8, ["icon", "onClick"])) : l("", !0)
-    ], 6)) : l("", !0);
+    return I(() => {
+      o.alertList && o.alertList.length && i.value && G(i.value)(P(o.duration) ? o.duration : 2e3);
+    }), (e, J) => (t(), a(S, { name: "v-alert" }, {
+      default: c(() => [
+        u.value ? (t(), r("div", {
+          key: 0,
+          role: "alert",
+          class: V(l(_)),
+          style: $(l(b))
+        }, [
+          e.$slots.beforeIcon || e.beforeIcon ? (t(), a(l(A), {
+            key: 0,
+            icon: e.beforeIcon
+          }, {
+            default: c(() => [
+              n(e.$slots, "beforeIcon")
+            ]),
+            _: 3
+          }, 8, ["icon"])) : s("", !0),
+          z("div", R, [
+            e.title ? (t(), r("div", j, [
+              n(e.$slots, "title", {}, () => [
+                B(m(e.title), 1)
+              ])
+            ])) : s("", !0),
+            e.$slots.default ? (t(), r("div", q, [
+              n(e.$slots, "default")
+            ])) : s("", !0),
+            e.alertList && e.alertList.length ? (t(), r("div", {
+              key: 2,
+              ref_key: "alertListEl",
+              ref: i,
+              class: "v-alert__list"
+            }, [
+              (t(!0), r(E, null, N(e.alertList, (C, g) => (t(), r("div", {
+                key: g,
+                class: "v-alert__list-item"
+              }, m(C), 1))), 128))
+            ], 512)) : s("", !0)
+          ]),
+          e.close ? (t(), a(l(w), {
+            key: 1,
+            round: "",
+            color: e.type === "default" ? "#333" : "#fff",
+            size: 16,
+            icon: e.closeIcon,
+            "on-click": h
+          }, {
+            default: c(() => [
+              n(e.$slots, "closeIcon")
+            ]),
+            _: 3
+          }, 8, ["color", "icon"])) : s("", !0)
+        ], 6)) : s("", !0)
+      ]),
+      _: 3
+    }));
   }
 });
 export {
-  J as default
+  oe as default
 };

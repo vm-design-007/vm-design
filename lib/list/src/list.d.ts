@@ -1,108 +1,28 @@
-import type { LooseRequired } from '@vue/shared';
-import type { ListSizeType } from './interface';
-import type { DefineComponent, PropType, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComputedRef,  CSSProperties } from 'vue';
-import type { ClassListInterface as a } from '../../_interface';
+import type { BasicType, VmSize } from '../..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
 declare const _sfc_main: DefineComponent<{
-    readonly listStyle: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly zebra: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly borderColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<ListSizeType>;
-        readonly default: () => ListSizeType;
-        readonly validator: (val: ListSizeType) => boolean;
-    };
-    readonly maxHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly listStyle: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly zebra: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly center: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly textColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly borderColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<ListSizeType>;
-            readonly default: () => ListSizeType;
-            readonly validator: (val: ListSizeType) => boolean;
-        };
-        readonly maxHeight: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {}>>;
-    classList: ComputedRef<a>;
-    styleLIst: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly listStyle: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly zebra: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly borderColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<ListSizeType>;
-        readonly default: () => ListSizeType;
-        readonly validator: (val: ListSizeType) => boolean;
-    };
-    readonly maxHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
+    readonly zebra: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly maxHeight: BasicType<PropType<string | number>, string | number | null>;
+    readonly zebraColor: BasicType<PropType<string>, string | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly zebra: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly maxHeight: BasicType<PropType<string | number>, string | number | null>;
+    readonly zebraColor: BasicType<PropType<string>, string | null>;
 }>>, {
     readonly center: boolean;
-    readonly size: ListSizeType;
-    readonly textColor: string;
+    readonly size: VmSize;
     readonly borderColor: string;
-    readonly listStyle: string;
     readonly zebra: boolean;
+    readonly textColor: string;
     readonly maxHeight: string | number;
+    readonly zebraColor: string;
 }>;
 export default _sfc_main;

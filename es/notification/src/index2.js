@@ -1,125 +1,99 @@
-import { defineComponent as z, computed as n, ref as m, onMounted as M, nextTick as O, openBlock as o, createBlock as c, Transition as A, unref as i, withCtx as F, withDirectives as H, createElementVNode as _, normalizeClass as P, normalizeStyle as j, createElementBlock as l, isVNode as g, resolveDynamicComponent as y, createCommentVNode as h, toDisplayString as k, Fragment as q, createTextVNode as x, vShow as G } from "vue";
-import { VCloseBtn as J } from "../../close-btn/index.js";
-import { isString as K } from "../../_utils/index3.js";
-import { Props as Q, Emits as U } from "./index3.js";
-import { notificationDefaultIcon as W } from "../../_model/notification/index2.js";
-import { massageManage as V } from "../../_model/notification/index.js";
+import { defineComponent as g, computed as T, openBlock as t, createBlock as a, Transition as w, unref as e, withCtx as z, withDirectives as A, createElementVNode as u, normalizeClass as D, normalizeStyle as M, createElementBlock as n, createVNode as E, createCommentVNode as l, Fragment as v, isVNode as y, resolveDynamicComponent as V, toDisplayString as m, createTextVNode as P, vShow as W } from "vue";
+import { Props as F } from "./index3.js";
+import { isString as U } from "../../_utils/is/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+import { useMessageWork as j } from "../../_hooks/use-message-work/index.js";
+import { VSvgIcon as q } from "../../svg-icon/index.js";
+import { VCloseBtn as G } from "../../close-btn/index.js";
+import H from "../../_svg/v-icon-circle-cross/index.js";
+import J from "../../_svg/v-icon-lightbulb/index.js";
+import K from "../../_svg/v-icon-smile-line/index.js";
+import O from "../../_svg/v-icon-thumb-up/index.js";
+import Q from "../../_svg/v-icon-warning/index.js";
+import R from "../../_svg/v-icon-bell/index.js";
 const X = {
   key: 0,
   class: "v-notification__icon"
-}, Y = { class: "v-notification__info" }, Z = { class: "v-notification__title" }, ee = {
+}, Y = { class: "v-notification__content" }, Z = {
   key: 1,
-  class: "v-notification__title-text"
-}, te = {
-  key: 1,
-  class: "v-notification__text"
-}, oe = z({
-  name: "VMessage"
-}), re = /* @__PURE__ */ z({
-  ...oe,
-  props: Q,
-  emits: U,
-  setup(S, { expose: w }) {
-    const e = S, u = n(
-      () => e.icon ? e.icon : e.type ? W[e.type] : null
-    ), C = m(), B = m(0), r = m(!1), D = n(
-      () => e.placement.includes("top")
-    ), E = n(
-      () => e.placement.includes("right")
-    ), I = n(
-      () => V.getSiblingOffset(e.placement, e.id, !D.value)
-    ), v = n(
-      () => e.offset + I.value
-    ), L = n(
-      () => B.value + v.value
-    );
-    M(() => {
-      O(() => {
-        B.value = C.value.getBoundingClientRect().height;
-      });
-    });
-    const N = n(() => {
-      const { type: t, round: s, close: f, placement: a } = e;
-      return [
-        "v-notification",
-        {
-          [`v-notification__${t}`]: t,
-          [`v-notification__${a}`]: a,
-          "v-notification__round": s,
-          "v-notification__hasClose": f
-        }
-      ];
-    }), R = n(() => {
-      const { color: t, background: s, zIndex: f } = e, a = {
-        color: t,
-        background: s,
-        zIndex: f
-      };
-      return e.placement.includes("bottom") ? a.bottom = v.value + "px" : a.top = v.value + "px", a;
-    }), d = m(), T = () => {
-      !d.value || clearTimeout(d.value);
-    }, p = () => {
-      T(), r.value = !1;
-    }, $ = () => {
-      V.removeInstance(e.placement, e.id);
-    }, b = () => {
-      !e.duration || (d.value = setTimeout(() => {
-        p();
-      }, e.duration));
-    };
-    return M(() => {
-      b(), r.value = !0;
-    }), w({
-      visible: r,
-      bottom: L,
-      close: p
-    }), (t, s) => (o(), c(A, {
+  class: "v-notification__title"
+}, $ = {
+  key: 2,
+  class: "v-notification__message"
+}, x = g({
+  name: "VNotification"
+}), ue = /* @__PURE__ */ g({
+  ...x,
+  props: F,
+  setup(k, { expose: B }) {
+    const r = k, {
+      classList: C,
+      styleList: L,
+      visible: _,
+      isPosition: I,
+      offsetStyle: h,
+      offsetVal: S,
+      onBeforeLeave: N,
+      onAfterLeave: b,
+      clearTimer: c,
+      startTime: f,
+      handelClose: p
+    } = j(r, "notification"), d = T(() => r.icon ? r.icon : {
+      default: K,
+      primary: J,
+      success: O,
+      danger: H,
+      warning: Q,
+      info: R
+    }[r.type]);
+    return B({ offsetVal: S }), (o, i) => (t(), a(w, {
       mode: "out-in",
-      name: "v-notification-fade" + (i(E) ? "-right" : "-left"),
-      onBeforeLeave: $,
-      onAfterLeave: s[0] || (s[0] = (f) => t.$emit("destroy"))
+      name: "v-notification-fade" + (e(I) ? "-right" : "-left"),
+      onBeforeLeave: e(N),
+      onAfterLeave: e(b)
     }, {
-      default: F(() => [
-        H(_("div", {
-          ref_key: "notificationRef",
-          ref: C,
-          class: P(i(N)),
-          style: j(i(R)),
-          onMouseleave: b,
-          onMouseenter: T
+      default: z(() => [
+        A(u("div", {
+          class: D(e(C)),
+          style: M([e(h), e(L)]),
+          onMouseleave: i[1] || (i[1] = (...s) => e(f) && e(f)(...s)),
+          onMouseenter: i[2] || (i[2] = (...s) => e(c) && e(c)(...s))
         }, [
-          t.showIcon && i(u) ? (o(), l("div", X, [
-            g(i(u)) ? (o(), c(y(i(u)), {
-              key: 0,
-              size: 28
-            })) : h("", !0)
-          ])) : h("", !0),
-          _("div", Y, [
-            _("div", Z, [
-              g(t.title) ? (o(), c(y(t.title), { key: 0 })) : (o(), l("h3", ee, k(t.title), 1))
-            ]),
-            g(t.message) ? (o(), c(y(t.message), { key: 0 })) : (o(), l("div", te, k(t.message), 1))
+          e(d) ? (t(), n("div", X, [
+            E(e(q), {
+              icon: e(d),
+              size: 25
+            }, null, 8, ["icon"])
+          ])) : l("", !0),
+          u("div", Y, [
+            o.title ? (t(), n(v, { key: 0 }, [
+              y(o.title) ? (t(), a(V(o.title), { key: 0 })) : (t(), n("h3", Z, m(o.title), 1))
+            ], 64)) : l("", !0),
+            y(o.message) ? (t(), a(V(o.message), { key: 1 })) : (t(), n("div", $, m(o.message), 1))
           ]),
-          e.close ? (o(), l("div", {
+          o.close ? (t(), n("div", {
             key: 1,
             class: "v-notification__close",
-            onClick: p
+            onClick: i[0] || (i[0] = (...s) => e(p) && e(p)(...s))
           }, [
-            i(K)(t.closeBtn) ? (o(), l(q, { key: 0 }, [
-              x(k(t.closeBtn), 1)
-            ], 64)) : (o(), c(i(J), {
+            e(U)(o.closeBtn) ? (t(), n(v, { key: 0 }, [
+              P(m(o.closeBtn), 1)
+            ], 64)) : (t(), a(e(G), {
               key: 1,
-              size: 16
-            }))
-          ])) : h("", !0)
+              icon: o.closeBtn,
+              size: 15,
+              color: "#a4a4a4"
+            }, null, 8, ["icon"]))
+          ])) : l("", !0)
         ], 38), [
-          [G, r.value]
+          [W, e(_)]
         ])
       ]),
       _: 1
-    }, 8, ["name"]));
+    }, 8, ["name", "onBeforeLeave", "onAfterLeave"]));
   }
 });
 export {
-  re as default
+  ue as default
 };

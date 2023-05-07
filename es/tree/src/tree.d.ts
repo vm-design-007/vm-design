@@ -1,27 +1,11 @@
-import type { LooseRequired } from '@vue/shared';
-import type { TreeDataInterface } from './interface';
-import type { DefineComponent, PropType, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComputedRef } from 'vue';
-import type { TreeAddLevelReturnInterface as a } from '../../_interface';
+import type { TreeData } from './interface';
+import type { BasicType } from '../..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
 declare const _sfc_main: DefineComponent<{
-    readonly data: {
-        readonly type: PropType<TreeDataInterface>;
-        readonly default: () => [];
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly data: {
-            readonly type: PropType<TreeDataInterface>;
-            readonly default: () => [];
-        };
-    }>> & {}>>;
-    treeData: ComputedRef<a[]>;
-    handleClick: (item: a, index: number) => void;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly data: {
-        readonly type: PropType<TreeDataInterface>;
-        readonly default: () => [];
-    };
+    readonly data: BasicType<PropType<TreeData>, TreeData | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly data: BasicType<PropType<TreeData>, TreeData | null>;
 }>>, {
-    readonly data: TreeDataInterface;
+    readonly data: TreeData;
 }>;
 export default _sfc_main;

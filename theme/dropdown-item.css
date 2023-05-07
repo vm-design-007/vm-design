@@ -1,0 +1,1 @@
+.v-dropdown-item{padding:8px 13px;font-size:14px;cursor:pointer;margin:4px;-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:background .3s;color:#333;background-color:#fff}.v-dropdown-item:not([class~=v-dropdown-item__disabled]):hover{background-color:#eee}.v-dropdown-item__disabled{cursor:not-allowed;color:#afafaf}

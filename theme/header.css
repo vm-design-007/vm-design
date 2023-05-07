@@ -1,1 +1,1 @@
-.v-header{box-sizing:border-box;flex-shrink:0;height:var(--v-footer-height, 60px);padding:var(--v-footer-padding, 0)}
+.v-header{flex-shrink:0;box-sizing:border-box;height:60px;height:var(--header-height, 60px);padding:0;padding:var(--header-padding, 0)}

@@ -1,70 +1,22 @@
-const t = {
-  visible: {
-    type: Boolean,
-    default: () => !0
-  },
-  appendToBody: {
-    type: Boolean,
-    default: () => !1
-  },
-  direction: {
-    type: String,
-    default: () => "right",
-    validator: (e) => ["left", "top", "right", "bottom"].includes(e)
-  },
-  size: {
-    type: [String, Number],
-    default: () => "30%"
-  },
-  title: {
-    type: String,
-    default: () => ""
-  },
-  showMask: {
-    type: Boolean,
-    default: () => !0
-  },
-  maskClose: {
-    type: Boolean,
-    default: () => !0
-  },
-  maskBlur: {
-    type: Boolean,
-    default: () => !1
-  },
-  showCloseIcon: {
-    type: Boolean,
-    default: () => !0
-  },
-  closeIcon: {
-    type: Object,
-    default: () => null
-  },
-  zIndex: {
-    type: Number,
-    default: () => 1999,
-    validator: (e) => e >= 0
-  },
-  open: {
-    type: Function,
-    default: () => null
-  },
-  openEnd: {
-    type: Function,
-    default: () => null
-  },
-  close: {
-    type: Function,
-    default: () => null
-  },
-  closeEnd: {
-    type: Function,
-    default: () => null
-  }
-}, l = {
-  "update:visible": (e) => typeof e == "boolean"
+import "vue";
+import { setBooleanProp as o, setStringProp as t, setStringNumberProp as n, setObjectProp as s, setNumberProp as p, setFunctionProp as e } from "../../_utils/props/index.js";
+const u = {
+  visible: o(),
+  appendToBody: o(),
+  direction: t("right", (r) => ["left", "top", "right", "bottom"].includes(r)),
+  size: n("30%"),
+  title: t(),
+  showMask: o(!0),
+  maskClose: o(!0),
+  maskBlur: o(),
+  showCloseIcon: o(!0),
+  closeIcon: s(),
+  zIndex: p(1999),
+  onOpen: e(),
+  onOpenEnd: e(),
+  onClose: e(),
+  onCloseEnd: e()
 };
 export {
-  l as Emits,
-  t as Props
+  u as Props
 };

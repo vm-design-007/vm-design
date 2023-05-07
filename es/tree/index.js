@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as p } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const e = r(o);
+import { install as r } from "../_utils/install/index.js";
+import "vue";
+const a = r(o);
 export {
-  e as VTree,
-  p as default
+  a as VTree,
+  a as default
 };

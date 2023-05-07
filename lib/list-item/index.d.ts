@@ -1,40 +1,17 @@
-import type { LooseRequired } from '@vue/shared';
-import type { ListPropsType } from '..';
-import type { DefineComponent, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import ListItem from "./src/list-item";
-export declare const VListItem: DefineComponent<{
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}, {
-    injectListProps: ListPropsType;
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-    }>> & {}>>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
+export declare const VListItem: Install<DefineComponent<{
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
 }>>, {
     readonly background: string;
     readonly color: string;
-}>;
-export default ListItem;
+}>>;
+/** list-item 组件实例类型 */
+export type ListItemInstance = InstanceType<typeof ListItem>;
+export * from './src/interface';
+export default VListItem;

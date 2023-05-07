@@ -1,8 +1,8 @@
 import r from "./src/index2.js";
-import { default as i } from "./src/index2.js";
-import { install as o } from "../_utils/index.js";
-const f = o(r);
+import { install as m } from "../_utils/install/index.js";
+import "vue";
+const i = m(r);
 export {
-  f as VBreadcrumb,
+  i as VBreadcrumb,
   i as default
 };

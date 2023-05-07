@@ -1,44 +1,13 @@
-const e = {
-  show: {
-    type: Boolean,
-    default: () => !1
-  },
-  close: {
-    type: Boolean,
-    default: () => !1
-  },
-  text: {
-    type: String,
-    default: () => ""
-  },
-  fontColor: {
-    type: String,
-    default: () => ""
-  },
-  iconColor: {
-    type: String,
-    default: () => ""
-  },
-  fontSize: {
-    type: String,
-    default: () => ""
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  opacity: {
-    type: Number,
-    default: () => null
-  },
-  icon: {
-    type: Object,
-    default: () => null
-  }
-}, l = {
-  close: (t) => t
+import "vue";
+import { setBooleanProp as r, setStringProp as o, setObjectProp as t } from "../../_utils/props/index.js";
+const s = {
+  visible: r(),
+  text: o(),
+  color: o(),
+  fullscreen: r(),
+  background: o(),
+  icon: t()
 };
 export {
-  l as Emits,
-  e as Props
+  s as Props
 };

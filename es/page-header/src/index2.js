@@ -1,58 +1,55 @@
-import { defineComponent as m, computed as l, openBlock as s, createElementBlock as n, createElementVNode as o, createVNode as g, unref as t, withCtx as f, renderSlot as a, createBlock as C, resolveDynamicComponent as b, toDisplayString as i, normalizeClass as d, normalizeStyle as k, createTextVNode as c, createCommentVNode as V } from "vue";
-import { sizeChange as z } from "../../_utils/index3.js";
-import y from "../../_components/svg/index.js";
-import { VSvgIcon as S } from "../../svg-icon/index.js";
-import { Props as B, Emits as N } from "./index3.js";
-const $ = { class: "v-page-header" }, E = { class: "v-page-header__text" }, L = {
+import { defineComponent as d, computed as h, openBlock as o, createElementBlock as i, createElementVNode as t, createVNode as f, unref as a, withCtx as g, renderSlot as r, createBlock as C, resolveDynamicComponent as b, toDisplayString as s, normalizeClass as l, normalizeStyle as k, createTextVNode as n, createCommentVNode as V } from "vue";
+import { Props as y } from "./index3.js";
+import { useRun as z } from "../../_hooks/use-run/index.js";
+import { useGlobal as B } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+import S from "../../_svg/v-icon-arrow-left/index.js";
+import { VSvgIcon as N } from "../../svg-icon/index.js";
+const $ = { class: "v-page-header" }, w = { class: "v-page-header__text" }, D = {
   key: 0,
   class: "v-page-header__main-subtitle"
-}, T = m({
+}, E = d({
   name: "VPageHeader"
-}), j = /* @__PURE__ */ m({
-  ...T,
-  props: B,
-  emits: N,
-  setup(p, { emit: h }) {
-    const r = p, _ = () => {
-      h("back");
-    }, u = l(() => [
-      "v-page-header__main",
-      { "v-page-header__main-center": r.titleCenter }
-    ]), v = l(() => [
-      "v-page-header__main-title",
-      { "v-page-header__main-title-bold": r.titleBold }
-    ]);
-    return (e, w) => (s(), n("header", $, [
-      o("div", {
+}), q = /* @__PURE__ */ d({
+  ...E,
+  props: y,
+  setup(c) {
+    const m = c, { run: p } = z(), { getLang: u } = B(), _ = h(() => u("pageHeader").value.backText), v = (e) => {
+      p(m.onBack, e);
+    };
+    return (e, H) => (o(), i("header", $, [
+      t("div", {
         class: "v-page-header__left",
-        onClick: _
+        onClick: v
       }, [
-        g(t(S), {
-          size: t(z)(e.iconSize)
-        }, {
-          default: f(() => [
-            a(e.$slots, "icon", {}, () => [
-              (s(), C(b(e.icon || t(y))))
+        f(a(N), { size: e.iconSize }, {
+          default: g(() => [
+            r(e.$slots, "icon", {}, () => [
+              (o(), C(b(e.icon || a(S))))
             ])
           ]),
           _: 3
         }, 8, ["size"]),
-        o("div", E, i(e.backText), 1)
+        t("div", w, s(a(_)), 1)
       ]),
-      o("div", {
-        class: d(t(u))
+      t("div", {
+        class: l(["v-page-header__main", { "v-page-header__main-center": e.titleCenter }])
       }, [
-        o("div", {
+        t("div", {
           style: k({ color: e.titleColor }),
-          class: d(t(v))
+          class: l([
+            "v-page-header__main-title",
+            { "v-page-header__main-title-bold": e.titleBold }
+          ])
         }, [
-          a(e.$slots, "title", {}, () => [
-            c(i(e.title), 1)
+          r(e.$slots, "title", {}, () => [
+            n(s(e.title), 1)
           ])
         ], 6),
-        e.subtitle || e.$slots.subtitle ? (s(), n("div", L, [
-          a(e.$slots, "subtitle", {}, () => [
-            c(i(e.subtitle), 1)
+        e.subtitle || e.$slots.subtitle ? (o(), i("div", D, [
+          r(e.$slots, "subtitle", {}, () => [
+            n(s(e.subtitle), 1)
           ])
         ])) : V("", !0)
       ], 2)
@@ -60,5 +57,5 @@ const $ = { class: "v-page-header" }, E = { class: "v-page-header__text" }, L = 
   }
 });
 export {
-  j as default
+  q as default
 };

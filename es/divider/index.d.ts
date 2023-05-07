@@ -1,111 +1,36 @@
-import type { LooseRequired } from '@vue/shared';
-import type { DividerPositionType, DividerType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { DividerPosition, DividerType } from './src/interface';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Divider from "./src/divider";
-export declare const VDivider: DefineComponent<{
-    readonly position: {
-        readonly type: PropType<DividerPositionType>;
-        readonly default: () => DividerPositionType;
-        readonly validator: (value: DividerPositionType) => boolean;
-    };
-    readonly vertical: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fontColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly margin: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly type: {
-        readonly type: PropType<DividerType>;
-        readonly validator: (value: DividerType) => boolean;
-        readonly default: () => DividerType;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly position: {
-            readonly type: PropType<DividerPositionType>;
-            readonly default: () => DividerPositionType;
-            readonly validator: (value: DividerPositionType) => boolean;
-        };
-        readonly vertical: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly fontColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly margin: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly type: {
-            readonly type: PropType<DividerType>;
-            readonly validator: (value: DividerType) => boolean;
-            readonly default: () => DividerType;
-        };
-    }>> & {}>>;
-    renderSlot: ComputedRef<boolean>;
-    dividerStyle: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly position: {
-        readonly type: PropType<DividerPositionType>;
-        readonly default: () => DividerPositionType;
-        readonly validator: (value: DividerPositionType) => boolean;
-    };
-    readonly vertical: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fontColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly margin: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly type: {
-        readonly type: PropType<DividerType>;
-        readonly validator: (value: DividerType) => boolean;
-        readonly default: () => DividerType;
-    };
+export declare const VDivider: Install<DefineComponent<{
+    readonly position: BasicType<PropType<DividerPosition>, DividerPosition | null>;
+    readonly vertical: BasicType<BooleanConstructor, boolean>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly fontColor: BasicType<PropType<string>, string | null>;
+    readonly margin: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly type: BasicType<PropType<DividerType>, DividerType | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly position: BasicType<PropType<DividerPosition>, DividerPosition | null>;
+    readonly vertical: BasicType<BooleanConstructor, boolean>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly fontColor: BasicType<PropType<string>, string | null>;
+    readonly margin: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly type: BasicType<PropType<DividerType>, DividerType | null>;
 }>>, {
     readonly type: DividerType;
     readonly background: string;
     readonly color: string;
     readonly fontColor: string;
     readonly vertical: boolean;
-    readonly position: DividerPositionType;
-    readonly margin: string;
-}>;
-export default Divider;
+    readonly height: string | number;
+    readonly position: DividerPosition;
+    readonly margin: string | number;
+}>>;
+/** divider 组件实例类型 */
+export type DividerInstance = InstanceType<typeof Divider>;
+export * from './src/interface';
+export default VDivider;

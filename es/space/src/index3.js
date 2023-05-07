@@ -1,26 +1,13 @@
-const t = {
-  vertical: {
-    type: Boolean,
-    default: () => !1
-  },
-  wrap: {
-    type: Boolean,
-    default: () => !0
-  },
-  spacing: {
-    type: String,
-    default: () => "middle",
-    validator: (e) => ["large", "middle", "small", "mini"].includes(e)
-  },
-  rowGap: {
-    type: String,
-    default: () => ""
-  },
-  columnGap: {
-    type: String,
-    default: () => ""
-  }
+import "vue";
+import { setBooleanProp as r, setStringProp as o } from "../../_utils/props/index.js";
+import { VM_SIZE as t } from "../../_tokens/attrs/index.js";
+const a = {
+  vertical: r(),
+  nowrap: r(),
+  spacing: o(null, (p) => t.includes(p)),
+  rowGap: o(),
+  columnGap: o()
 };
 export {
-  t as Props
+  a as Props
 };

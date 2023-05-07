@@ -1,25 +1,14 @@
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Main from "./src/main";
-export declare const VMain: DefineComponent<{
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly padding: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {}>>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
+export declare const VMain: Install<DefineComponent<{
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
 }>>, {
     readonly padding: string | number;
-}>;
-export default Main;
+}>>;
+/** main 组件实例类型 */
+export type MainInstance = InstanceType<typeof Main>;
+export * from './src/interface';
+export default VMain;

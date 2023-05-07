@@ -1,95 +1,40 @@
-const l = {
-  modelValue: {
-    type: String,
-    default: () => ""
-  },
-  type: {
-    type: String,
-    default: () => "text",
-    validator: (e) => ["text", "password"].includes(e)
-  },
-  size: {
-    type: String,
-    default: () => "middle",
-    validator: (e) => ["large", "middle", "small", "mini"].includes(e)
-  },
-  disabled: {
-    type: Boolean,
-    default: () => !1
-  },
-  max: {
-    type: Number,
-    default: () => null
-  },
-  min: {
-    type: Number,
-    default: () => null
-  },
-  maxLength: {
-    type: Number,
-    default: () => null,
-    validator: (e) => e >= 0
-  },
-  autofocus: {
-    type: Boolean,
-    default: () => !1
-  },
-  name: {
-    type: String,
-    default: () => "v-input"
-  },
-  placeholder: {
-    type: String,
-    default: () => ""
-  },
-  clear: {
-    type: Boolean,
-    default: () => !1
-  },
-  search: {
-    type: Boolean,
-    default: () => !1
-  },
-  readonly: {
-    type: Boolean,
-    default: () => !1
-  },
-  showPassword: {
-    type: Boolean,
-    default: () => !1
-  },
-  enterSearch: {
-    type: Boolean,
-    default: () => !1
-  },
-  icon: {
-    type: Object,
-    default: () => null
-  },
-  onSearch: {
-    type: Function,
-    default: () => null
-  },
-  onChange: {
-    type: Function,
-    default: () => null
-  },
-  onBlur: {
-    type: Function,
-    default: () => null
-  },
-  onFocus: {
-    type: Function,
-    default: () => null
-  },
-  onEnter: {
-    type: Function,
-    default: () => null
-  }
-}, t = {
-  "update:modelValue": (e) => e
+import "vue";
+import { setStringNumberProp as t, setStringProp as e, setBooleanProp as o, setNumberProp as a, setObjectProp as c, setFunctionProp as r } from "../../_utils/props/index.js";
+import { VM_SIZE as s } from "../../_tokens/attrs/index.js";
+const p = {
+  modelValue: t(),
+  type: e("text", (n) => ["text", "password", "number"].includes(n)),
+  size: e(null, (n) => s.includes(n)),
+  disabled: o(),
+  max: a(),
+  min: a(),
+  maxLength: a(),
+  fontSize: t(),
+  autofocus: o(),
+  name: e("v-input"),
+  placeholder: e(),
+  placeholderColor: e(),
+  clear: o(),
+  width: t(),
+  height: t(),
+  search: o(),
+  background: e(),
+  textColor: e(),
+  activeBackground: e(),
+  activeBorderColor: e(),
+  readonly: o(),
+  showPassword: o(),
+  enterSearch: o(),
+  icon: c(),
+  afterIcon: c(),
+  autocomplete: e(),
+  onSearch: r(),
+  onChange: r(),
+  onInput: r(),
+  onBlur: r(),
+  onFocus: r(),
+  onEnter: r()
 };
 export {
-  t as Emits,
-  l as Props
+  p as Props
 };

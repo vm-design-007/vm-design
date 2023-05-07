@@ -1,13 +1,9 @@
-const t = {
-  height: {
-    type: [String, Number],
-    default: () => "60px"
-  },
-  padding: {
-    type: [String, Number],
-    default: () => "0"
-  }
+import "vue";
+import { setStringNumberProp as r } from "../../_utils/props/index.js";
+const p = {
+  height: r(),
+  padding: r()
 };
 export {
-  t as Props
+  p as Props
 };

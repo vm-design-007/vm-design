@@ -1,457 +1,50 @@
-import type { ClassListInterface, HandleEventInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { AlertType, AlertOverflowType } from '..';
-import type { DefineComponent, PropType, VNode, RendererNode, RendererElement, Component, ComputedOptions, MethodOptions, ExtractPropTypes, Ref, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { VmType, VmIcon, HandleMouse } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Alert from "./src/alert";
-export declare const VAlert: DefineComponent<{
-    readonly type: {
-        readonly type: PropType<AlertType>;
-        readonly default: () => AlertType;
-        readonly validator: (val: AlertType) => boolean;
-    };
-    readonly fontSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly titleSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly bold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly close: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly simple: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly titleColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fixed: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly overflow: {
-        readonly type: PropType<AlertOverflowType>;
-        readonly default: () => AlertOverflowType;
-        readonly validator: (val: AlertOverflowType) => boolean;
-    };
-    readonly closeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly beforeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly type: {
-            readonly type: PropType<AlertType>;
-            readonly default: () => AlertType;
-            readonly validator: (val: AlertType) => boolean;
-        };
-        readonly fontSize: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly titleSize: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly bold: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly center: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly close: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly simple: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly title: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly titleColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly fixed: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly overflow: {
-            readonly type: PropType<AlertOverflowType>;
-            readonly default: () => AlertOverflowType;
-            readonly validator: (val: AlertOverflowType) => boolean;
-        };
-        readonly closeIcon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly beforeIcon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-    }>> & {
-        "onClose-end"?: ((evt: MouseEvent) => any) | undefined;
-    }>>;
-    emit: (event: "close-end", evt: MouseEvent) => void;
-    isShow: Ref<boolean>;
-    classList: ComputedRef<ClassListInterface>;
-    contentClassList: ComputedRef<ClassListInterface>;
-    styleList: ComputedRef<CSSProperties>;
-    handleClose: HandleEventInterface;
-    VCloseBtn: DefineComponent<{
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly disabled: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-            readonly round: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly disabled: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }>>;
-        emit: (event: "click", evt: MouseEvent) => void;
-        handleClick: HandleEventInterface;
-        classList: ComputedRef<ClassListInterface>;
-        VSvgIcon: DefineComponent<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }, {
-            prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-                readonly icon: {
-                    readonly type: PropType<VNode<RendererNode, RendererElement, {
-                        [key: string]: any;
-                    }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                    readonly default: () => null;
-                };
-                readonly color: {
-                    readonly type: StringConstructor;
-                    readonly default: () => string;
-                };
-                readonly size: {
-                    readonly type: PropType<string | number>;
-                    readonly default: () => string;
-                };
-            }>> & {
-                onClick?: ((evt: MouseEvent) => any) | undefined;
-            }>>;
-            emit: (event: "click", evt: MouseEvent) => void;
-            handleClick: HandleEventInterface;
-            styleList: ComputedRef<CSSProperties>;
-        }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-            readonly click: (evt: MouseEvent) => MouseEvent;
-        }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }, {
-            readonly color: string;
-            readonly size: string | number;
-            readonly icon: VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-        }>;
-        VIconCrossVue: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly click: (evt: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly disabled: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }, {
-        readonly round: boolean;
-        readonly color: string;
-        readonly size: string | number;
-        readonly disabled: boolean;
-        readonly icon: VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    }>;
-    VSvgIcon: DefineComponent<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }>>;
-        emit: (event: "click", evt: MouseEvent) => void;
-        handleClick: HandleEventInterface;
-        styleList: ComputedRef<CSSProperties>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly click: (evt: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }, {
-        readonly color: string;
-        readonly size: string | number;
-        readonly icon: VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    }>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly 'close-end': (evt: MouseEvent) => MouseEvent;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly type: {
-        readonly type: PropType<AlertType>;
-        readonly default: () => AlertType;
-        readonly validator: (val: AlertType) => boolean;
-    };
-    readonly fontSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly titleSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly bold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly close: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly simple: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly titleColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fixed: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly overflow: {
-        readonly type: PropType<AlertOverflowType>;
-        readonly default: () => AlertOverflowType;
-        readonly validator: (val: AlertOverflowType) => boolean;
-    };
-    readonly closeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly beforeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-}>> & {
-    "onClose-end"?: ((evt: MouseEvent) => any) | undefined;
-}, {
-    readonly bold: boolean;
-    readonly fixed: boolean;
-    readonly type: AlertType;
+export declare const VAlert: Install<DefineComponent<{
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly fontSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly titleSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly bold: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
+    readonly close: BasicType<BooleanConstructor, boolean>;
+    readonly simple: BasicType<BooleanConstructor, boolean>;
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly titleColor: BasicType<PropType<string>, string | null>;
+    readonly fixed: BasicType<BooleanConstructor, boolean>;
+    readonly closeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly beforeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly alertList: BasicType<PropType<string[]>, string[] | null>;
+    readonly duration: BasicType<NumberConstructor, number | null>;
+    readonly onClose: BasicType<PropType<HandleMouse>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly fontSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly titleSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly bold: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
+    readonly close: BasicType<BooleanConstructor, boolean>;
+    readonly simple: BasicType<BooleanConstructor, boolean>;
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly titleColor: BasicType<PropType<string>, string | null>;
+    readonly fixed: BasicType<BooleanConstructor, boolean>;
+    readonly closeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly beforeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly alertList: BasicType<PropType<string[]>, string[] | null>;
+    readonly duration: BasicType<NumberConstructor, number | null>;
+    readonly onClose: BasicType<PropType<HandleMouse>, null>;
+}>>, {
+    readonly type: VmType;
     readonly fontSize: string | number;
     readonly titleSize: string | number;
+    readonly bold: boolean;
     readonly center: boolean;
     readonly close: boolean;
     readonly simple: boolean;
@@ -460,12 +53,14 @@ export declare const VAlert: DefineComponent<{
     readonly background: string;
     readonly color: string;
     readonly titleColor: string;
-    readonly overflow: AlertOverflowType;
-    readonly closeIcon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    readonly beforeIcon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-}>;
-export default Alert;
+    readonly fixed: boolean;
+    readonly closeIcon: VmIcon;
+    readonly beforeIcon: VmIcon;
+    readonly alertList: string[];
+    readonly duration: number;
+    readonly onClose: HandleMouse;
+}>>;
+/** alert 组件实例类型 */
+export type AlertInstance = InstanceType<typeof Alert>;
+export * from './src/interface';
+export default VAlert;

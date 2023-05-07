@@ -1,167 +1,42 @@
-import type { HandleEventInterface } from '../_interface';
-import type { BackTopHandleScrollInterface } from './src/interface';
-import type { LooseRequired } from '@vue/shared';
-import type { BackTopBehaviorType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, Ref, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { BackTopBehavior } from './src/interface';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import BackTop from "./src/back-top";
-export declare const VBackTop: DefineComponent<{
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly behavior: {
-        readonly type: PropType<BackTopBehaviorType>;
-        readonly default: () => BackTopBehaviorType;
-        readonly validator: (val: BackTopBehaviorType) => boolean;
-    };
-    readonly visibleHeight: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly right: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly bottom: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly zIndex: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly top: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly listenEl: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly behavior: {
-            readonly type: PropType<BackTopBehaviorType>;
-            readonly default: () => BackTopBehaviorType;
-            readonly validator: (val: BackTopBehaviorType) => boolean;
-        };
-        readonly visibleHeight: {
-            readonly type: NumberConstructor;
-            readonly default: () => number;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly right: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly bottom: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly zIndex: {
-            readonly type: NumberConstructor;
-            readonly default: () => number;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly top: {
-            readonly type: NumberConstructor;
-            readonly default: () => number;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly listenEl: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: Event) => any) | undefined;
-    }>>;
-    emit: (event: "click", evt: Event) => void;
-    visible: Ref<boolean>;
-    handleScroll: BackTopHandleScrollInterface;
-    handleClick: HandleEventInterface;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly click: (evt: Event) => Event;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly behavior: {
-        readonly type: PropType<BackTopBehaviorType>;
-        readonly default: () => BackTopBehaviorType;
-        readonly validator: (val: BackTopBehaviorType) => boolean;
-    };
-    readonly visibleHeight: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly right: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly bottom: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly zIndex: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly top: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly listenEl: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}>> & {
-    onClick?: ((evt: Event) => any) | undefined;
-}, {
+export declare const VBackTop: Install<DefineComponent<{
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly behavior: BasicType<PropType<BackTopBehavior>, BackTopBehavior | null>;
+    readonly visibleHeight: BasicType<NumberConstructor, number | null>;
+    readonly right: BasicType<PropType<string | number>, string | number | null>;
+    readonly bottom: BasicType<PropType<string | number>, string | number | null>;
+    readonly zIndex: BasicType<NumberConstructor, number | null>;
+    readonly top: BasicType<NumberConstructor, number | null>;
+    readonly listenEl: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly behavior: BasicType<PropType<BackTopBehavior>, BackTopBehavior | null>;
+    readonly visibleHeight: BasicType<NumberConstructor, number | null>;
+    readonly right: BasicType<PropType<string | number>, string | number | null>;
+    readonly bottom: BasicType<PropType<string | number>, string | number | null>;
+    readonly zIndex: BasicType<NumberConstructor, number | null>;
+    readonly top: BasicType<NumberConstructor, number | null>;
+    readonly listenEl: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+}>>, {
     readonly round: boolean;
     readonly background: string;
     readonly color: string;
-    readonly behavior: BackTopBehaviorType;
+    readonly behavior: BackTopBehavior;
     readonly visibleHeight: number;
     readonly right: string | number;
     readonly bottom: string | number;
     readonly zIndex: number;
     readonly top: number;
     readonly listenEl: string;
-}>;
-export default BackTop;
+}>>;
+/** back-top 组件实例类型 */
+export type BackTopInstance = InstanceType<typeof BackTop>;
+export * from './src/interface';
+export default VBackTop;

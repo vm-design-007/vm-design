@@ -1,3 +1,1 @@
-export type { BadgePropsType } from './badge'
-
-export type BadgeType = 'primary' | 'success' | 'danger' | 'warning'
+export type { BadgeProps } from './props';

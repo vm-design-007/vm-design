@@ -1,70 +1,26 @@
-const t = {
+import "vue";
+import { setBooleanProp as e, setStringProp as t, setStringNumberProp as r, setObjectProp as s, setNumberProp as n, setFunctionProp as o } from "../../_utils/props/index.js";
+const l = {
   visible: {
-    type: Boolean,
-    default: () => !1,
+    ...e(),
     required: !0
   },
-  title: {
-    type: String,
-    default: () => ""
-  },
-  appendToBody: {
-    type: Boolean,
-    default: () => !1
-  },
-  width: {
-    type: [String, Number],
-    default: () => ""
-  },
-  fullscreen: {
-    type: Boolean,
-    default: () => !1
-  },
-  showMask: {
-    type: Boolean,
-    default: () => !0
-  },
-  maskClose: {
-    type: Boolean,
-    default: () => !0
-  },
-  maskBlur: {
-    type: Boolean,
-    default: () => !1
-  },
-  showCloseIcon: {
-    type: Boolean,
-    default: () => !0
-  },
-  closeIcon: {
-    type: Object,
-    default: () => null
-  },
-  zIndex: {
-    type: Number,
-    default: () => 1999,
-    validator: (e) => e >= 0
-  },
-  open: {
-    type: Function,
-    default: () => null
-  },
-  openEnd: {
-    type: Function,
-    default: () => null
-  },
-  close: {
-    type: Function,
-    default: () => null
-  },
-  closeEnd: {
-    type: Function,
-    default: () => null
-  }
-}, l = {
-  "update:visible": (e) => typeof e == "boolean"
+  title: t(),
+  appendToBody: e(),
+  width: r(),
+  height: r(),
+  fullscreen: e(),
+  showMask: e(!0),
+  maskClose: e(!0),
+  maskBlur: e(),
+  showCloseIcon: e(!0),
+  closeIcon: s(),
+  zIndex: n(1999),
+  onOpen: o(),
+  onOpenEnd: o(),
+  onClose: o(),
+  onCloseEnd: o()
 };
 export {
-  l as Emits,
-  t as Props
+  l as Props
 };

@@ -1,43 +1,19 @@
-import type { ClassListInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { ButtonGroupSizeType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { ButtonGroupDirection } from './src/interface';
+import type { VmSize } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import ButtonGroup from "./src/button-group";
-export declare const VButtonGroup: DefineComponent<{
-    readonly size: {
-        readonly type: PropType<ButtonGroupSizeType>;
-        readonly default: () => ButtonGroupSizeType;
-        readonly validator: (val: ButtonGroupSizeType) => boolean;
-    };
-    readonly vertical: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly size: {
-            readonly type: PropType<ButtonGroupSizeType>;
-            readonly default: () => ButtonGroupSizeType;
-            readonly validator: (val: ButtonGroupSizeType) => boolean;
-        };
-        readonly vertical: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-    }>> & {}>>;
-    classList: ComputedRef<ClassListInterface>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly size: {
-        readonly type: PropType<ButtonGroupSizeType>;
-        readonly default: () => ButtonGroupSizeType;
-        readonly validator: (val: ButtonGroupSizeType) => boolean;
-    };
-    readonly vertical: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
+export declare const VButtonGroup: Install<DefineComponent<{
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly direction: BasicType<PropType<ButtonGroupDirection>, ButtonGroupDirection | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly direction: BasicType<PropType<ButtonGroupDirection>, ButtonGroupDirection | null>;
 }>>, {
-    readonly size: ButtonGroupSizeType;
-    readonly vertical: boolean;
-}>;
-export default ButtonGroup;
+    readonly size: VmSize;
+    readonly direction: ButtonGroupDirection;
+}>>;
+/** button-group 组件实例类型 */
+export type ButtonGroupInstance = InstanceType<typeof ButtonGroup>;
+export * from './src/interface';
+export default VButtonGroup;

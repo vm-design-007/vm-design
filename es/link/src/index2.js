@@ -1,70 +1,50 @@
-import { defineComponent as p, computed as i, openBlock as r, createElementBlock as y, normalizeClass as C, unref as n, normalizeStyle as b, createBlock as l, withCtx as a, renderSlot as s, createCommentVNode as c } from "vue";
-import { Props as _, Emits as $ } from "./index3.js";
-import { VSvgIcon as f } from "../../svg-icon/index.js";
-import { sizeChange as v } from "../../_utils/index3.js";
-const g = ["href", "target"], L = p({
+import { defineComponent as l, openBlock as t, createElementBlock as y, normalizeClass as z, unref as r, normalizeStyle as C, createElementVNode as h, createBlock as n, createCommentVNode as s, renderSlot as b } from "vue";
+import { Props as g } from "./index3.js";
+import { VSvgIcon as i } from "../../svg-icon/index.js";
+import { useList as v } from "../../_hooks/use-list/index.js";
+import { useRun as I } from "../../_hooks/use-run/index.js";
+import { useGlobal as L } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const V = ["href", "target"], B = l({
   name: "VLink"
-}), w = /* @__PURE__ */ p({
-  ...L,
-  props: _,
-  emits: $,
-  setup(m, { emit: k }) {
-    const t = m, u = (e) => {
-      if (t.prohibit || t.noLink) {
+}), j = /* @__PURE__ */ l({
+  ...B,
+  props: g,
+  setup(a) {
+    const o = a, { getProp: c } = L(o), { run: m } = I(), { classes: p, styles: f } = v(c(["type"], ["primary"]), "link"), u = (e) => {
+      if (o.disabled || o.noLink) {
         e.preventDefault();
         return;
       }
-      k("click", e);
-    }, d = i(() => {
-      const { type: e, state: o, prohibit: z, noCopy: I } = t;
-      return [
-        "v-link",
-        {
-          [`v-link__${o}`]: o,
-          [`v-link__${e}`]: e,
-          "v-link__prohibit": z,
-          "v-link__no-copy": I
-        }
-      ];
-    }), h = i(() => {
-      const { size: e, color: o } = t;
-      return {
-        color: o,
-        fontSize: v(e)
-      };
-    });
-    return (e, o) => (r(), y("a", {
+      m(o.onClick, e);
+    }, d = p(["type", "state", "disabled", "noCopy"], "v-link"), k = f(["size", "color", "hoverColor"]);
+    return (e, S) => (t(), y("div", {
       role: "link",
-      class: C(n(d)),
-      style: b(n(h)),
-      href: e.href,
-      target: e.target,
-      onClick: u
+      class: z(r(d)),
+      style: C(r(k))
     }, [
-      e.$slots.beforeIcon || e.beforeIcon ? (r(), l(n(f), {
-        key: 0,
-        icon: e.beforeIcon,
-        size: e.size || 16
-      }, {
-        default: a(() => [
-          s(e.$slots, "beforeIcon")
-        ]),
-        _: 3
-      }, 8, ["icon", "size"])) : c("", !0),
-      s(e.$slots, "default"),
-      e.$slots.afterIcon || e.afterIcon ? (r(), l(n(f), {
-        key: 1,
-        icon: e.afterIcon,
-        size: e.size
-      }, {
-        default: a(() => [
-          s(e.$slots, "afterIcon")
-        ]),
-        _: 3
-      }, 8, ["icon", "size"])) : c("", !0)
-    ], 14, g));
+      h("a", {
+        class: "v-link__a",
+        href: e.href,
+        target: e.target,
+        onClick: u
+      }, [
+        e.beforeIcon ? (t(), n(r(i), {
+          key: 0,
+          icon: e.beforeIcon,
+          size: e.size
+        }, null, 8, ["icon", "size"])) : s("", !0),
+        b(e.$slots, "default"),
+        e.afterIcon ? (t(), n(r(i), {
+          key: 1,
+          icon: e.afterIcon,
+          size: e.size
+        }, null, 8, ["icon", "size"])) : s("", !0)
+      ], 8, V)
+    ], 6));
   }
 });
 export {
-  w as default
+  j as default
 };

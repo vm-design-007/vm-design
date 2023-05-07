@@ -1,48 +1,42 @@
-import { defineComponent as n, ref as f, computed as r, openBlock as _, createElementBlock as y, normalizeClass as v, unref as o, normalizeStyle as k, renderSlot as C } from "vue";
-import { Props as R } from "./index3.js";
-import { Ripples as S } from "../../_utils/index4.js";
-const h = n({
+import { defineComponent as r, ref as d, openBlock as y, createElementBlock as _, normalizeStyle as v, unref as k, renderSlot as C, toRefs as R, reactive as E } from "vue";
+import { Props as b } from "./index3.js";
+import { useList as g } from "../../_hooks/use-list/index.js";
+import { useRipples as h } from "../../_hooks/use-ripples/index.js";
+import { useGlobal as B } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const L = r({
   name: "Ripple"
-}), V = /* @__PURE__ */ n({
-  ...h,
-  props: R,
-  setup(s) {
-    const p = s, l = f(null), i = r(() => {
-      const { startOpacity: e, endOpacity: t } = p;
-      return {
-        "--v-ripple-start-opacity": e,
-        "--v-ripple-end-opacity": t
-      };
-    }), c = r(() => {
-      const { noSelect: e } = p;
-      return ["v-ripple", { "v-ripple__select": e }];
-    }), a = (e) => {
-      const { type: t, ripplesColor: m, duration: u, disabled: d } = p;
-      if (d)
+}), T = /* @__PURE__ */ r({
+  ...L,
+  props: b,
+  setup(l) {
+    const e = l, { getType: s, getProp: i } = B(e), { styles: n } = g(i(["type"], ["default"]), "ripple"), t = d(), a = n(["startOpacity", "endOpacity"], !1), c = (o) => {
+      if (e.disabled)
         return;
-      new S(
-        e,
-        l.value,
-        {
-          duration: u,
-          component: "v-ripple",
-          className: "v-ripple__animation",
-          type: t,
-          ripplesColor: m
-        }
-      ).clickRipples();
+      const { ripplesColor: p, duration: m } = R(e), f = E({
+        duration: m.value,
+        component: "v-ripple",
+        className: "v-ripple__animation",
+        type: s(),
+        ripplesColor: p.value
+      });
+      if (t.value) {
+        const { runRipples: u } = h(o, t.value, f);
+        u();
+      }
     };
-    return (e, t) => (_(), y("div", {
-      ref_key: "VRipple",
-      ref: l,
-      class: v(o(c)),
-      style: k(o(i)),
-      onClick: a
+    return (o, p) => (y(), _("div", {
+      ref_key: "rippleEl",
+      ref: t,
+      class: "v-ripple",
+      style: v(k(a)),
+      onClick: c
     }, [
-      C(e.$slots, "default")
-    ], 6));
+      C(o.$slots, "default")
+    ], 4));
   }
 });
 export {
-  V as default
+  T as default
 };

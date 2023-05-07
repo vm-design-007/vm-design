@@ -1,82 +1,88 @@
-import { defineComponent as c, ref as b, watch as p, openBlock as s, createBlock as m, unref as n, withCtx as u, createElementVNode as a, normalizeClass as C, normalizeStyle as g, renderSlot as l, toDisplayString as y, createCommentVNode as i, createElementBlock as f } from "vue";
-import { Props as E, Emits as w } from "./index3.js";
-import { VCloseBtn as z } from "../../close-btn/index.js";
-import { VPopup as B } from "../../popup/index.js";
-import { sizeChange as V } from "../../_utils/index3.js";
-const _ = { class: "v-dialog__header" }, $ = { class: "v-dialog__header-title" }, I = {
+import { defineComponent as f, toRef as y, openBlock as n, createBlock as c, unref as e, isRef as B, withCtx as m, createElementVNode as s, normalizeClass as C, normalizeStyle as V, renderSlot as l, toDisplayString as I, createCommentVNode as r, createElementBlock as p } from "vue";
+import { Props as $ } from "./index3.js";
+import { VCloseBtn as w } from "../../close-btn/index.js";
+import { VPopup as z } from "../../popup/index.js";
+import { isBoolean as E } from "../../_utils/is/index.js";
+import { EMIT_VISIBLE as L } from "../../_tokens/emits/index.js";
+import { useList as S } from "../../_hooks/use-list/index.js";
+import { useVisible as D } from "../../_hooks/use-visible/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const M = { class: "v-dialog__header" }, N = { class: "v-dialog__header-before" }, O = { class: "v-dialog__header-center" }, P = { class: "v-dialog__header-after" }, R = {
   key: 0,
   class: "v-dialog__body"
-}, O = {
-  key: 1,
+}, T = { class: "v-dialog__section" }, A = {
+  key: 0,
   class: "v-dialog__footer"
-}, D = c({
+}, U = f({
   name: "VDialog"
-}), U = /* @__PURE__ */ c({
-  ...D,
-  props: E,
-  emits: w,
-  setup(v, { emit: h }) {
-    const t = v, o = b(t.visible), d = () => {
-      h("update:visible", !1);
-    };
-    return p(
-      () => o.value,
-      (e) => {
-        e || d();
-      }
-    ), p(
-      () => t.visible,
-      (e) => {
-        o.value = e;
-      }
-    ), (e, r) => (s(), m(n(B), {
-      visible: o.value,
-      "onUpdate:visible": r[0] || (r[0] = (k) => o.value = k),
-      "append-to-body": e.appendToBody,
-      "show-mask": e.showMask,
-      "mask-close": e.maskClose,
-      "z-index": e.zIndex,
-      "mask-blur": e.maskBlur,
-      onOpen: e.open,
-      onOpenEnd: e.openEnd,
-      onClose: e.close,
-      onCloseEnd: e.closeEnd
+}), Y = /* @__PURE__ */ f({
+  ...U,
+  props: $,
+  emits: {
+    [L]: (i) => E(i)
+  },
+  setup(i, { emit: u }) {
+    const a = i, { styles: h, classes: k } = S(a, "dialog"), { isVisible: t, closeVisible: v } = D(y(a, "visible"), u), _ = h(["width", "height"]), b = k(["fullscreen"], "v-dialog");
+    return (o, d) => (n(), c(e(z), {
+      visible: e(t),
+      "onUpdate:visible": d[0] || (d[0] = (g) => B(t) ? t.value = g : null),
+      "append-to-body": o.appendToBody,
+      "show-mask": o.showMask,
+      "mask-close": o.maskClose,
+      "z-index": o.zIndex,
+      "mask-blur": o.maskBlur,
+      fullscreen: o.fullscreen,
+      "on-open": o.onOpen,
+      "on-open-end": o.onOpenEnd,
+      "on-close": o.onClose,
+      "on-close-end": o.onCloseEnd
     }, {
-      default: u(() => [
-        a("div", {
+      default: m(() => [
+        s("div", {
           role: "dialog",
           "aria-modal": "true",
           tabindex: "-1",
-          class: C(["v-dialog", { "v-dialog__fullscreen": e.fullscreen }]),
-          style: g({ width: n(V)(e.width) })
+          class: C(e(b)),
+          style: V(e(_))
         }, [
-          a("header", _, [
-            l(e.$slots, "header", {}, () => [
-              a("span", $, y(e.title), 1),
-              e.showCloseIcon ? (s(), m(n(z), {
-                key: 0,
-                icon: e.closeIcon,
-                onClick: d
-              }, {
-                default: u(() => [
-                  l(e.$slots, "closeIcon")
-                ]),
-                _: 3
-              }, 8, ["icon"])) : i("", !0)
+          s("header", M, [
+            s("div", N, [
+              l(o.$slots, "headerBefore")
+            ]),
+            s("h2", O, I(o.title), 1),
+            s("div", P, [
+              l(o.$slots, "headerAfter", {}, () => [
+                o.showCloseIcon ? (n(), c(e(w), {
+                  key: 0,
+                  round: "",
+                  color: "#3c4043",
+                  size: 30,
+                  icon: o.closeIcon,
+                  "on-click": e(v)
+                }, {
+                  default: m(() => [
+                    l(o.$slots, "closeIcon")
+                  ]),
+                  _: 3
+                }, 8, ["icon", "on-click"])) : r("", !0)
+              ])
             ])
           ]),
-          e.$slots.default ? (s(), f("section", I, [
-            l(e.$slots, "default")
-          ])) : i("", !0),
-          e.$slots.footer ? (s(), f("footer", O, [
-            l(e.$slots, "footer")
-          ])) : i("", !0)
+          o.$slots.default ? (n(), p("div", R, [
+            s("section", T, [
+              l(o.$slots, "default")
+            ]),
+            o.$slots.footer ? (n(), p("footer", A, [
+              l(o.$slots, "footer")
+            ])) : r("", !0)
+          ])) : r("", !0)
         ], 6)
       ]),
       _: 3
-    }, 8, ["visible", "append-to-body", "show-mask", "mask-close", "z-index", "mask-blur", "onOpen", "onOpenEnd", "onClose", "onCloseEnd"]));
+    }, 8, ["visible", "append-to-body", "show-mask", "mask-close", "z-index", "mask-blur", "fullscreen", "on-open", "on-open-end", "on-close", "on-close-end"]));
   }
 });
 export {
-  U as default
+  Y as default
 };

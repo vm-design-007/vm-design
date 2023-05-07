@@ -1,130 +1,37 @@
-import type { ClassListInterface, HandleEventInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { ToolbarType, ToolbarClickEmitInterface } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { ToolbarClick } from './src/interface';
+import type { VmSize } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Toolbar from "./src/toolbar";
-export declare const VToolbar: DefineComponent<{
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly size: {
-        readonly type: PropType<ToolbarType>;
-        readonly default: () => ToolbarType;
-        readonly validator: (val: ToolbarType) => boolean;
-    };
-    readonly block: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fixed: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly width: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly height: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly size: {
-            readonly type: PropType<ToolbarType>;
-            readonly default: () => ToolbarType;
-            readonly validator: (val: ToolbarType) => boolean;
-        };
-        readonly block: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly textColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly fixed: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly width: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly height: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((target: ToolbarClickEmitInterface) => any) | undefined;
-    }>>;
-    emit: (event: "click", target: ToolbarClickEmitInterface) => void;
-    classList: ComputedRef<ClassListInterface>;
-    styleList: ComputedRef<CSSProperties>;
-    handleClick: HandleEventInterface;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly click: (target: ToolbarClickEmitInterface) => ToolbarClickEmitInterface;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly size: {
-        readonly type: PropType<ToolbarType>;
-        readonly default: () => ToolbarType;
-        readonly validator: (val: ToolbarType) => boolean;
-    };
-    readonly block: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fixed: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly width: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly height: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}>> & {
-    onClick?: ((target: ToolbarClickEmitInterface) => any) | undefined;
-}, {
-    readonly fixed: boolean;
+export declare const VToolbar: Install<DefineComponent<{
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly fixed: BasicType<BooleanConstructor, boolean>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly onClick: BasicType<PropType<ToolbarClick>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly fixed: BasicType<BooleanConstructor, boolean>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly onClick: BasicType<PropType<ToolbarClick>, null>;
+}>>, {
     readonly round: boolean;
     readonly background: string;
-    readonly size: ToolbarType;
-    readonly width: string;
+    readonly fixed: boolean;
+    readonly width: string | number;
+    readonly size: VmSize;
+    readonly onClick: ToolbarClick;
+    readonly height: string | number;
     readonly textColor: string;
-    readonly block: boolean;
-    readonly height: string;
-}>;
-export default Toolbar;
+}>>;
+/** toolbar 组件实例类型 */
+export type ToolbarInstance = InstanceType<typeof Toolbar>;
+export * from './src/interface';
+export default VToolbar;

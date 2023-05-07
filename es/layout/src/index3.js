@@ -1,10 +1,8 @@
-const r = {
-  direction: {
-    type: String,
-    default: () => "",
-    validator: (t) => ["horizontal", "vertical", ""].includes(t)
-  }
+import "vue";
+import { setStringProp as o } from "../../_utils/props/index.js";
+const n = {
+  direction: o(null, (r) => ["horizontal", "vertical"].includes(r))
 };
 export {
-  r as Props
+  n as Props
 };

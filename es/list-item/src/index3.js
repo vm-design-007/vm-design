@@ -1,13 +1,9 @@
-const t = {
-  background: {
-    type: String,
-    default: () => ""
-  },
-  color: {
-    type: String,
-    default: () => ""
-  }
+import "vue";
+import { setStringProp as o } from "../../_utils/props/index.js";
+const p = {
+  background: o(),
+  color: o()
 };
 export {
-  t as Props
+  p as Props
 };

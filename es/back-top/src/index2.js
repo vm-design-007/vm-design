@@ -1,65 +1,56 @@
-import { defineComponent as d, ref as v, onMounted as k, computed as b, withDirectives as f, openBlock as h, createElementBlock as _, normalizeClass as E, normalizeStyle as g, unref as C, withModifiers as S, renderSlot as w, vShow as y } from "vue";
-import { Props as z, Emits as T } from "./index3.js";
-import { sizeChange as i, debounce as B } from "../../_utils/index3.js";
-const L = ["onClick"], N = d({
+import { defineComponent as c, ref as f, onMounted as h, openBlock as b, createBlock as k, Transition as _, withCtx as E, withDirectives as w, createElementVNode as S, normalizeClass as g, unref as i, normalizeStyle as y, withModifiers as C, renderSlot as L, vShow as T, toRefs as x } from "vue";
+import { Props as z } from "./index3.js";
+import { debounce as N } from "../../_utils/utils/index.js";
+import { isString as B, isNumber as H } from "../../_utils/is/index.js";
+import { useList as q } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const I = ["onClick"], M = c({
   name: "VBackTop"
-}), D = /* @__PURE__ */ d({
-  ...N,
+}), F = /* @__PURE__ */ c({
+  ...M,
   props: z,
-  emits: T,
-  setup(a, { emit: u }) {
-    const t = a, r = v(!1), c = (o) => B(() => {
-      const e = (o || document.documentElement).scrollTop;
-      r.value = e > t.visibleHeight;
-    }, 200), p = (o) => {
-      const { top: e, behavior: n, listenEl: l } = t;
-      if (l) {
-        document.querySelector(
-          l
-        ).scrollTo({
-          top: e,
-          behavior: n
-        });
+  setup(a) {
+    const o = a, { styles: d, classes: u } = q(o, "back-top"), n = f(!1), l = (e) => N(() => {
+      const t = (e || document.documentElement).scrollTop, s = H(o.visibleHeight) ? o.visibleHeight : 200;
+      n.value = t > s;
+    }, 200), m = () => {
+      const { top: e, behavior: t, listenEl: s } = x(o);
+      if (s.value) {
+        const r = document.querySelector(s.value);
+        r && r.scrollTo({ top: e.value, behavior: t.value });
         return;
       }
-      window.scrollTo({
-        top: e,
-        behavior: n
-      }), u("click", o);
+      window && window.scrollTo({ top: e.value, behavior: t.value });
     };
-    k(() => {
-      if (t.listenEl) {
-        const o = document.querySelector(
-          t.listenEl
-        );
-        o.addEventListener(
-          "scroll",
-          c(o)
-        );
-      }
-      document.addEventListener("scroll", c(null));
+    h(() => {
+      if (o.listenEl) {
+        if (!B(o.listenEl)) {
+          document.addEventListener("scroll", l());
+          return;
+        }
+        const e = document.querySelector(o.listenEl);
+        e && e.addEventListener("scroll", l(e));
+      } else
+        document.addEventListener("scroll", l());
     });
-    const m = b(() => {
-      const { right: o, bottom: e, zIndex: n, background: l, color: s } = t;
-      return {
-        "--v-back-top-right": i(o),
-        "--v-back-top-bottom": i(e),
-        "--v-back-top-z-index": n,
-        "--v-back-top-background": l,
-        "--v-back-top-color": s
-      };
-    });
-    return (o, e) => f((h(), _("div", {
-      class: E(["v-back-top", { "v-back-top__round": o.round }]),
-      style: g(C(m)),
-      onClick: S(p, ["stop"])
-    }, [
-      w(o.$slots, "default")
-    ], 14, L)), [
-      [y, r.value]
-    ]);
+    const p = d(["right", "bottom", "background", "color", "zIndex"], "zIndex"), v = u(["round"], "v-back-top");
+    return (e, t) => (b(), k(_, { name: "v-back-top" }, {
+      default: E(() => [
+        w(S("div", {
+          class: g(i(v)),
+          style: y(i(p)),
+          onClick: C(m, ["stop"])
+        }, [
+          L(e.$slots, "default")
+        ], 14, I), [
+          [T, n.value]
+        ])
+      ]),
+      _: 3
+    }));
   }
 });
 export {
-  D as default
+  F as default
 };

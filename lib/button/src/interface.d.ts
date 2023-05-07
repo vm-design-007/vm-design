@@ -1,16 +1,7 @@
-import type { ButtonHTMLAttributes } from 'vue'
-
-export type { ButtonPropsType } from './button'
-
-export type ButtonSizeType = 'large' | 'middle' | 'small' | 'mini'
-
-export type ButtonTargetType = '_blank' | '_self' | '_parent' | '_top'
-
-export type ButtonType =
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'danger'
-  | 'warning'
-
-export type ButtonNativeType = NonNullable<ButtonHTMLAttributes['type']>
+export type { ButtonProps } from './props';
+/**
+ * 原生 type 属性
+ *
+ * @see type https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button#attr-type
+ */
+export type ButtonNative = 'submit' | 'reset' | 'button';

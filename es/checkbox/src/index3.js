@@ -1,24 +1,19 @@
-const t = {
+import "vue";
+import { setBooleanProp as e, setFunctionProp as o } from "../../_utils/props/index.js";
+const r = {
   modelValue: {
     type: Boolean,
     default: () => !1
   },
   label: {
-    type: String,
-    default: () => ""
+    type: [String, Number, Boolean],
+    default: () => null
   },
-  disabled: {
-    type: Boolean,
-    default: () => !1
-  },
-  border: {
-    type: Boolean,
-    default: () => !1
-  }
-}, o = {
-  "update:modelValue": (e) => typeof e == "string" || typeof e == "number" || typeof e == "boolean"
+  disabled: e(),
+  border: e(),
+  showLabel: e(!0),
+  onChange: o()
 };
 export {
-  o as Emits,
-  t as Props
+  r as Props
 };

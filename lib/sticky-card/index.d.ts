@@ -1,122 +1,30 @@
-import type { OrdinaryFunctionInterface, ClassListInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { StickyCardEmitInterface } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, Ref, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { HandleChange } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import StickyCard from "./src/sticky-card";
-export declare const VStickyCard: DefineComponent<{
-    readonly open: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly openText: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly closeText: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly openHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly borderColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly openEnd: {
-        readonly type: PropType<StickyCardEmitInterface>;
-        readonly default: () => null;
-    };
-    readonly closeEnd: {
-        readonly type: PropType<StickyCardEmitInterface>;
-        readonly default: () => null;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly open: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly openText: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly closeText: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly openHeight: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly borderColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly openEnd: {
-            readonly type: PropType<StickyCardEmitInterface>;
-            readonly default: () => null;
-        };
-        readonly closeEnd: {
-            readonly type: PropType<StickyCardEmitInterface>;
-            readonly default: () => null;
-        };
-    }>> & {}>>;
-    isOpen: Ref<boolean>;
-    handleClick: OrdinaryFunctionInterface;
-    optionText: ComputedRef<string>;
-    styleList: ComputedRef<CSSProperties>;
-    classList: ComputedRef<ClassListInterface>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly open: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly openText: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly closeText: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly openHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly borderColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly openEnd: {
-        readonly type: PropType<StickyCardEmitInterface>;
-        readonly default: () => null;
-    };
-    readonly closeEnd: {
-        readonly type: PropType<StickyCardEmitInterface>;
-        readonly default: () => null;
-    };
+export declare const VStickyCard: Install<DefineComponent<{
+    readonly open: BasicType<BooleanConstructor, boolean>;
+    readonly openText: BasicType<PropType<string>, string | null>;
+    readonly closeText: BasicType<PropType<string>, string | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly onOpen: BasicType<PropType<HandleChange>, null>;
+    readonly onClose: BasicType<PropType<HandleChange>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly open: BasicType<BooleanConstructor, boolean>;
+    readonly openText: BasicType<PropType<string>, string | null>;
+    readonly closeText: BasicType<PropType<string>, string | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly onOpen: BasicType<PropType<HandleChange>, null>;
+    readonly onClose: BasicType<PropType<HandleChange>, null>;
 }>>, {
-    readonly background: string;
+    readonly onClose: HandleChange;
     readonly borderColor: string;
+    readonly onOpen: HandleChange;
     readonly open: boolean;
-    readonly openEnd: StickyCardEmitInterface;
-    readonly closeEnd: StickyCardEmitInterface;
     readonly openText: string;
     readonly closeText: string;
-    readonly openHeight: string | number;
-}>;
-export default StickyCard;
+}>>;
+/** sticky-card 组件实例类型 */
+export type StickyCardInstance = InstanceType<typeof StickyCard>;
+export * from './src/interface';
+export default VStickyCard;

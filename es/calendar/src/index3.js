@@ -1,42 +1,20 @@
-const t = {
+import "vue";
+import { setBooleanProp as e, setStringProp as o, setStringNumberProp as r, setFunctionProp as t } from "../../_utils/props/index.js";
+const p = {
   date: {
     type: Date,
     default: () => new Date(),
     required: !0
   },
-  lunar: {
-    type: Boolean,
-    default: () => !1
-  },
-  showHeader: {
-    type: Boolean,
-    default: () => !0
-  },
-  border: {
-    type: Boolean,
-    default: () => !1
-  },
-  borderColor: {
-    type: String,
-    default: () => "#eee"
-  },
-  dayCellHeight: {
-    type: [String, Number],
-    default: () => "85px"
-  },
-  weekCellHeight: {
-    type: [String, Number],
-    default: () => "50px"
-  },
-  memorandum: {
-    type: Object,
-    default: () => null
-  }
-}, a = {
-  "change-date": (e) => e,
-  "change-switch": (e) => e
+  lunar: e(),
+  showHeader: e(!0),
+  border: e(),
+  borderColor: o(),
+  dayCellHeight: r(),
+  weekCellHeight: r(),
+  onChangeDate: t(),
+  onChangeMonth: t()
 };
 export {
-  a as Emits,
-  t as Props
+  p as Props
 };

@@ -1,62 +1,22 @@
-const t = {
-  type: {
-    type: String,
-    default: () => "default",
-    validator: (e) => ["default", "primary", "success", "danger", "warning"].includes(e)
-  },
-  size: {
-    type: [String, Number],
-    default: () => ""
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  block: {
-    type: Boolean,
-    default: () => !1
-  },
-  spacing: {
-    type: [String, Number],
-    default: () => ""
-  },
-  lineHeight: {
-    type: [String, Number],
-    default: () => ""
-  },
-  indent: {
-    type: [String, Number],
-    default: () => ""
-  },
-  bold: {
-    type: Boolean,
-    default: () => !1
-  },
-  decoration: {
-    type: String,
-    default: () => ""
-  },
-  padding: {
-    type: [String, Number],
-    default: () => ""
-  },
-  width: {
-    type: [String, Number],
-    default: () => ""
-  },
-  ellipsis: {
-    type: Boolean,
-    default: () => !1
-  },
-  center: {
-    type: Boolean,
-    default: () => !1
-  }
+import "vue";
+import { setStringProp as r, setStringNumberProp as e, setBooleanProp as n } from "../../_utils/props/index.js";
+import { VM_TYPE as i } from "../../_tokens/attrs/index.js";
+const s = {
+  type: r(null, (o) => i.includes(o)),
+  size: e(),
+  color: r(),
+  background: r(),
+  block: n(),
+  spacing: e(),
+  lineHeight: e(),
+  indent: e(),
+  bold: n(),
+  decoration: r(null, (o) => ["overline", "line-through", "underline"].includes(o)),
+  padding: e(),
+  width: e(),
+  ellipsis: n(),
+  center: n()
 };
 export {
-  t as Props
+  s as Props
 };

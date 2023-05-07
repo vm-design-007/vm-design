@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as l } from "./src/index2.js";
-import { install as t } from "../_utils/index.js";
-const e = t(o);
+import { install as t } from "../_utils/install/index.js";
+import "vue";
+const a = t(o);
 export {
-  e as VSkeleton,
-  l as default
+  a as VSkeleton,
+  a as default
 };

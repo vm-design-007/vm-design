@@ -1,38 +1,33 @@
-import { defineComponent as s, computed as t, useSlots as v, openBlock as n, createElementBlock as l, normalizeClass as i, normalizeStyle as d, unref as a, renderSlot as m, createCommentVNode as f } from "vue";
-import { Props as _ } from "./index3.js";
-const y = s({
+import { defineComponent as r, openBlock as t, createElementBlock as o, normalizeClass as d, unref as s, normalizeStyle as m, renderSlot as f, createCommentVNode as u } from "vue";
+import { Props as v } from "./index3.js";
+import { useList as _ } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const y = {
+  key: 0,
+  class: "v-divider__text"
+}, h = r({
   name: "VDivider"
-}), S = /* @__PURE__ */ s({
-  ...y,
-  props: _,
-  setup(c) {
-    const o = c, p = t(() => !o.vertical && Boolean(v().default)), u = t(
-      () => {
-        const { color: e, margin: r } = o;
-        return r ? {
-          margin: `${r} 0`,
-          borderColor: e
-        } : { borderColor: e };
-      }
-    );
-    return (e, r) => (n(), l("div", {
+}), S = /* @__PURE__ */ r({
+  ...h,
+  props: v,
+  setup(i) {
+    const l = i, { classes: n, styles: a } = _(l, "divider"), c = n(["vertical", "position"], "v-divider"), p = a([
+      "color",
+      "margin",
+      "background",
+      "fontColor",
+      "height",
+      "type"
+    ]);
+    return (e, k) => (t(), o("div", {
       role: "separator",
-      class: i([
-        "v-divider",
-        { "v-divider__vertical": e.vertical, [`v-divider__${e.type}`]: e.type }
-      ]),
-      style: d(a(u))
+      class: d(s(c)),
+      style: m(s(p))
     }, [
-      a(p) ? (n(), l("span", {
-        key: 0,
-        class: i(["v-divider__text", `v-divider__text-${e.position}`]),
-        style: d({
-          background: e.background,
-          color: e.fontColor
-        })
-      }, [
-        m(e.$slots, "default")
-      ], 6)) : f("", !0)
+      !e.vertical || !e.$slots.default ? (t(), o("span", y, [
+        f(e.$slots, "default")
+      ])) : u("", !0)
     ], 6));
   }
 });

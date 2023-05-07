@@ -1,19 +1,17 @@
-import { defineComponent as r, provide as t, openBlock as n, createElementBlock as s, normalizeStyle as a, unref as m, renderSlot as p, createCommentVNode as l } from "vue";
-import { sizeChange as c } from "../../_utils/index3.js";
-import { Props as d, BreadcrumbPropsKey as f } from "./index3.js";
-const u = r({
+import { defineComponent as o, provide as t, openBlock as s, createElementBlock as n, renderSlot as p, createCommentVNode as a } from "vue";
+import { Props as c, BREADCRUMB_PROPS_KEY as d } from "./index3.js";
+const m = {
+  key: 0,
+  class: "v-breadcrumb"
+}, l = o({
   name: "VBreadcrumb"
-}), B = /* @__PURE__ */ r({
-  ...u,
-  props: d,
-  setup(o) {
-    return t(f, o), (e, _) => e.$slots.default ? (n(), s("div", {
-      key: 0,
-      class: "v-breadcrumb",
-      style: a({ fontSize: m(c)(e.fontSize) })
-    }, [
+}), B = /* @__PURE__ */ o({
+  ...l,
+  props: c,
+  setup(r) {
+    return t(d, r), (e, _) => e.$slots.default ? (s(), n("div", m, [
       p(e.$slots, "default")
-    ], 4)) : l("", !0);
+    ])) : a("", !0);
   }
 });
 export {

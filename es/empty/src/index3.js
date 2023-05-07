@@ -1,29 +1,14 @@
-const t = {
-  content: {
-    type: String,
-    default: () => "\u6682\u65E0\u6570\u636E"
-  },
-  contentSize: {
-    type: String,
-    default: () => ""
-  },
-  contentColor: {
-    type: String,
-    default: () => ""
-  },
-  imageSrc: {
-    type: String,
-    default: () => ""
-  },
-  imageSize: {
-    type: [String, Number],
-    default: () => ""
-  },
-  background: {
-    type: String,
-    default: () => ""
-  }
+import "vue";
+import { setStringProp as o, setStringNumberProp as t } from "../../_utils/props/index.js";
+const n = {
+  content: o(),
+  contentSize: t(),
+  contentColor: o(),
+  imageSrc: o(),
+  imageSize: t(),
+  background: o(),
+  iconSize: t(30)
 };
 export {
-  t as Props
+  n as Props
 };

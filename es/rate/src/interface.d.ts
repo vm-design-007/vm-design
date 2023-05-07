@@ -1,9 +1,7 @@
-export type { RatePropsType } from './rate'
-
-export interface OnMouseoverInterface {
-  (index: number): void
-}
-
-export interface OnHandleClickInterface {
-  (index: number): void
-}
+export type { RateProps } from './props';
+/**
+ * 改变时触发的回调类型接口
+ *
+ * @param { number } value 最新值
+ */
+export type RateChange = (value: number) => number;

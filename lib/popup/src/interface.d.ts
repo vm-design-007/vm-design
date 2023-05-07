@@ -1,7 +1,9 @@
-export type { PopupPropsType } from './popup'
-
-export type PopupDirectionType = 'left' | 'right' | 'top' | 'bottom' | 'center'
-
-export interface PopupHandleChangeInterface {
-  (evt: MouseEvent): void
-}
+export type { PopupProps } from './props';
+/** 不同弹出位置类型 */
+export type PopupDirection = 'left' | 'right' | 'top' | 'bottom' | 'center';
+/**
+ * 回调方法类型
+ *
+ * @param { Object } node 元素节点
+ */
+export type PopupCallback = (node: Element) => void;

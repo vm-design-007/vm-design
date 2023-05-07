@@ -1,29 +1,29 @@
-import { defineComponent as n, computed as l, openBlock as t, createElementBlock as m, normalizeStyle as a, unref as p, createBlock as d, resolveDynamicComponent as f, renderSlot as u } from "vue";
-import { Props as k, Emits as y } from "./index3.js";
-import { sizeChange as C } from "../../_utils/index3.js";
-const _ = n({
+import { defineComponent as t, openBlock as n, createElementBlock as m, normalizeStyle as p, unref as a, createBlock as u, resolveDynamicComponent as f, renderSlot as d } from "vue";
+import { Props as k } from "./index3.js";
+import { useList as y } from "../../_hooks/use-list/index.js";
+import { useRun as v } from "../../_hooks/use-run/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const C = t({
   name: "VSvgIcon"
-}), h = /* @__PURE__ */ n({
-  ..._,
+}), D = /* @__PURE__ */ t({
+  ...C,
   props: k,
-  emits: y,
-  setup(r, { emit: c }) {
-    const o = r, s = (e) => {
-      c("click", e);
-    }, i = l(() => ({
-      fontSize: C(o.size),
-      color: o.color
-    }));
-    return (e, v) => (t(), m("i", {
+  setup(r) {
+    const e = r, { run: s } = v(), { styles: c } = y(e, "svg-icon"), i = (o) => {
+      s(e.onClick, o);
+    }, l = c(["size", "color"]);
+    return (o, _) => (n(), m("i", {
+      role: "img",
       class: "v-svg-icon",
-      style: a(p(i)),
       "text-indent": "middle",
-      onClick: s
+      style: p(a(l)),
+      onClick: i
     }, [
-      e.icon ? (t(), d(f(e.icon), { key: 0 })) : u(e.$slots, "default", { key: 1 })
+      o.icon ? (n(), u(f(o.icon), { key: 0 })) : d(o.$slots, "default", { key: 1 })
     ], 4));
   }
 });
 export {
-  h as default
+  D as default
 };

@@ -1,7 +1,3 @@
-export type { LinkPropsType } from './link'
-
-export type LinkType = 'default' | 'primary' | 'success' | 'danger' | 'warning'
-
-export type LinkTargetType = '_self' | '_blank' | '_parent' | '_top' | ''
-
-export type LinkHoverType = 'line' | 'bag' | ''
+export type { LinkProps } from './props';
+/** 不同 hover 状态 */
+export type LinkState = 'line' | 'background';

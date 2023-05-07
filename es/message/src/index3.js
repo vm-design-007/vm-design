@@ -1,66 +1,27 @@
-import { messageTypes as t, messagePlacements as l } from "../../_model/message/index2.js";
-const a = {
-  id: {
-    type: String,
-    default: () => ""
-  },
+import "vue";
+import { setStringProp as t, setBooleanProp as r, setNumberProp as e, setObjectProp as n, setFunctionProp as p } from "../../_utils/props/index.js";
+import { VM_TYPE as l } from "../../_tokens/attrs/index.js";
+const i = {
   message: {
     type: [String, Object],
-    default: () => "",
-    required: !0
-  },
-  type: {
-    type: String,
-    default: () => "default",
-    validator: (e) => t.includes(e)
-  },
-  close: {
-    type: Boolean,
-    default: () => !1
-  },
-  duration: {
-    type: Number,
-    default: () => 3e3
-  },
-  round: {
-    type: Boolean,
-    default: () => !1
-  },
-  icon: {
-    type: Object,
     default: () => null
   },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  offset: {
-    type: Number,
-    default: () => 20
-  },
-  placement: {
-    type: String,
-    default: () => "top",
-    validator: (e) => l.includes(e)
-  },
-  zIndex: {
-    type: Number,
-    default: () => null
-  },
+  type: t("default", (o) => l.includes(o)),
+  close: r(),
+  duration: e(2500),
+  round: r(),
+  icon: n(),
+  color: t(),
+  background: t(),
+  offset: e(20),
+  placement: t("top", (o) => ["top", "top-left", "top-right", "bottom", "bottom-left", "bottom-right"].includes(o)),
+  zIndex: e(),
   closeBtn: {
     type: [String, Object],
     default: () => null
   },
-  closeEnd: {
-    type: Function,
-    default: () => null
-  }
-}, n = ["destroy"];
+  onClose: p()
+};
 export {
-  n as Emits,
-  a as Props
+  i as Props
 };

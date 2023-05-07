@@ -1,0 +1,1 @@
+.v-option{display:block;padding:8px 13px;font-size:15px;cursor:pointer;margin:4px;-webkit-user-select:none;-moz-user-select:none;user-select:none;transition:background .3s;color:#333;background-color:#fff}.v-option:not([class~=v-option__disabled]):hover{background-color:#eee}.v-option__disabled{cursor:not-allowed;color:#afafaf}

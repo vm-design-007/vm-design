@@ -1,199 +1,39 @@
-import type { OrdinaryFunctionInterface, ClassListInterface, UtilsSizeChangeInterface, HandleEventInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, PropType, VNode, RendererNode, RendererElement, Component, ComputedOptions, MethodOptions, ExtractPropTypes, ComputedRef, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, CSSProperties } from 'vue';
+import type { VmIcon, HandleEvent } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import PageHeader from "./src/page-header";
-export declare const VPageHeader: DefineComponent<{
-    readonly icon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly iconSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly backText: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly titleBold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly titleColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly titleCenter: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly subtitle: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly iconSize: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly backText: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly title: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly titleBold: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly titleColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly titleCenter: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly subtitle: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-    }>> & {
-        onBack?: (() => any) | undefined;
-    }>>;
-    emit: (event: "back") => void;
-    handleClick: OrdinaryFunctionInterface;
-    rightClassList: ComputedRef<ClassListInterface>;
-    rightTitleClassList: ComputedRef<ClassListInterface>;
-    sizeChange: UtilsSizeChangeInterface;
-    VIconArrowLeftVue: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}>;
-    VSvgIcon: DefineComponent<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }>>;
-        emit: (event: "click", evt: MouseEvent) => void;
-        handleClick: HandleEventInterface;
-        styleList: ComputedRef<CSSProperties>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly click: (evt: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }, {
-        readonly color: string;
-        readonly size: string | number;
-        readonly icon: VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    }>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly back: () => boolean;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly icon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly iconSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly backText: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly titleBold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly titleColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly titleCenter: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly subtitle: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}>> & {
-    onBack?: (() => any) | undefined;
-}, {
+export declare const VPageHeader: Install<DefineComponent<{
+    readonly icon: BasicType<PropType<VmIcon>, null>;
+    readonly iconSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly backText: BasicType<PropType<string>, string | null>;
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly titleBold: BasicType<BooleanConstructor, boolean>;
+    readonly titleColor: BasicType<PropType<string>, string | null>;
+    readonly titleCenter: BasicType<BooleanConstructor, boolean>;
+    readonly subtitle: BasicType<PropType<string>, string | null>;
+    readonly onBack: BasicType<PropType<HandleEvent>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly icon: BasicType<PropType<VmIcon>, null>;
+    readonly iconSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly backText: BasicType<PropType<string>, string | null>;
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly titleBold: BasicType<BooleanConstructor, boolean>;
+    readonly titleColor: BasicType<PropType<string>, string | null>;
+    readonly titleCenter: BasicType<BooleanConstructor, boolean>;
+    readonly subtitle: BasicType<PropType<string>, string | null>;
+    readonly onBack: BasicType<PropType<HandleEvent>, null>;
+}>>, {
     readonly title: string;
     readonly titleColor: string;
-    readonly icon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
+    readonly icon: VmIcon;
+    readonly titleBold: boolean;
     readonly iconSize: string | number;
     readonly backText: string;
-    readonly titleBold: boolean;
     readonly titleCenter: boolean;
     readonly subtitle: string;
-}>;
-export default PageHeader;
+    readonly onBack: HandleEvent;
+}>>;
+/** page-header 组件实例类型 */
+export type PageHeaderInstance = InstanceType<typeof PageHeader>;
+export * from './src/interface';
+export default VPageHeader;

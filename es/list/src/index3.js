@@ -1,35 +1,16 @@
-const t = {
-  listStyle: {
-    type: String,
-    default: () => ""
-  },
-  zebra: {
-    type: Boolean,
-    default: () => !1
-  },
-  center: {
-    type: Boolean,
-    default: () => !1
-  },
-  textColor: {
-    type: String,
-    default: () => ""
-  },
-  borderColor: {
-    type: String,
-    default: () => ""
-  },
-  size: {
-    type: String,
-    default: () => "middle",
-    validator: (e) => ["large", "middle", "small"].includes(e)
-  },
-  maxHeight: {
-    type: [String, Number],
-    default: () => ""
-  }
-}, l = Symbol("list-props");
+import "vue";
+import { setBooleanProp as o, setStringProp as r, setStringNumberProp as t } from "../../_utils/props/index.js";
+import { VM_SIZE as i } from "../../_tokens/attrs/index.js";
+const l = {
+  zebra: o(),
+  center: o(),
+  textColor: r(),
+  borderColor: r(),
+  size: r("middle", (e) => i.includes(e)),
+  maxHeight: t(),
+  zebraColor: r()
+}, n = Symbol("list-props-key");
 export {
-  t as Props,
-  l as listPropsKey
+  n as LIST_PROPS_KEY,
+  l as Props
 };

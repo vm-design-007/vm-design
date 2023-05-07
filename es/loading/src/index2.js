@@ -1,48 +1,40 @@
-import { defineComponent as s, computed as d, openBlock as p, createElementBlock as u, normalizeStyle as i, unref as e, createVNode as r, withCtx as f, renderSlot as g, createElementVNode as y, toDisplayString as V, createCommentVNode as _ } from "vue";
-import { Props as k, Emits as C } from "./index3.js";
-import { VSvgIcon as S } from "../../svg-icon/index.js";
-import v from "../../_components/svg/index8.js";
-const h = s({
+import { defineComponent as r, openBlock as t, createElementBlock as s, normalizeClass as f, unref as e, normalizeStyle as u, createVNode as n, withCtx as _, renderSlot as g, toDisplayString as y, createCommentVNode as i } from "vue";
+import { Props as v } from "./index3.js";
+import { VSvgIcon as k } from "../../svg-icon/index.js";
+import L from "../../_svg/v-icon-loading-a/index.js";
+import { useList as V } from "../../_hooks/use-list/index.js";
+import "../../_hooks/use-message/index.js";
+const C = {
+  key: 0,
+  class: "v-loading__title"
+}, S = r({
   name: "VLoading"
-}), L = /* @__PURE__ */ s({
-  ...h,
-  props: k,
-  emits: C,
-  setup(l, { emit: a }) {
-    const t = l, c = (o) => {
-      t.close && a("close", o);
-    }, m = d(() => {
-      const { background: o, opacity: n } = t;
-      return {
-        background: o,
-        opacity: n
-      };
-    });
-    return (o, n) => o.show ? (p(), u("div", {
+}), A = /* @__PURE__ */ r({
+  ...S,
+  props: v,
+  setup(l) {
+    const a = l, { styles: c, classes: m } = V(a, "loading"), p = c(["background", "color"]), d = m(["fullscreen"], "v-loading");
+    return (o, h) => o.visible ? (t(), s("div", {
       key: 0,
-      class: "v-loading",
-      style: i(e(m)),
-      onClick: c
+      class: f(e(d)),
+      style: u(e(p))
     }, [
-      r(e(S), {
+      n(e(k), {
         size: 20,
         class: "v-loading__animation",
         icon: o.icon
       }, {
-        default: f(() => [
+        default: _(() => [
           g(o.$slots, "icon", {}, () => [
-            r(e(v))
+            n(e(L))
           ])
         ]),
         _: 3
       }, 8, ["icon"]),
-      y("span", {
-        class: "v-loading__title",
-        style: i({ fontSize: o.fontSize, color: o.fontColor })
-      }, V(o.text || " \u73A9\u547D\u52A0\u8F7D\u4E2D..."), 5)
-    ], 4)) : _("", !0);
+      o.text ? (t(), s("span", C, y(o.text), 1)) : i("", !0)
+    ], 6)) : i("", !0);
   }
 });
 export {
-  L as default
+  A as default
 };

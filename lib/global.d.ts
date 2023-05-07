@@ -1,6 +1,10 @@
 import type * as components from './components'
 
-// https://github.com/johnsoncodehk/volar/blob/master/extensions/vscode-vue-language-features/README.md
+/**
+ * Volar 插件实现代码提示
+ *
+ * https://github.com/johnsoncodehk/volar/blob/master/extensions/vscode-vue-language-features/README.md
+ */
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
@@ -20,7 +24,7 @@ declare module '@vue/runtime-core' {
     VDrawer: typeof components.VDrawer
     VEmpty: typeof components.VEmpty
     VExpandCard: typeof components.VExpandCard
-    VFooter: typeof components.VFooter
+    VVooter: typeof components.VVooter
     VHeader: typeof components.VHeader
     VImage: typeof components.VImage
     VImagePreview: typeof components.VImagePreview
@@ -28,7 +32,6 @@ declare module '@vue/runtime-core' {
     VLink: typeof components.VLink
     VList: typeof components.VList
     VListItem: typeof components.VListItem
-    VLoading: typeof components.VLoading
     VMain: typeof components.VMain
     VPageHeader: typeof components.VPageHeader
     VProgress: typeof components.VProgress
@@ -46,13 +49,51 @@ declare module '@vue/runtime-core' {
     VTooltip: typeof components.VTooltip
     VTree: typeof components.VTree
     VWatermark: typeof components.VWatermark
+    VUpLoad: typeof components.VUpLoad
+    VTable: typeof components.VTable
+    VDropdown: typeof components.VDropdown
+    VDropdownItem: typeof components.VDropdownItem
+    VTextarea: typeof components.VTextarea
+    VSelect: typeof components.VSelect
+    VOption: typeof components.VOption
+    VInput: typeof components.VInput
+    VTabs: typeof components.VTabs
+    VTabsPane: typeof components.VTabsPane
+    VPopup: typeof components.VPopup
+    VPagination: typeof components.VPagination
+    VCheckbox: typeof components.VCheckbox
+    VCheckboxGroup: typeof components.VCheckboxGroup
+    VSwap: typeof components.VSwap
+    VDatePicker: typeof components.VDatePicker
+    VTimePicker: typeof components.VTimePicker
+    VInputNumber: typeof components.VInputNumber
+    VCloseBtn: typeof components.VCloseBtn
+    VTrigger: typeof components.VTrigger
+    VMenu: typeof components.VMenu
+    VMenuItem: typeof components.VMenuItem
+    VMenuItemGroup: typeof components.VMenuItemGroup
+    VSubmenu: typeof components.VSubmenu
+    VCollapseAnimation: typeof components.VCollapseAnimation
+    VSlider: typeof components.VSlider
+    VVmGlobal: typeof components.VVmGlobal
+    VVorm: typeof components.VVorm
+    VVormItem: typeof components.VVormItem
+    VBox: typeof components.VBox
+    VSvgIcon: typeof components.VSvgIcon
+    VRate: typeof components.VRate
+    VInfiniteScrolling: typeof components.VInfiniteScrolling
+    VNumberAnimate: typeof components.VNumberAnimate
+    VCountDown: typeof components.VCountDown
   }
 
   interface ComponentCustomProperties {
     VMessage: typeof components.VMessage
     VNotification: typeof components.VNotification
-    useLoadingBar: typeof components.useLoadingBar
   }
 }
 
-export { }
+declare global {
+  const __DEV__: boolean
+}
+
+export {}

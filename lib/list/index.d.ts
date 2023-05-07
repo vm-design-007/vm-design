@@ -1,109 +1,33 @@
-import type { ClassListInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { ListSizeType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { VmSize } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import List from "./src/list";
-export declare const VList: DefineComponent<{
-    readonly listStyle: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly zebra: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly borderColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<ListSizeType>;
-        readonly default: () => ListSizeType;
-        readonly validator: (val: ListSizeType) => boolean;
-    };
-    readonly maxHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly listStyle: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly zebra: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly center: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly textColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly borderColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<ListSizeType>;
-            readonly default: () => ListSizeType;
-            readonly validator: (val: ListSizeType) => boolean;
-        };
-        readonly maxHeight: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {}>>;
-    classList: ComputedRef<ClassListInterface>;
-    styleLIst: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly listStyle: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly zebra: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly textColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly borderColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<ListSizeType>;
-        readonly default: () => ListSizeType;
-        readonly validator: (val: ListSizeType) => boolean;
-    };
-    readonly maxHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
+export declare const VList: Install<DefineComponent<{
+    readonly zebra: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly maxHeight: BasicType<PropType<string | number>, string | number | null>;
+    readonly zebraColor: BasicType<PropType<string>, string | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly zebra: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
+    readonly textColor: BasicType<PropType<string>, string | null>;
+    readonly borderColor: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly maxHeight: BasicType<PropType<string | number>, string | number | null>;
+    readonly zebraColor: BasicType<PropType<string>, string | null>;
 }>>, {
     readonly center: boolean;
-    readonly size: ListSizeType;
-    readonly textColor: string;
+    readonly size: VmSize;
     readonly borderColor: string;
-    readonly listStyle: string;
     readonly zebra: boolean;
+    readonly textColor: string;
     readonly maxHeight: string | number;
-}>;
-export default List;
+    readonly zebraColor: string;
+}>>;
+/** list 组件实例类型 */
+export type ListInstance = InstanceType<typeof List>;
+export * from './src/interface';
+export default VList;

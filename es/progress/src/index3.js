@@ -1,57 +1,20 @@
-const t = {
-  percentage: {
-    type: Number,
-    default: () => 10,
-    validator: (e) => e >= 0 && e <= 100
-  },
-  type: {
-    type: String,
-    default: () => "primary",
-    validator: (e) => ["primary", "success", "danger", "warning"].includes(
-      e
-    )
-  },
-  square: {
-    type: Boolean,
-    default: () => !1
-  },
-  linear: {
-    type: Boolean,
-    default: () => !1
-  },
-  showText: {
-    type: Boolean,
-    default: () => !0
-  },
-  textColor: {
-    type: String,
-    default: () => ""
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  width: {
-    type: [String, Number],
-    default: () => ""
-  },
-  height: {
-    type: [String, Number],
-    default: () => "6px"
-  },
-  stripe: {
-    type: Boolean,
-    default: () => !1
-  },
-  textInside: {
-    type: Boolean,
-    default: () => !1
-  }
-};
+import "vue";
+import { setNumberProp as o, setStringProp as r, setStringNumberProp as p, setBooleanProp as t } from "../../_utils/props/index.js";
+import { VM_TYPE as s } from "../../_tokens/attrs/index.js";
+const c = {
+  percentage: o(0),
+  state: r("line", (e) => ["line", "circle"].includes(e)),
+  type: r("primary", (e) => s.includes(e)),
+  height: p(),
+  showText: t(!0),
+  diameter: o(400),
+  outsideText: t(),
+  textColor: r(),
+  color: r(),
+  background: r(),
+  stripe: t()
+}, l = Symbol("progress-props-key");
 export {
-  t as Props
+  l as PROGRESS_PROPS_KEY,
+  c as Props
 };

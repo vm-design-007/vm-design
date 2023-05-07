@@ -1,43 +1,17 @@
-const t = {
-  imgList: {
-    type: Array,
-    default: () => []
-  },
-  visible: {
-    type: Boolean,
-    default: () => !1
-  },
-  modalClose: {
-    type: Boolean,
-    default: () => !0
-  },
-  isCloseBtn: {
-    type: Boolean,
-    default: () => !0
-  },
-  showIndex: {
-    type: Number,
-    default: () => 0,
-    validator: (e) => e >= 0
-  },
-  zIndex: {
-    type: Number,
-    default: () => 999,
-    validator: (e) => e >= 0
-  },
-  isOption: {
-    type: Boolean,
-    default: () => !0
-  },
-  round: {
-    type: String,
-    default: () => ""
-  }
-}, o = {
-  "update:visible": (e) => typeof e == "boolean",
-  close: (e) => e
+import "vue";
+import { setBooleanProp as o, setArrayProp as r, setNumberProp as e, setStringProp as t, setFunctionProp as s } from "../../_utils/props/index.js";
+const i = {
+  visible: o(),
+  imgList: r([]),
+  modalClose: o(!0),
+  appendToBody: o(),
+  isCloseBtn: o(!0),
+  showIndex: e(0),
+  zIndex: e(),
+  isOption: o(!0),
+  round: t(),
+  onClose: s()
 };
 export {
-  o as Emits,
-  t as Props
+  i as Props
 };

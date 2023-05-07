@@ -1,46 +1,41 @@
-import { defineComponent as a, reactive as d, toRefs as h, provide as f, computed as s, openBlock as b, createElementBlock as k, normalizeClass as v, unref as n, normalizeStyle as g, renderSlot as x } from "vue";
-import { Props as G, Emits as y, checkboxGroupPropsKey as z } from "./index3.js";
-import { sizeChange as p } from "../../_utils/index3.js";
-const C = a({
+import { defineComponent as c, provide as f, reactive as _, toRefs as d, openBlock as g, createElementBlock as h, normalizeClass as k, unref as t, normalizeStyle as C, renderSlot as b } from "vue";
+import { Props as x, CHECKBOX_GROUP_PROPS_KEY as y } from "./index3.js";
+import { isArray as E } from "../../_utils/is/index.js";
+import { EMIT_UPDATE as s } from "../../_tokens/emits/index.js";
+import { useList as P } from "../../_hooks/use-list/index.js";
+import { useRun as v } from "../../_hooks/use-run/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const G = c({
   name: "VCheckboxGroup"
-}), B = /* @__PURE__ */ a({
-  ...C,
-  props: G,
-  emits: y,
-  setup(l, { emit: t }) {
-    const r = l, u = (o) => {
-      t("update:modelValue", o), t("change", o);
-    }, i = d({
-      ...h(r),
-      changeEvent: u
-    });
-    f(z, i);
-    const m = s(() => {
-      const { columnGap: o, rowGap: e } = r;
-      return {
-        columnGap: p(o),
-        rowGap: p(e)
-      };
-    }), _ = s(() => {
-      const { border: o, vertical: e, size: c } = r;
-      return [
-        "v-checkbox-group",
-        {
-          "v-checkbox-group__border": o,
-          "v-checkbox-group__vertical": e,
-          [`v-checkbox-group__${c}`]: c && o
-        }
-      ];
-    });
-    return (o, e) => (b(), k("div", {
+}), U = /* @__PURE__ */ c({
+  ...G,
+  props: x,
+  emits: {
+    [s]: (e) => E(e)
+  },
+  setup(e, { emit: n }) {
+    const r = e, { run: p } = v(), { classes: a, styles: i } = P(r, "checkbox-group"), l = (o) => {
+      n(s, o), p(r.onChange, o);
+    };
+    f(
+      y,
+      _({
+        ...d(r),
+        setChange: l
+      })
+    );
+    const m = i(["columnGap", "rowGap"]), u = a(["background", "vertical", "size"], "v-checkbox-group");
+    return (o, R) => (g(), h("div", {
       role: "group",
-      class: v(n(_)),
-      style: g(n(m))
+      "aria-label": "checkbox-group",
+      class: k(t(u)),
+      style: C(t(m))
     }, [
-      x(o.$slots, "default")
+      b(o.$slots, "default")
     ], 6));
   }
 });
 export {
-  B as default
+  U as default
 };

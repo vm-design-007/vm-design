@@ -1,55 +1,48 @@
-import { defineComponent as u, ref as y, computed as b, openBlock as o, createElementBlock as h, normalizeClass as I, unref as r, normalizeStyle as B, createBlock as t, withCtx as c, resolveDynamicComponent as i, createCommentVNode as n, renderSlot as S, withModifiers as V } from "vue";
-import { Props as w, Emits as z } from "./index3.js";
-import { VSvgIcon as m } from "../../svg-icon/index.js";
-import { VCloseBtn as $ } from "../../close-btn/index.js";
-const E = u({
+import { defineComponent as a, ref as g, openBlock as o, createBlock as r, Transition as C, withCtx as v, createElementBlock as b, normalizeClass as z, unref as t, normalizeStyle as I, createCommentVNode as n, renderSlot as h } from "vue";
+import { Props as B } from "./index3.js";
+import { VSvgIcon as c } from "../../svg-icon/index.js";
+import { VCloseBtn as S } from "../../close-btn/index.js";
+import { useList as V } from "../../_hooks/use-list/index.js";
+import { useRun as L } from "../../_hooks/use-run/index.js";
+import { useGlobal as _ } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const w = a({
   name: "VTag"
-}), P = /* @__PURE__ */ u({
-  ...E,
-  props: w,
-  emits: z,
-  setup(f, { emit: p }) {
-    const d = f, s = y(!0), _ = b(() => {
-      const { simple: e, type: l, size: a, block: v, round: g, line: C } = d;
-      return [
-        "v-tag",
-        {
-          [`v-tag__${l}`]: l,
-          [`v-tag__${a}`]: a,
-          "v-tag__simple": e,
-          "v-tag__block": v,
-          "v-tag__round": g,
-          "v-tag__line": C
-        }
-      ];
-    }), k = (e) => {
-      s.value = !1, p("close-end", e);
+}), D = /* @__PURE__ */ a({
+  ...w,
+  props: B,
+  setup(i) {
+    const s = i, { getProp: m } = _(s), { run: u } = L(), { classes: p, styles: f } = V(m(["size", "type"]), "tag"), l = g(!0), d = p(["simple", "type", "size", "block", "round", "line"], "v-tag"), k = f(["color", "background"]), y = (e) => {
+      l.value = !1, u(s.onClose, e);
     };
-    return (e, l) => s.value ? (o(), h("div", {
-      key: 0,
-      class: I(r(_)),
-      style: B({ background: e.background, color: e.color })
-    }, [
-      e.beforeIcon ? (o(), t(r(m), { key: 0 }, {
-        default: c(() => [
-          (o(), t(i(e.beforeIcon)))
-        ]),
-        _: 1
-      })) : n("", !0),
-      S(e.$slots, "default"),
-      e.afterIcon ? (o(), t(r(m), { key: 1 }, {
-        default: c(() => [
-          (o(), t(i(e.afterIcon)))
-        ]),
-        _: 1
-      })) : n("", !0),
-      e.close ? (o(), t(r($), {
-        key: 2,
-        onClick: V(k, ["stop"])
-      }, null, 8, ["onClick"])) : n("", !0)
-    ], 6)) : n("", !0);
+    return (e, P) => (o(), r(C, { name: "v-tag" }, {
+      default: v(() => [
+        l.value ? (o(), b("div", {
+          key: 0,
+          class: z(t(d)),
+          style: I(t(k))
+        }, [
+          e.beforeIcon ? (o(), r(t(c), {
+            key: 0,
+            icon: e.beforeIcon
+          }, null, 8, ["icon"])) : n("", !0),
+          h(e.$slots, "default"),
+          e.afterIcon ? (o(), r(t(c), {
+            key: 1,
+            icon: e.afterIcon
+          }, null, 8, ["icon"])) : n("", !0),
+          e.close ? (o(), r(t(S), {
+            key: 2,
+            size: 14,
+            "on-click": y
+          })) : n("", !0)
+        ], 6)) : n("", !0)
+      ]),
+      _: 3
+    }));
   }
 });
 export {
-  P as default
+  D as default
 };

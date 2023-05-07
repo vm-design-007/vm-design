@@ -1,54 +1,38 @@
-import { defineComponent as m, provide as u, computed as a, openBlock as r, createElementBlock as l, normalizeClass as h, unref as c, normalizeStyle as v, renderSlot as n, createCommentVNode as _ } from "vue";
-import { Props as y, listPropsKey as z } from "./index3.js";
-import { sizeChange as $ } from "../../_utils/index3.js";
+import { defineComponent as i, provide as f, openBlock as s, createElementBlock as o, normalizeClass as _, unref as l, normalizeStyle as u, renderSlot as t, createCommentVNode as a } from "vue";
+import { Props as h, LIST_PROPS_KEY as y } from "./index3.js";
+import { useList as z } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
 const C = {
   key: 0,
   class: "v-list__header"
-}, g = {
+}, L = {
   key: 1,
   class: "v-list__footer"
-}, k = m({
+}, $ = i({
   name: "VList"
-}), S = /* @__PURE__ */ m({
-  ...k,
-  props: y,
-  setup(d) {
-    const s = d;
-    u(z, s);
-    const p = a(() => {
-      const { maxHeight: e, zebra: t, center: o, size: i } = s;
-      return [
-        "v-list",
-        {
-          [`v-list__${i}`]: i,
-          "v-list__scroll": e,
-          "v-list__zebra": t,
-          "v-list__center": o
-        }
-      ];
-    }), f = a(() => {
-      const { maxHeight: e, borderColor: t, listStyle: o } = s;
-      return {
-        borderColor: t,
-        maxHeight: $(e),
-        listStyle: o
-      };
-    });
-    return (e, t) => (r(), l("ul", {
+}), E = /* @__PURE__ */ i({
+  ...$,
+  props: h,
+  setup(n) {
+    const r = n;
+    f(y, r);
+    const { classes: c, styles: m } = z(r, "list"), p = m(["borderColor", "maxHeight", "zebraColor"]), d = c(["zebra", "center", "size"], "v-list");
+    return (e, k) => (s(), o("ul", {
       role: "list",
-      class: h(c(p)),
-      style: v(c(f))
+      class: _(l(d)),
+      style: u(l(p))
     }, [
-      e.$slots.header ? (r(), l("header", C, [
-        n(e.$slots, "header")
-      ])) : _("", !0),
-      n(e.$slots, "default"),
-      e.$slots.footer ? (r(), l("footer", g, [
-        n(e.$slots, "footer")
-      ])) : _("", !0)
+      e.$slots.header ? (s(), o("header", C, [
+        t(e.$slots, "header")
+      ])) : a("", !0),
+      t(e.$slots, "default"),
+      e.$slots.footer ? (s(), o("footer", L, [
+        t(e.$slots, "footer")
+      ])) : a("", !0)
     ], 6));
   }
 });
 export {
-  S as default
+  E as default
 };

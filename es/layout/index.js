@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as p } from "./src/index2.js";
-import { install as t } from "../_utils/index.js";
-const f = t(o);
+import { install as t } from "../_utils/install/index.js";
+import "vue";
+const i = t(o);
 export {
-  f as VLayout,
-  p as default
+  i as VLayout,
+  i as default
 };

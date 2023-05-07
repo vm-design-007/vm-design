@@ -1,55 +1,19 @@
-const t = {
-  modelValue: {
-    type: Number,
-    default: () => 0,
-    validator: (e) => e >= 0
-  },
-  max: {
-    type: Number,
-    default: () => 5,
-    validator: (e) => e > 0
-  },
-  effectColor: {
-    type: String,
-    default: () => "#fcc202"
-  },
-  invalidColor: {
-    type: String,
-    default: () => "#eef"
-  },
-  readonly: {
-    type: Boolean,
-    default: () => !1
-  },
-  icon: {
-    type: Object,
-    default: () => null
-  },
-  size: {
-    type: [String, Number],
-    default: () => "25px"
-  },
-  textShow: {
-    type: Boolean,
-    default: () => !1
-  },
-  textColor: {
-    type: String,
-    default: () => ""
-  },
-  textArr: {
-    type: Array,
-    default: () => ["\u6781\u5DEE", "\u5931\u671B", "\u4E00\u822C", "\u4E0D\u9519", "\u5F88\u68D2"]
-  },
-  textSize: {
-    type: [String, Number],
-    default: () => ""
-  }
-}, u = {
-  change: (e) => e,
-  "update:modelValue": (e) => e
+import "vue";
+import { setNumberProp as e, setStringProp as o, setBooleanProp as r, setObjectProp as u, setStringNumberProp as t, setArrayProp as n, setFunctionProp as p } from "../../_utils/props/index.js";
+const l = {
+  modelValue: e(0),
+  max: e(5),
+  effectColor: o("#fcc202"),
+  invalidColor: o("#eef"),
+  readonly: r(),
+  icon: u(),
+  size: t(25),
+  textShow: r(),
+  textColor: o(),
+  textArr: n(["\u6781\u5DEE", "\u5931\u671B", "\u4E00\u822C", "\u4E0D\u9519", "\u5F88\u68D2"]),
+  textSize: t(),
+  onChange: p()
 };
 export {
-  u as Emits,
-  t as Props
+  l as Props
 };

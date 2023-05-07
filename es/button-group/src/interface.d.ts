@@ -1,3 +1,3 @@
-export type { ButtonGroupPropsType } from './button-group'
-
-export type ButtonGroupSizeType = 'large' | 'middle' | 'small' | 'mini'
+export type { ButtonGroupProps } from './props';
+/** 排列方式 */
+export type ButtonGroupDirection = 'horizontal' | 'vertical';

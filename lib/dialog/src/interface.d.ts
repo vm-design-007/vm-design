@@ -1,5 +1,1 @@
-export type { DialogPropsType } from './dialog'
-
-export interface DialogCallBackInterface {
-  (evt: MouseEvent): void
-}
+export type { DialogProps } from './props';

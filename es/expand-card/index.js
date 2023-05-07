@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as i } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const a = r(o);
+import { install as r } from "../_utils/install/index.js";
+import "vue";
+const i = r(o);
 export {
-  a as VExpandCard,
+  i as VExpandCard,
   i as default
 };

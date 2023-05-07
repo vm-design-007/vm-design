@@ -1,41 +1,29 @@
-import { defineComponent as r, computed as n, openBlock as u, createElementBlock as m, normalizeClass as v, unref as l, normalizeStyle as f, renderSlot as b, createCommentVNode as k } from "vue";
-import { Props as g } from "./index3.js";
-const h = ["v-content"], y = r({
+import { defineComponent as e, openBlock as c, createElementBlock as p, normalizeClass as m, unref as t, normalizeStyle as d, renderSlot as f, createCommentVNode as u } from "vue";
+import { Props as _ } from "./index3.js";
+import { useList as y } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const b = ["v-content"], k = e({
   name: "VTooltip"
-}), w = /* @__PURE__ */ r({
-  ...y,
-  props: g,
+}), B = /* @__PURE__ */ e({
+  ...k,
+  props: _,
   setup(s) {
-    const e = s, i = n(() => {
-      const { position: o, state: t, disabled: c, bold: a, noArrow: _, bright: d } = e;
-      return [
-        "v-tooltip",
-        {
-          [`v-tooltip__${o}`]: o,
-          [`v-tooltip__${t}`]: t,
-          "v-tooltip__disabled ": c,
-          "v-tooltip__bold": a,
-          "v-tooltip__no-arrow": _,
-          "v-tooltip__bright": d
-        }
-      ];
-    }), p = n(() => {
-      const { background: o, fontColor: t } = e;
-      return {
-        "--v-tooltip-background": o,
-        "--v-tooltip-font-color": t
-      };
-    });
-    return (o, t) => o.$slots.default ? (u(), m("div", {
+    const n = s, { classes: r, styles: l } = y(n, "tooltip"), i = r(
+      ["position", "state", "disabled", "bold", "noArrow", "bright"],
+      "v-tooltip"
+    ), a = l(["background", "fontColor"]);
+    return (o, v) => o.$slots.default ? (c(), p("div", {
       key: 0,
+      role: "tooltip",
       "v-content": o.content,
-      class: v(l(i)),
-      style: f(l(p))
+      class: m(t(i)),
+      style: d(t(a))
     }, [
-      b(o.$slots, "default")
-    ], 14, h)) : k("", !0);
+      f(o.$slots, "default")
+    ], 14, b)) : u("", !0);
   }
 });
 export {
-  w as default
+  B as default
 };

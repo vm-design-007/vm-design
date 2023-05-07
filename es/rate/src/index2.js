@@ -1,61 +1,68 @@
-import { defineComponent as u, ref as p, watch as V, computed as _, unref as r, openBlock as a, createElementBlock as n, createElementVNode as C, Fragment as h, renderList as k, normalizeClass as y, createVNode as z, createBlock as S, withCtx as g, createTextVNode as B, toDisplayString as M, createCommentVNode as N } from "vue";
-import { Props as w, Emits as E } from "./index3.js";
-import { VSvgIcon as I } from "../../svg-icon/index.js";
-import T from "../../_components/svg/index12.js";
-import { VText as $ } from "../../text/index.js";
-const A = {
+import { defineComponent as c, ref as h, watch as k, computed as i, unref as r, openBlock as a, createElementBlock as s, createElementVNode as y, Fragment as z, renderList as g, normalizeClass as M, createVNode as N, createBlock as S, withCtx as B, createTextVNode as E, toDisplayString as T, createCommentVNode as w } from "vue";
+import { Props as I } from "./index3.js";
+import { VSvgIcon as A } from "../../svg-icon/index.js";
+import D from "../../_svg/v-icon-star-b/index.js";
+import { VText as L } from "../../text/index.js";
+import { isNumber as P } from "../../_utils/is/index.js";
+import { EMIT_UPDATE as m } from "../../_tokens/emits/index.js";
+import { useRun as R } from "../../_hooks/use-run/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const $ = {
   class: "v-rate",
   role: "slider"
-}, D = { class: "v-rate__list" }, F = ["onMouseover", "onClick"], L = u({
+}, b = { class: "v-rate__list" }, F = ["onMouseover", "onClick"], U = c({
   name: "VRate"
-}), J = /* @__PURE__ */ u({
-  ...L,
-  props: w,
-  emits: E,
-  setup(c, { emit: s }) {
-    const o = c, t = p(o.modelValue), i = (e) => {
+}), Z = /* @__PURE__ */ c({
+  ...U,
+  props: I,
+  emits: {
+    [m]: (l) => l
+  },
+  setup(l, { emit: u }) {
+    const o = l, { run: d } = R(), t = h(o.modelValue), p = (e) => {
       o.readonly || (t.value = e);
-    }, m = () => {
+    }, f = () => {
       o.readonly || (t.value = o.modelValue);
-    }, d = (e) => {
-      o.readonly || (t.value = e, s("update:modelValue", e), s("change", e));
+    }, v = (e) => {
+      o.readonly || (t.value = e, u(m, e), d(o.onChange, e));
     };
-    V(
+    k(
       () => o.modelValue,
       () => {
         t.value = o.modelValue;
       }
     );
-    const v = _(() => o.textArr[r(t) - 1]);
-    return (e, P) => (a(), n("div", A, [
-      C("div", D, [
-        (a(!0), n(h, null, k(e.max, (R, l) => (a(), n("div", {
-          key: l,
-          class: y(["v-rate__star", { "v-rate__star-readonly": e.readonly }]),
-          onMouseout: m,
-          onMouseover: (f) => i(l + 1),
-          onClick: (f) => d(l + 1)
+    const _ = i(() => o.textArr[r(t) - 1]), V = i(() => P(o.max) ? o.max : 5);
+    return (e, j) => (a(), s("div", $, [
+      y("div", b, [
+        (a(!0), s(z, null, g(r(V), (q, n) => (a(), s("div", {
+          key: n,
+          class: M(["v-rate__star", { "v-rate__star-readonly": e.readonly }]),
+          onMouseout: f,
+          onMouseover: (C) => p(n + 1),
+          onClick: (C) => v(n + 1)
         }, [
-          z(r(I), {
+          N(r(A), {
             size: e.size,
-            icon: e.icon || r(T),
-            color: t.value > l ? e.effectColor : e.invalidColor
+            icon: e.icon || r(D),
+            color: t.value > n ? e.effectColor : e.invalidColor
           }, null, 8, ["size", "icon", "color"])
         ], 42, F))), 128))
       ]),
-      e.textShow ? (a(), S(r($), {
+      e.textShow ? (a(), S(r(L), {
         key: 0,
         size: e.textSize,
         color: e.textColor
       }, {
-        default: g(() => [
-          B(M(r(v)), 1)
+        default: B(() => [
+          E(T(r(_)), 1)
         ]),
         _: 1
-      }, 8, ["size", "color"])) : N("", !0)
+      }, 8, ["size", "color"])) : w("", !0)
     ]));
   }
 });
 export {
-  J as default
+  Z as default
 };

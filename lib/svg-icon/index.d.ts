@@ -1,68 +1,24 @@
-import type { HandleEventInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, PropType, VNode, RendererNode, RendererElement, Component, ComputedOptions, MethodOptions, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { VmIcon, HandleMouse } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import SvgIcon from "./src/svg-icon";
-export declare const VSvgIcon: DefineComponent<{
-    readonly icon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }>>;
-    emit: (event: "click", evt: MouseEvent) => void;
-    handleClick: HandleEventInterface;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly click: (evt: MouseEvent) => MouseEvent;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly icon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}>> & {
-    onClick?: ((evt: MouseEvent) => any) | undefined;
-}, {
+export declare const VSvgIcon: Install<DefineComponent<{
+    readonly icon: BasicType<PropType<VmIcon>, null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<string | number>, string | number | null>;
+    readonly onClick: BasicType<PropType<HandleMouse>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly icon: BasicType<PropType<VmIcon>, null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<string | number>, string | number | null>;
+    readonly onClick: BasicType<PropType<HandleMouse>, null>;
+}>>, {
     readonly color: string;
+    readonly icon: VmIcon;
     readonly size: string | number;
-    readonly icon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-}>;
-export default SvgIcon;
+    readonly onClick: HandleMouse;
+}>>;
+/** svg-icon 组件实例类型 */
+export type SvgIconInstance = InstanceType<typeof SvgIcon>;
+export * from './src/interface';
+export default VSvgIcon;

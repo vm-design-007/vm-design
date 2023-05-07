@@ -1,20 +1,11 @@
-const e = {
-  icon: {
-    type: Object,
-    default: () => null
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  size: {
-    type: [String, Number],
-    default: () => ""
-  }
-}, c = {
-  click: (t) => t
+import "vue";
+import { setObjectProp as o, setStringProp as r, setStringNumberProp as t, setFunctionProp as e } from "../../_utils/props/index.js";
+const n = {
+  icon: o(),
+  color: r(),
+  size: t(),
+  onClick: e()
 };
 export {
-  c as Emits,
-  e as Props
+  n as Props
 };

@@ -1,67 +1,28 @@
-const t = {
-  src: {
-    type: String,
-    default: () => ""
-  },
-  errSrc: {
-    type: String,
-    default: () => ""
-  },
-  icon: {
-    type: Object,
-    default: () => null
-  },
-  alt: {
-    type: String,
-    default: () => ""
-  },
-  round: {
-    type: Boolean,
-    default: () => !1
-  },
-  lazy: {
-    type: Boolean,
-    default: () => !1
-  },
-  fit: {
-    type: String,
-    default: () => "",
-    validator: (e) => ["fill", "contain", "cover", "none", "scale-down", ""].includes(e)
-  },
+import { isString as i, isNumber as s } from "../../_utils/is/index.js";
+import "vue";
+import { setStringProp as r, setObjectProp as u, setBooleanProp as t, setStringNumberProp as e, setFunctionProp as n } from "../../_utils/props/index.js";
+import { VM_FIT as p, VM_SIZE as m } from "../../_tokens/attrs/index.js";
+const a = {
+  src: r(),
+  errSrc: r(),
+  icon: u(),
+  alt: r(),
+  round: t(),
+  lazy: t(),
+  fit: r(null, (o) => p.includes(o)),
   size: {
     type: [String, Number],
     default: () => "middle",
-    validator: (e) => typeof e == "string" ? ["large", "middle", "small", "mini"].includes(e) : typeof e == "number" ? e >= 1 : !1
+    validator: (o) => i(o) ? m.includes(o) : s(o) ? o >= 1 : !1
   },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  fontSize: {
-    type: [String, Number],
-    default: () => "15px"
-  },
-  fontColor: {
-    type: String,
-    default: () => "#333"
-  },
-  text: {
-    type: String,
-    default: () => ""
-  },
-  rootMargin: {
-    type: [String, Number],
-    default: () => "100px"
-  },
-  loadAnimation: {
-    type: Boolean,
-    default: () => !1
-  }
-}, n = {
-  load: (e) => e instanceof Event,
-  error: (e) => e instanceof Event
+  background: r(),
+  fontSize: e(),
+  fontColor: r(),
+  text: r(),
+  rootMargin: e("100px"),
+  onLoad: n(),
+  onError: n()
 };
 export {
-  n as Emits,
-  t as Props
+  a as Props
 };

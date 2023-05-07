@@ -1,7 +1,5 @@
-export type { MessagePropsType } from './message'
-
-export type { MessageInstance } from '../../_interface'
-
-export type MessageType = 'default' | 'primary' | 'success' | 'danger' | 'warning'
-
-export type MessagePlacementType = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right'
+export type { MessageProps } from './props';
+/** 关闭之后的回调 */
+export type MessageClose = (evt?: MouseEvent) => void;
+/** 不同弹出位置类型 */
+export type MessagePlacement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';

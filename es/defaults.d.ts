@@ -1,6 +1,6 @@
-import type { AppInstallInterface } from './_interface';
+import type { App } from 'vue';
 declare const _default: {
     version: string;
-    install: AppInstallInterface;
+    install: (app: App<any>) => App<any>;
 };
 export default _default;

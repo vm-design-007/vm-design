@@ -1,43 +1,16 @@
-const e = {
-  content: {
-    type: String,
-    default: () => ""
-  },
-  position: {
-    type: String,
-    default: () => "bottom",
-    validator: (t) => ["top", "bottom", "right", "left"].includes(t)
-  },
-  disabled: {
-    type: Boolean,
-    default: () => !1
-  },
-  state: {
-    type: String,
-    default: () => "hover",
-    validator: (t) => ["hover", "active", "always"].includes(t)
-  },
-  noArrow: {
-    type: Boolean,
-    default: () => !1
-  },
-  bold: {
-    type: Boolean,
-    default: () => !1
-  },
-  bright: {
-    type: Boolean,
-    default: () => !1
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  fontColor: {
-    type: String,
-    default: () => ""
-  }
+import "vue";
+import { setStringNumberProp as e, setStringProp as o, setBooleanProp as t } from "../../_utils/props/index.js";
+const s = {
+  content: e(),
+  position: o("bottom", (r) => ["top", "bottom", "right", "left"].includes(r)),
+  disabled: t(),
+  state: o("hover", (r) => ["hover", "active", "always"].includes(r)),
+  noArrow: t(),
+  bold: t(),
+  bright: t(),
+  background: o(),
+  fontColor: o()
 };
 export {
-  e as Props
+  s as Props
 };

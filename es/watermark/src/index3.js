@@ -1,37 +1,15 @@
-const e = {
-  content: {
-    type: String,
-    default: () => ""
-  },
-  width: {
-    type: Number,
-    default: () => 280
-  },
-  height: {
-    type: Number,
-    default: () => 200
-  },
-  fontSize: {
-    type: [String, Number],
-    default: () => "30px"
-  },
-  fontColor: {
-    type: String,
-    default: () => "#333"
-  },
-  image: {
-    type: String,
-    default: () => ""
-  },
-  block: {
-    type: Boolean,
-    default: () => !1
-  },
-  zIndex: {
-    type: Number,
-    default: () => 100
-  }
+import "vue";
+import { setStringProp as o, setNumberProp as t, setStringNumberProp as r, setBooleanProp as e } from "../../_utils/props/index.js";
+const i = {
+  content: o(),
+  width: t(280),
+  height: t(200),
+  fontSize: r("30px"),
+  fontColor: o("#333"),
+  image: o(),
+  block: e(),
+  zIndex: t(100)
 };
 export {
-  e as Props
+  i as Props
 };

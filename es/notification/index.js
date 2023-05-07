@@ -1,6 +1,9 @@
-import o from "../_model/notification/index.js";
-import { installFn as i } from "../_utils/index.js";
-const r = i(o, "VNotification");
+import o from "./src/index2.js";
+import { installFn as i } from "../_utils/install/index.js";
+import "vue";
+import "../loading/src/index2.js";
+import { useMessage as t } from "../_hooks/use-message/index.js";
+const { Message: m } = t(o, "notification"), c = i(m, "VNotification");
 export {
-  r as VNotification
+  c as VNotification
 };

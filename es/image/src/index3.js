@@ -1,67 +1,24 @@
-const t = {
-  src: {
-    type: String,
-    default: () => ""
-  },
-  alt: {
-    type: String,
-    default: () => ""
-  },
-  draggable: {
-    type: Boolean,
-    default: () => !0
-  },
-  lazy: {
-    type: Boolean,
-    default: () => !1
-  },
-  rootMargin: {
-    type: [String, Number],
-    default: () => "100px"
-  },
-  width: {
-    type: [String, Number],
-    default: () => ""
-  },
-  height: {
-    type: [String, Number],
-    default: () => ""
-  },
-  block: {
-    type: Boolean,
-    default: () => !1
-  },
-  fit: {
-    type: String,
-    default: () => "",
-    validator: (e) => ["fill", "contain", "cover", "none", "scale-down", ""].includes(e)
-  },
-  noSelect: {
-    type: Boolean,
-    default: () => !1
-  },
-  referrerPolicy: {
-    type: String,
-    default: () => ""
-  },
-  round: {
-    type: [String, Number],
-    default: () => 0
-  },
-  errSrc: {
-    type: String,
-    default: () => ""
-  },
-  title: {
-    type: String,
-    default: () => ""
-  }
-}, r = {
-  load: (e) => e instanceof Event,
-  error: (e) => e instanceof Event,
-  click: (e) => e
+import "vue";
+import { setStringProp as r, setBooleanProp as o, setStringNumberProp as t, setFunctionProp as e } from "../../_utils/props/index.js";
+import { VM_FIT as n } from "../../_tokens/attrs/index.js";
+const c = {
+  src: r(),
+  alt: r(),
+  draggable: o(!0),
+  lazy: o(),
+  rootMargin: t("100px"),
+  width: t(),
+  height: t(),
+  block: o(),
+  fit: r(null, (i) => n.includes(i)),
+  select: o(),
+  referrerPolicy: r(),
+  round: t(),
+  errSrc: r(),
+  title: r(),
+  onLoad: e(),
+  onError: e()
 };
 export {
-  r as Emits,
-  t as Props
+  c as Props
 };

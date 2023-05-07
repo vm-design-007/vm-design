@@ -1,60 +1,26 @@
-const t = {
+import "vue";
+import { setBooleanProp as e, setNumberProp as r, setStringProp as t, setStringNumberProp as n, setFunctionProp as o } from "../../_utils/props/index.js";
+const u = {
   visible: {
-    type: Boolean,
-    default: () => !1,
+    ...e(),
     required: !0
   },
-  appendToBody: {
-    type: Boolean,
-    default: () => !1
-  },
-  showMask: {
-    type: Boolean,
-    default: () => !0
-  },
-  maskClose: {
-    type: Boolean,
-    default: () => !0
-  },
-  maskBlur: {
-    type: Boolean,
-    default: () => !1
-  },
-  zIndex: {
-    type: Number,
-    default: () => 1999,
-    validator: (e) => e >= 0
-  },
-  maskBackground: {
-    type: String,
-    default: () => ""
-  },
-  maskOpacity: {
-    type: Number,
-    default: () => null,
-    validator: (e) => e >= 0 && e <= 1
-  },
-  direction: {
-    type: String,
-    default: () => "center",
-    validator: (e) => ["left", "right", "top", "bottom", "center"].includes(e)
-  },
-  popupSize: {
-    type: [String, Number],
-    default: () => ""
-  },
-  padding: {
-    type: [String, Number],
-    default: () => ""
-  }
-}, a = {
-  "update:visible": (e) => typeof e == "boolean",
-  open: (e) => e,
-  close: (e) => e,
-  "open-end": (e) => e,
-  "close-end": (e) => e
+  appendToBody: e(),
+  showMask: e(!0),
+  maskClose: e(!0),
+  maskBlur: e(),
+  zIndex: r(1999),
+  maskBackground: t(),
+  maskOpacity: r(),
+  direction: t("center", (p) => ["left", "right", "top", "bottom", "center"].includes(p)),
+  popupSize: n(),
+  fullscreen: e(),
+  padding: n(),
+  onOpen: o(),
+  onClose: o(),
+  onOpenEnd: o(),
+  onCloseEnd: o()
 };
 export {
-  a as Emits,
-  t as Props
+  u as Props
 };

@@ -1,7 +1,7 @@
 {
   "name": "vm-design",
-  "version": "v-0.0.3",
-  "description": "Vm design can quickly build interactive interfaces in vue3 applications, which looks good.",
+  "version": "0.0.4",
+  "description": "vm design can quickly build interactive interfaces in vue3 applications, which looks good.",
   "keywords": [
     "vm",
     "design",
@@ -25,6 +25,11 @@
       "require": "./lib/index.js",
       "types": "./es/index.d.ts"
     },
+    "./resolver": {
+      "require": "./resolver/index.js",
+      "import": "./resolver/index.js",
+      "types": "./resolver/index.d.ts"
+    },
     "./dist": "./dist/",
     "./theme": "./theme/",
     "./es": "./es/index.js",
@@ -43,11 +48,13 @@
     "*.css"
   ],
   "author": {
-    "name": "don.xander"
+    "name": "tyh2001",
+    "url": "https://tianyuhao.cn"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vm-design-007/vm-design/issues"
   },
+  "homepage": "https://vm.tianyuhao.cn",
   "repository": "https://github.com/vm-design-007/vm-design"
 }

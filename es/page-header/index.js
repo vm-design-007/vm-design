@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as i } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const m = r(o);
+import { install as r } from "../_utils/install/index.js";
+import "vue";
+const e = r(o);
 export {
-  m as VPageHeader,
-  i as default
+  e as VPageHeader,
+  e as default
 };

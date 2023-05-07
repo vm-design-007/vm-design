@@ -1,200 +1,55 @@
-import type { ClassListInterface } from '../_interface';
-import type { LooseRequired } from '@vue/shared';
-import type { TextType, TextDecorationType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { TextDecoration } from './src/interface';
+import type { VmType } from '..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Text from "./src/text";
-export declare const VText: DefineComponent<{
-    readonly type: {
-        readonly type: PropType<TextType>;
-        readonly default: () => TextType;
-        readonly validator: (val: TextType) => boolean;
-    };
-    readonly size: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly block: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly spacing: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly lineHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly indent: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly bold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly decoration: {
-        readonly type: PropType<TextDecorationType>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly ellipsis: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly type: {
-            readonly type: PropType<TextType>;
-            readonly default: () => TextType;
-            readonly validator: (val: TextType) => boolean;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly block: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly spacing: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly lineHeight: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly indent: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly bold: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly decoration: {
-            readonly type: PropType<TextDecorationType>;
-            readonly default: () => string;
-        };
-        readonly padding: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly width: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly ellipsis: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly center: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-    }>> & {}>>;
-    classList: ComputedRef<ClassListInterface>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly type: {
-        readonly type: PropType<TextType>;
-        readonly default: () => TextType;
-        readonly validator: (val: TextType) => boolean;
-    };
-    readonly size: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly block: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly spacing: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly lineHeight: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly indent: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly bold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly decoration: {
-        readonly type: PropType<TextDecorationType>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly ellipsis: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly center: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
+export declare const VText: Install<DefineComponent<{
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly size: BasicType<PropType<string | number>, string | number | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly block: BasicType<BooleanConstructor, boolean>;
+    readonly spacing: BasicType<PropType<string | number>, string | number | null>;
+    readonly lineHeight: BasicType<PropType<string | number>, string | number | null>;
+    readonly indent: BasicType<PropType<string | number>, string | number | null>;
+    readonly bold: BasicType<BooleanConstructor, boolean>;
+    readonly decoration: BasicType<PropType<TextDecoration>, TextDecoration | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly ellipsis: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly size: BasicType<PropType<string | number>, string | number | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+    readonly block: BasicType<BooleanConstructor, boolean>;
+    readonly spacing: BasicType<PropType<string | number>, string | number | null>;
+    readonly lineHeight: BasicType<PropType<string | number>, string | number | null>;
+    readonly indent: BasicType<PropType<string | number>, string | number | null>;
+    readonly bold: BasicType<BooleanConstructor, boolean>;
+    readonly decoration: BasicType<PropType<TextDecoration>, TextDecoration | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly ellipsis: BasicType<BooleanConstructor, boolean>;
+    readonly center: BasicType<BooleanConstructor, boolean>;
 }>>, {
+    readonly type: VmType;
     readonly bold: boolean;
-    readonly type: TextType;
     readonly center: boolean;
     readonly background: string;
     readonly color: string;
-    readonly size: string | number;
     readonly width: string | number;
     readonly padding: string | number;
+    readonly size: string | number;
     readonly block: boolean;
     readonly spacing: string | number;
     readonly lineHeight: string | number;
     readonly indent: string | number;
-    readonly decoration: TextDecorationType;
+    readonly decoration: TextDecoration;
     readonly ellipsis: boolean;
-}>;
-export default Text;
+}>>;
+/** text 组件实例类型 */
+export type TextInstance = InstanceType<typeof Text>;
+export * from './src/interface';
+export default VText;

@@ -1,8 +1,8 @@
-import o from "./src/index2.js";
-import { default as p } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const m = r(o);
+import i from "./src/index2.js";
+import { install as o } from "../_utils/install/index.js";
+import "vue";
+const a = o(i);
 export {
-  m as VDivider,
-  p as default
+  a as VDivider,
+  a as default
 };

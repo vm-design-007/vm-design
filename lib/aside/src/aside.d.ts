@@ -1,36 +1,15 @@
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, PropType, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, CSSProperties,  ComputedRef } from 'vue';
+import type { BasicType } from '../..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
 declare const _sfc_main: DefineComponent<{
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => number;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly width: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly padding: {
-            readonly type: PropType<string | number>;
-            readonly default: () => number;
-        };
-    }>> & {}>>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => number;
-    };
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
 }>>, {
+    readonly background: string;
     readonly width: string | number;
     readonly padding: string | number;
 }>;

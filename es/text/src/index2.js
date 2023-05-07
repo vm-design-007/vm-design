@@ -1,43 +1,34 @@
-import { defineComponent as i, computed as r, openBlock as _, createElementBlock as v, normalizeClass as m, unref as s, normalizeStyle as u, renderSlot as f } from "vue";
-import { Props as g } from "./index3.js";
-import { sizeChange as e } from "../../_utils/index3.js";
-const h = i({
+import { defineComponent as e, openBlock as a, createElementBlock as m, normalizeClass as d, unref as t, normalizeStyle as f, renderSlot as u } from "vue";
+import { Props as _ } from "./index3.js";
+import { useList as y } from "../../_hooks/use-list/index.js";
+import { useGlobal as g } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const b = e({
   name: "VText"
-}), y = /* @__PURE__ */ i({
-  ...h,
-  props: g,
-  setup(l) {
-    const t = l, c = r(() => {
-      const { type: o, block: n, bold: p, ellipsis: d, center: x } = t;
-      return [
-        "v-text",
-        {
-          [`v-text__${o}`]: o,
-          "v-text__block": n,
-          "v-text__bold": p,
-          "v-text__center": x,
-          "v-text__ellipsis": d
-        }
-      ];
-    }), a = r(() => ({
-      "--v-text-color": t.color,
-      "--v-text-background": t.background,
-      "--v-text-text-decoration": t.decoration,
-      "--v-text-width": e(t.width),
-      "--v-text-font-size": e(t.size),
-      "--v-text-padding": e(t.padding),
-      "--v-text-letter-spacing": e(t.spacing),
-      "--v-text-line-height": e(t.lineHeight),
-      "--v-text-text-indent": e(t.indent)
-    }));
-    return (o, n) => (_(), v("p", {
-      class: m(s(c)),
-      style: u(s(a))
+}), P = /* @__PURE__ */ e({
+  ...b,
+  props: _,
+  setup(o) {
+    const s = o, { getProp: r } = g(s), { classes: n, styles: l } = y(r(["type"]), "text"), i = n(["type", "block", "bold", "ellipsis", "center"], "v-text"), c = l([
+      "color",
+      "background",
+      "decoration",
+      "width",
+      "size",
+      "padding",
+      "spacing",
+      "lineHeight",
+      "indent"
+    ]);
+    return (p, k) => (a(), m("p", {
+      class: d(t(i)),
+      style: f(t(c))
     }, [
-      f(o.$slots, "default")
+      u(p.$slots, "default")
     ], 6));
   }
 });
 export {
-  y as default
+  P as default
 };

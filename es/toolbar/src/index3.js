@@ -1,41 +1,16 @@
-const t = {
-  round: {
-    type: Boolean,
-    default: () => !1
-  },
-  size: {
-    type: String,
-    default: () => "large",
-    validator: (e) => ["large", "middle", "small", "mini"].includes(e)
-  },
-  block: {
-    type: Boolean,
-    default: () => !1
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  textColor: {
-    type: String,
-    default: () => ""
-  },
-  fixed: {
-    type: Boolean,
-    default: () => !1
-  },
-  width: {
-    type: String,
-    default: () => ""
-  },
-  height: {
-    type: String,
-    default: () => ""
-  }
-}, l = {
-  click: (e) => e
+import "vue";
+import { setBooleanProp as r, setStringProp as o, setStringNumberProp as t, setFunctionProp as i } from "../../_utils/props/index.js";
+import { VM_SIZE as n } from "../../_tokens/attrs/index.js";
+const m = {
+  round: r(),
+  size: o("middle", (e) => n.includes(e)),
+  background: o(),
+  textColor: o(),
+  fixed: r(),
+  width: t(),
+  height: t(),
+  onClick: i()
 };
 export {
-  l as Emits,
-  t as Props
+  m as Props
 };

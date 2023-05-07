@@ -1,160 +1,102 @@
-import { defineComponent as b, ref as f, computed as z, watch as j, openBlock as n, createElementBlock as o, normalizeClass as A, normalizeStyle as I, unref as c, createElementVNode as s, toDisplayString as u, renderSlot as y, createVNode as k, withCtx as m, createTextVNode as _, createCommentVNode as g, Fragment as C, renderList as w, createBlock as K } from "vue";
-import { Props as O, Emits as P } from "./index3.js";
-import { VButton as E } from "../../button/index.js";
-import { VText as W } from "../../text/index.js";
-import { addZero as V, sizeChange as x } from "../../_utils/index3.js";
-import { WEEK_DATA as Z } from "../../_model/calendar/index.js";
-import { diffDay as q } from "../../_model/calendar/index2.js";
-const G = {
+import { defineComponent as M, computed as u, reactive as A, watch as B, openBlock as s, createElementBlock as l, normalizeClass as C, unref as a, normalizeStyle as P, createVNode as y, withModifiers as c, createElementVNode as i, toDisplayString as d, createCommentVNode as k, Fragment as g, renderList as w } from "vue";
+import { Props as R } from "./index3.js";
+import { VSvgIcon as D } from "../../svg-icon/index.js";
+import Y from "../../_svg/v-icon-chevron-left/index.js";
+import G from "../../_svg/v-icon-chevron-right/index.js";
+import { addZero as L } from "../../_utils/utils/index.js";
+import { isDate as T } from "../../_utils/is/index.js";
+import { useCalendar as Z } from "../../_hooks/use-calendar/index.js";
+import { useList as j } from "../../_hooks/use-list/index.js";
+import { useRun as q } from "../../_hooks/use-run/index.js";
+import { useGlobal as J } from "../../_hooks/use-global/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const K = {
   key: 0,
   class: "v-calendar__header"
-}, J = { class: "v-calendar__time" }, Q = { class: "v-calendar__time-now" }, R = { class: "v-calendar__option" }, U = { class: "v-calendar__week" }, X = { class: "v-calendar__day" }, ee = ["onClick"], te = { class: "v-calendar__solar" }, ae = {
+}, O = { class: "v-calendar__option" }, Q = { class: "v-calendar__now-time" }, U = { class: "v-calendar__week" }, W = { class: "v-calendar__day" }, X = ["onClick"], ee = { class: "v-calendar__solar" }, te = {
   key: 0,
   class: "v-calendar__lunar"
-}, ne = {
-  key: 1,
-  class: "v-calendar__memorandum"
-}, le = b({
+}, ne = M({
   name: "VCalendar"
-}), me = /* @__PURE__ */ b({
-  ...le,
-  props: O,
-  emits: P,
-  setup(B, { emit: D }) {
-    const l = B, d = f(l.date.getFullYear()), r = f(l.date.getMonth()), i = f(l.date.getDate()), { AllMonthDays: N, changeLastMonth: $, changeNextMonth: M } = q(
-      d,
-      r
-    ), L = (e, a) => a === i.value && e === r.value + 1 ? "v-calendar__day-today" : e !== r.value + 1 ? "v-calendar__not-month" : "", v = (e) => {
-      ({
-        last: () => $(),
-        next: () => M(),
+}), fe = /* @__PURE__ */ M({
+  ...ne,
+  props: R,
+  setup(V) {
+    const r = V, m = u(() => T(r.date) ? r.date : new Date()), e = A({
+      year: m.value.getFullYear(),
+      month: m.value.getMonth() + 1,
+      date: m.value.getDate()
+    }), { AllMonthDays: $, changeLastMonth: p, changeNextMonth: v } = Z(e), { getLang: F } = J(), { run: f } = q(), { styles: I, classes: N } = j(r, "calendar"), b = u(() => F("calendar").value.weekList), x = (t, n) => n === e.date && t === e.month ? "v-calendar__day-today" : t !== e.month ? "v-calendar__not-month" : "", _ = (t) => {
+      const n = {
+        last: () => p(),
+        next: () => v(),
         now: () => {
-          r.value = l.date.getMonth(), d.value = l.date.getFullYear(), i.value = l.date.getDate();
+          e.month = r.date.getMonth(), e.year = r.date.getFullYear(), e.date = r.date.getDate();
         }
-      })[e]();
-    }, T = z(() => `${d.value}\u5E74 ${V(r.value + 1)}\u6708 ${V(
-      i.value
-    )}\u65E5`), F = (e, a) => {
-      i.value = a, e < r.value + 1 ? $() : e > r.value + 1 && M(), D("change-date", {
-        year: d.value,
-        month: e || r.value,
-        date: a
-      });
-    }, H = z(() => {
-      const { borderColor: e, dayCellHeight: a, weekCellHeight: t } = l;
-      return {
-        "--v-calendar-border-color": e,
-        "--v-calendar-day-height": x(a),
-        "--v-calendar-week-height": x(t)
       };
-    }), S = (e) => l.memorandum ? Object.keys(l.memorandum).includes(e) : !1;
-    return j(
-      () => r.value,
-      (e) => {
-        D("change-switch", {
-          year: d.value,
-          month: e + 1,
-          date: i.value
+      n[t] && n[t]();
+    }, E = u(() => `${e.year} / ${L(e.month)} / ${L(
+      e.date
+    )}`), H = (t) => {
+      const n = e.date;
+      e.date = t.day, t.year > e.year || t.month > e.month ? v() : (t.year > e.year || t.month < e.month) && p(), n !== t.day && f(r.onChangeDate, {
+        year: e.year,
+        month: t.month || e.month,
+        date: t.day
+      });
+    };
+    B(
+      () => e.month,
+      (t) => {
+        f(r.onChangeMonth, {
+          year: e.year,
+          month: t,
+          date: e.date
         });
       }
-    ), (e, a) => (n(), o("div", {
-      class: A(["v-calendar", { "v-calendar__border": e.border }]),
-      style: I(c(H))
+    );
+    const S = I(["borderColor", "dayCellHeight", "weekCellHeight"]), z = N(["border"], "v-calendar");
+    return (t, n) => (s(), l("div", {
+      class: C(a(z)),
+      style: P(a(S))
     }, [
-      e.showHeader ? (n(), o("header", G, [
-        s("div", J, [
-          s("span", Q, u(c(T)), 1)
+      t.showHeader ? (s(), l("header", K, [
+        y(a(D), {
+          icon: a(Y),
+          onClick: n[0] || (n[0] = c((o) => _("last"), ["stop"]))
+        }, null, 8, ["icon"]),
+        i("div", O, [
+          i("span", Q, d(a(E)), 1),
+          i("span", {
+            class: "v-calendar__now-date",
+            onClick: n[1] || (n[1] = c((o) => _("now"), ["stop"]))
+          }, "\u4ECA\u5929")
         ]),
-        s("div", R, [
-          s("div", {
-            class: "v-calendar__last",
-            onClick: a[0] || (a[0] = (t) => v("last"))
-          }, [
-            y(e.$slots, "last-change", {}, () => [
-              k(c(E), {
-                text: "",
-                size: "mini",
-                type: "primary"
-              }, {
-                default: m(() => [
-                  _("\u4E0A\u4E2A\u6708")
-                ]),
-                _: 1
-              })
-            ])
-          ]),
-          s("div", {
-            class: "v-calendar__now",
-            onClick: a[1] || (a[1] = (t) => v("now"))
-          }, [
-            y(e.$slots, "now-change", {}, () => [
-              k(c(E), {
-                text: "",
-                size: "mini",
-                type: "primary"
-              }, {
-                default: m(() => [
-                  _("\u4ECA\u5929")
-                ]),
-                _: 1
-              })
-            ])
-          ]),
-          s("div", {
-            class: "v-calendar__next",
-            onClick: a[2] || (a[2] = (t) => v("next"))
-          }, [
-            y(e.$slots, "next-change", {}, () => [
-              k(c(E), {
-                text: "",
-                size: "mini",
-                type: "primary"
-              }, {
-                default: m(() => [
-                  _("\u4E0B\u4E2A\u6708")
-                ]),
-                _: 1
-              })
-            ])
-          ])
-        ])
-      ])) : g("", !0),
-      s("ul", U, [
-        (n(!0), o(C, null, w(c(Z), (t, h) => (n(), o("li", {
+        y(a(D), {
+          icon: a(G),
+          onClick: n[2] || (n[2] = c((o) => _("next"), ["stop"]))
+        }, null, 8, ["icon"])
+      ])) : k("", !0),
+      i("div", U, [
+        (s(!0), l(g, null, w(a(b), (o, h) => (s(), l("div", {
           key: h,
-          class: "v-calendar__week-li"
-        }, u(t), 1))), 128))
+          class: "v-calendar__week-item"
+        }, d(o), 1))), 128))
       ]),
-      s("ul", X, [
-        (n(!0), o(C, null, w(c(N), (t, h) => (n(), o("li", {
+      i("div", W, [
+        (s(!0), l(g, null, w(a($), (o, h) => (s(), l("div", {
           key: h,
-          class: A([
-            "v-calendar__day-li",
-            L(t.cMonth, t.cDay)
-          ]),
-          onClick: (p) => F(t.cMonth, t.cDay)
+          class: C(["v-calendar__day-item", x(o.month, o.day)]),
+          onClick: c((oe) => H(o), ["stop"])
         }, [
-          s("span", te, u(t.cDay), 1),
-          e.lunar ? (n(), o("span", ae, u(t.festival || t.IDayCn), 1)) : g("", !0),
-          S(t.date) ? (n(), o("div", ne, [
-            (n(!0), o(C, null, w(e.memorandum[t.date], (p, Y) => (n(), K(c(W), {
-              key: Y,
-              type: p.type || "default",
-              size: 14,
-              center: "",
-              class: "v-calendar__memorandum-item"
-            }, {
-              default: m(() => [
-                _(u(p.content), 1)
-              ]),
-              _: 2
-            }, 1032, ["type"]))), 128))
-          ])) : g("", !0)
-        ], 10, ee))), 128))
+          i("span", ee, d(o.day), 1),
+          t.lunar ? (s(), l("span", te, d(o.lunarFestival || o.festival || o.term || o.IDayCn), 1)) : k("", !0)
+        ], 10, X))), 128))
       ])
     ], 6));
   }
 });
 export {
-  me as default
+  fe as default
 };

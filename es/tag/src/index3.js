@@ -1,54 +1,20 @@
-const l = {
-  type: {
-    type: String,
-    default: () => "default",
-    validator: (e) => ["default", "primary", "success", "danger", "warning"].includes(e)
-  },
-  close: {
-    type: Boolean,
-    default: () => !1
-  },
-  round: {
-    type: Boolean,
-    default: () => !1
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  beforeIcon: {
-    type: Object,
-    default: () => null
-  },
-  afterIcon: {
-    type: Object,
-    default: () => null
-  },
-  size: {
-    type: String,
-    default: () => "middle",
-    validator: (e) => ["large", "middle", "small", "mini"].includes(e)
-  },
-  simple: {
-    type: Boolean,
-    default: () => !1
-  },
-  block: {
-    type: Boolean,
-    default: () => !1
-  },
-  line: {
-    type: Boolean,
-    default: () => !1
-  }
-}, t = {
-  "close-end": (e) => e
+import "vue";
+import { setStringProp as r, setBooleanProp as o, setObjectProp as n, setFunctionProp as t } from "../../_utils/props/index.js";
+import { VM_TYPE as l, VM_SIZE as s } from "../../_tokens/attrs/index.js";
+const u = {
+  type: r(null, (e) => l.includes(e)),
+  close: o(),
+  round: o(),
+  background: r(),
+  color: r(),
+  beforeIcon: n(),
+  afterIcon: n(),
+  size: r(null, (e) => s.includes(e)),
+  simple: o(),
+  block: o(),
+  line: o(),
+  onClose: t()
 };
 export {
-  t as Emits,
-  l as Props
+  u as Props
 };

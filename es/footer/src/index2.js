@@ -1,27 +1,23 @@
-import { defineComponent as r, computed as a, openBlock as c, createElementBlock as f, normalizeStyle as l, unref as i, renderSlot as m } from "vue";
-import { Props as d } from "./index3.js";
-import { sizeChange as t } from "../../_utils/index3.js";
-const u = r({
+import { defineComponent as o, openBlock as p, createElementBlock as l, normalizeStyle as m, unref as c, renderSlot as f } from "vue";
+import { Props as i } from "./index3.js";
+import { useList as a } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const u = o({
   name: "VFooter"
-}), v = /* @__PURE__ */ r({
+}), B = /* @__PURE__ */ o({
   ...u,
-  props: d,
-  setup(n) {
-    const s = n, p = a(() => {
-      const { height: e, padding: o } = s;
-      return {
-        "--v-footer-height": t(e),
-        "--v-footer-padding": t(o)
-      };
-    });
-    return (e, o) => (c(), f("footer", {
+  props: i,
+  setup(t) {
+    const e = t, { styles: r } = a(e, "footer"), s = r(["height", "padding"]);
+    return (n, d) => (p(), l("footer", {
       class: "v-footer",
-      style: l(i(p))
+      style: m(c(s))
     }, [
-      m(e.$slots, "default")
+      f(n.$slots, "default")
     ], 4));
   }
 });
 export {
-  v as default
+  B as default
 };

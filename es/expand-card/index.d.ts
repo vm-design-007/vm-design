@@ -1,98 +1,36 @@
-import type { ClassListInterface } from '../_interface';
-import type { ExpandCardISwitchExpandCardInterface, ExpandCardImageListItemInterface } from './src/interface';
-import type { LooseRequired } from '@vue/shared';
-import type { ExpandCardImageListType } from '..';
-import type { DefineComponent, PropType, ExtractPropTypes, Ref, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { ExpandCardImageList, ExpandCardChange } from './src/interface';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import ExpandCard from "./src/expand-card";
-export declare const VExpandCard: DefineComponent<{
-    readonly imageList: {
-        readonly type: PropType<ExpandCardImageListType>;
-        readonly default: () => string[];
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly expandIndex: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly height: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly imageList: {
-            readonly type: PropType<ExpandCardImageListType>;
-            readonly default: () => string[];
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly expandIndex: {
-            readonly type: NumberConstructor;
-            readonly default: () => number;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly width: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly height: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {}>>;
-    currExpandIndex: Ref<number>;
-    switchExpandCard: ExpandCardISwitchExpandCardInterface;
-    activeClass: (index: number) => string | void;
-    classList: ComputedRef<ClassListInterface>;
-    imageListArr: ComputedRef<ExpandCardImageListItemInterface[]>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly imageList: {
-        readonly type: PropType<ExpandCardImageListType>;
-        readonly default: () => string[];
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly expandIndex: {
-        readonly type: NumberConstructor;
-        readonly default: () => number;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly height: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
+export declare const VExpandCard: Install<DefineComponent<{
+    readonly imageList: BasicType<PropType<ExpandCardImageList>, ExpandCardImageList | null>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly expandIndex: BasicType<NumberConstructor, number | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly vertical: BasicType<BooleanConstructor, boolean>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly onChange: BasicType<PropType<ExpandCardChange>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly imageList: BasicType<PropType<ExpandCardImageList>, ExpandCardImageList | null>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly expandIndex: BasicType<NumberConstructor, number | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly vertical: BasicType<BooleanConstructor, boolean>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly onChange: BasicType<PropType<ExpandCardChange>, null>;
 }>>, {
     readonly round: boolean;
     readonly color: string;
     readonly width: string | number;
+    readonly vertical: boolean;
+    readonly onChange: ExpandCardChange;
     readonly height: string | number;
-    readonly imageList: ExpandCardImageListType;
+    readonly imageList: ExpandCardImageList;
     readonly expandIndex: number;
-}>;
-export default ExpandCard;
+}>>;
+/** expand-card 组件实例类型 */
+export type ExpandCardInstance = InstanceType<typeof ExpandCard>;
+export * from './src/interface';
+export default VExpandCard;

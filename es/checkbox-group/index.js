@@ -1,8 +1,8 @@
 import o from "./src/index2.js";
-import { default as i } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const f = r(o);
+import { install as r } from "../_utils/install/index.js";
+import "vue";
+const p = r(o);
 export {
-  f as VCheckboxGroup,
-  i as default
+  p as VCheckboxGroup,
+  p as default
 };

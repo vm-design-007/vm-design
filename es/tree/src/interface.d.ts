@@ -1,9 +1,13 @@
-export type { TreePropsType } from './tree'
-
-export interface TreeDataItemInterface {
-  label: string
-  children?: TreeDataItemInterface[]
-  level?: number
+export type { TreeProps } from './props';
+/**
+ * 树形结构每一项类型接口
+ *
+ * @param { string } label label
+ * @param { Array } [children] 孩子节点
+ */
+export interface TreeDataItem {
+    label: string;
+    children?: TreeDataItem[];
 }
-
-export type TreeDataInterface = TreeDataItemInterface[]
+/** 树形结构数组类型 */
+export type TreeData = TreeDataItem[];

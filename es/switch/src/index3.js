@@ -1,47 +1,22 @@
-const t = {
+import "vue";
+import { setBooleanProp as o, setStringProp as e, setObjectProp as t, setStringNumberProp as i, setFunctionProp as n } from "../../_utils/props/index.js";
+import { VM_SIZE as s } from "../../_tokens/attrs/index.js";
+const u = {
   modelValue: {
-    type: Boolean,
-    default: () => !1,
+    ...o(),
     required: !0
   },
-  size: {
-    type: String,
-    default: () => "middle",
-    validator: (e) => ["large", "middle", "small"].includes(e)
-  },
-  disabled: {
-    type: Boolean,
-    default: () => !1
-  },
-  icon: {
-    type: Object,
-    default: () => null
-  },
-  closeColor: {
-    type: String,
-    default: () => ""
-  },
-  openColor: {
-    type: String,
-    default: () => ""
-  },
-  openText: {
-    type: String,
-    default: () => ""
-  },
-  closeText: {
-    type: String,
-    default: () => ""
-  },
-  square: {
-    type: Boolean,
-    default: () => !1
-  }
-}, l = {
-  "update:modelValue": (e) => String(e),
-  change: (e) => String(e)
+  size: e(null, (r) => s.includes(r)),
+  disabled: o(),
+  icon: t(),
+  closeColor: e(),
+  activeColor: e(),
+  activeText: e(),
+  closeText: e(),
+  square: o(),
+  iconSize: i(),
+  onChange: n()
 };
 export {
-  l as Emits,
-  t as Props
+  u as Props
 };

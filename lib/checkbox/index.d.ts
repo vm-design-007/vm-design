@@ -1,78 +1,46 @@
-import type { ClassListInterface } from '../_interface';
-import type { CheckboxLabelType, CheckboxGroupPropsType, CheckboxGroupLabelType } from '..';
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, ExtractPropTypes, Ref, ComputedRef, WritableComputedRef, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { CheckboxModelValue, CheckboxLabel, CheckboxChange } from './src/interface';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Checkbox from "./src/checkbox";
-export declare const VCheckbox: DefineComponent<{
+export declare const VCheckbox: Install<DefineComponent<{
     readonly modelValue: {
-        readonly type: BooleanConstructor;
+        readonly type: PropType<CheckboxModelValue>;
         readonly default: () => boolean;
     };
     readonly label: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
+        readonly type: PropType<CheckboxLabel>;
+        readonly default: () => null;
     };
-    readonly disabled: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly border: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly modelValue: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly label: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly disabled: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly border: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-    }>> & {
-        "onUpdate:modelValue"?: ((val: CheckboxLabelType) => any) | undefined;
-    }>>;
-    emit: (event: "update:modelValue", val: CheckboxLabelType) => void;
-    groupProps: Ref<CheckboxGroupPropsType | null>;
-    getGroupInject: () => void;
-    isGroup: ComputedRef<boolean>;
-    modelValue: WritableComputedRef<CheckboxGroupLabelType>;
-    isChecked: ComputedRef<boolean>;
-    classList: ComputedRef<ClassListInterface>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly 'update:modelValue': (val: CheckboxLabelType) => boolean;
+    readonly disabled: BasicType<BooleanConstructor, boolean>;
+    readonly border: BasicType<BooleanConstructor, boolean>;
+    readonly showLabel: BasicType<BooleanConstructor, boolean>;
+    readonly onChange: BasicType<PropType<CheckboxChange>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
+    "update:modelValue": (val: CheckboxModelValue) => CheckboxModelValue;
 }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
     readonly modelValue: {
-        readonly type: BooleanConstructor;
+        readonly type: PropType<CheckboxModelValue>;
         readonly default: () => boolean;
     };
     readonly label: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
+        readonly type: PropType<CheckboxLabel>;
+        readonly default: () => null;
     };
-    readonly disabled: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly border: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
+    readonly disabled: BasicType<BooleanConstructor, boolean>;
+    readonly border: BasicType<BooleanConstructor, boolean>;
+    readonly showLabel: BasicType<BooleanConstructor, boolean>;
+    readonly onChange: BasicType<PropType<CheckboxChange>, null>;
 }>> & {
-    "onUpdate:modelValue"?: ((val: CheckboxLabelType) => any) | undefined;
+    "onUpdate:modelValue"?: ((val: CheckboxModelValue) => any) | undefined;
 }, {
     readonly disabled: boolean;
     readonly border: boolean;
-    readonly modelValue: boolean;
-    readonly label: string;
-}>;
-export default Checkbox;
+    readonly modelValue: CheckboxModelValue;
+    readonly label: CheckboxLabel;
+    readonly showLabel: boolean;
+    readonly onChange: CheckboxChange;
+}>>;
+/** check-box 组件实例类型 */
+export type CheckboxInstance = InstanceType<typeof Checkbox>;
+export * from './src/interface';
+export default VCheckbox;

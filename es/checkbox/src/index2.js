@@ -1,79 +1,72 @@
-import { defineComponent as p, ref as _, computed as s, openBlock as n, createElementBlock as c, normalizeClass as x, unref as d, withDirectives as y, createElementVNode as i, isRef as V, vModelCheckbox as g, createCommentVNode as b, renderSlot as C, Fragment as G, createTextVNode as E, toDisplayString as N, getCurrentInstance as j, inject as I } from "vue";
-import { Props as P, Emits as A } from "./index3.js";
-import { checkboxGroupPropsKey as B } from "../../checkbox-group/src/index3.js";
-const D = ["value"], S = {
+import { defineComponent as m, inject as y, computed as a, reactive as V, openBlock as r, createElementBlock as c, normalizeClass as g, unref as t, withDirectives as E, createElementVNode as d, isRef as P, vModelCheckbox as D, createCommentVNode as u, renderSlot as B, Fragment as R, createTextVNode as j, toDisplayString as A } from "vue";
+import { Props as L } from "./index3.js";
+import { isArray as N, isBoolean as O } from "../../_utils/is/index.js";
+import { EMIT_UPDATE as b } from "../../_tokens/emits/index.js";
+import { useList as S } from "../../_hooks/use-list/index.js";
+import { useRun as T } from "../../_hooks/use-run/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+import { CHECKBOX_GROUP_PROPS_KEY as U } from "../../checkbox-group/src/index3.js";
+const w = ["value", "disabled"], I = {
   key: 0,
   class: "v-checkbox__box"
-}, $ = { class: "v-checkbox__text" }, w = p({
+}, K = { class: "v-checkbox__text" }, M = m({
   name: "VCheckbox"
-}), M = /* @__PURE__ */ p({
-  ...w,
-  props: P,
-  emits: A,
-  setup(m, { emit: v }) {
-    const o = m, l = _(null);
-    (() => {
-      const { parent: e } = j(), t = e.type.name;
-      t && t === "VCheckboxGroup" && (l.value = I(B));
-    })();
-    const u = s(() => !!l.value || !1), r = s({
-      get() {
-        var e;
-        return u.value ? (e = l.value) == null ? void 0 : e.modelValue : o.modelValue;
-      },
-      set(e) {
-        var t, a;
-        if (u.value)
-          !o.disabled && !((t = l.value) != null && t.disabled) && ((a = l.value) == null || a.changeEvent(e));
-        else {
-          if (o.disabled)
-            return;
-          v("update:modelValue", e);
+}), Q = /* @__PURE__ */ m({
+  ...M,
+  props: L,
+  emits: {
+    [b]: (n) => typeof n != "object"
+  },
+  setup(n, { emit: p }) {
+    const s = n, { run: f } = T(), o = y(U, null), l = a({
+      get: () => o && o.modelValue || s.modelValue,
+      set: (e) => {
+        if (!o) {
+          p(b, e), f(s.onChange, e);
+          return;
         }
+        o.setChange(e);
       }
-    }), f = s(() => {
-      const e = r.value;
-      return Array.isArray(e) ? e.includes(o.label) : typeof e == "boolean" ? e : e === o.label;
-    }), h = s(() => {
-      var e, t;
-      return [
-        "v-checkbox",
-        {
-          "v-checkbox__selected": f.value,
-          "v-checkbox__bordered": (e = l.value) == null ? void 0 : e.border,
-          "v-checkbox__disabled": o.disabled || ((t = l.value) == null ? void 0 : t.disabled)
-        }
-      ];
-    });
-    return (e, t) => {
-      var a;
-      return n(), c("label", {
-        role: "checkbox",
-        "aria-checked": "false",
-        tabindex: "0",
-        "aria-labelledby": "chk1-label",
-        class: x(d(h))
-      }, [
-        y(i("input", {
-          "onUpdate:modelValue": t[0] || (t[0] = (k) => V(r) ? r.value = k : null),
-          type: "checkbox",
-          class: "v-checkbox__input",
-          hidden: "",
-          value: e.label
-        }, null, 8, D), [
-          [g, d(r)]
-        ]),
-        (a = l.value) != null && a.border ? b("", !0) : (n(), c("span", S)),
-        i("span", $, [
-          C(e.$slots, "default"),
-          e.$slots.default ? b("", !0) : (n(), c(G, { key: 0 }, [
-            E(N(e.label), 1)
-          ], 64))
-        ])
-      ], 2);
-    };
+    }), h = a(() => {
+      const e = l.value;
+      return N(e) ? e.includes(s.label) : O(e) ? e : e === s.label;
+    }), k = a(
+      () => !!(o && o.disabled)
+    ), _ = a(() => s.disabled || k.value), { classes: v } = S(
+      V({
+        checked: h,
+        disabled: _
+      }),
+      "checkbox"
+    ), x = v(["checked", "disabled"], "v-checkbox");
+    return (e, i) => (r(), c("label", {
+      role: "checkbox",
+      "aria-checked": "false",
+      tabindex: "0",
+      "aria-labelledby": "chk1-label",
+      class: g(t(x))
+    }, [
+      E(d("input", {
+        "onUpdate:modelValue": i[0] || (i[0] = (C) => P(l) ? l.value = C : null),
+        type: "checkbox",
+        class: "v-checkbox__input",
+        hidden: "",
+        value: e.label,
+        disabled: e.disabled || !!t(o) && t(o).disabled
+      }, null, 8, w), [
+        [D, t(l)]
+      ]),
+      t(o) && t(o).background ? u("", !0) : (r(), c("span", I)),
+      d("span", K, [
+        B(e.$slots, "default"),
+        !e.$slots.default && e.showLabel ? (r(), c(R, { key: 0 }, [
+          j(A(e.label), 1)
+        ], 64)) : u("", !0)
+      ])
+    ], 2));
   }
 });
 export {
-  M as default
+  Q as default
 };

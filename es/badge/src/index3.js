@@ -1,36 +1,15 @@
-const t = {
-  value: {
-    type: [String, Number],
-    default: () => ""
-  },
-  max: {
-    type: Number,
-    default: () => 99
-  },
-  dot: {
-    type: Boolean,
-    default: () => !1
-  },
-  show: {
-    type: Boolean,
-    default: () => !1
-  },
-  type: {
-    type: String,
-    default: () => "danger",
-    validator: (e) => ["primary", "success", "danger", "warning"].includes(
-      e
-    )
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  textColor: {
-    type: String,
-    default: () => ""
-  }
+import "vue";
+import { setStringNumberProp as e, setNumberProp as p, setBooleanProp as o, setStringProp as r } from "../../_utils/props/index.js";
+import { VM_TYPE as m } from "../../_tokens/attrs/index.js";
+const i = {
+  value: e(),
+  max: p(99),
+  dot: o(),
+  show: o(!0),
+  type: r("danger", (t) => m.includes(t)),
+  background: r(),
+  color: r()
 };
 export {
-  t as Props
+  i as Props
 };

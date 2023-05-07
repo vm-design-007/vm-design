@@ -1,38 +1,20 @@
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, PropType, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { Install, BasicType } from '../_utils';
 import Aside from "./src/aside";
-export declare const VAside: DefineComponent<{
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => number;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly width: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly padding: {
-            readonly type: PropType<string | number>;
-            readonly default: () => number;
-        };
-    }>> & {}>>;
-    styleList: ComputedRef<CSSProperties>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly padding: {
-        readonly type: PropType<string | number>;
-        readonly default: () => number;
-    };
+export declare const VAside: Install<DefineComponent<{
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly padding: BasicType<PropType<string | number>, string | number | null>;
+    readonly background: BasicType<PropType<string>, string | null>;
 }>>, {
+    readonly background: string;
     readonly width: string | number;
     readonly padding: string | number;
-}>;
-export default Aside;
+}>>;
+/** aside 组件实例类型 */
+export type AsideInstance = InstanceType<typeof Aside>;
+export * from './src/interface';
+export default VAside;

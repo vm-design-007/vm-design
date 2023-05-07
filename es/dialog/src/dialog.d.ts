@@ -1,571 +1,70 @@
-import type { PopupHandleChangeInterface } from '../../popup/src/interface';
-import type { PopupDirectionType } from '../..';
-import type { LooseRequired } from '@vue/shared';
-import type { DialogCallBackInterface } from './interface';
-import type { DefineComponent, PropType, VNode, RendererNode, RendererElement, Component, ComputedOptions, MethodOptions, ExtractPropTypes, ComputedRef, CSSProperties, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, Ref } from 'vue';
-import type { HandleEventInterface, ClassListInterface, UtilsSizeChangeInterface, OrdinaryFunctionInterface as a } from '../../_interface';
+import type { PopupCallback } from '../../popup';
+import type { VmIcon } from '../..';
+import type { Validator, BasicType } from '../../_utils';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
 declare const _sfc_main: DefineComponent<{
     readonly visible: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
         readonly required: true;
-    };
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly appendToBody: {
         readonly type: BooleanConstructor;
         readonly default: () => boolean;
+        readonly validator?: Validator | undefined;
     };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly fullscreen: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly showMask: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly maskClose: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly maskBlur: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly showCloseIcon: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly closeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly zIndex: {
-        readonly type: NumberConstructor;
-        readonly default: () => Number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly open: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
-    readonly openEnd: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
-    readonly close: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
-    readonly closeEnd: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly visible: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-            readonly required: true;
-        };
-        readonly title: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly appendToBody: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly width: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly fullscreen: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly showMask: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly maskClose: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly maskBlur: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly showCloseIcon: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly closeIcon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly zIndex: {
-            readonly type: NumberConstructor;
-            readonly default: () => Number;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly open: {
-            readonly type: PropType<DialogCallBackInterface>;
-            readonly default: () => null;
-        };
-        readonly openEnd: {
-            readonly type: PropType<DialogCallBackInterface>;
-            readonly default: () => null;
-        };
-        readonly close: {
-            readonly type: PropType<DialogCallBackInterface>;
-            readonly default: () => null;
-        };
-        readonly closeEnd: {
-            readonly type: PropType<DialogCallBackInterface>;
-            readonly default: () => null;
-        };
-    }>> & {
-        "onUpdate:visible"?: ((visible: boolean) => any) | undefined;
-    }>>;
-    emit: (event: "update:visible", visible: boolean) => void;
-    isVisible: Ref<boolean>;
-    closeDialog: a;
-    VCloseBtn: DefineComponent<{
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly disabled: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-            readonly round: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly disabled: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }>>;
-        emit: (event: "click", evt: MouseEvent) => void;
-        handleClick: HandleEventInterface;
-        classList: ComputedRef<ClassListInterface>;
-        VSvgIcon: DefineComponent<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }, {
-            prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-                readonly icon: {
-                    readonly type: PropType<VNode<RendererNode, RendererElement, {
-                        [key: string]: any;
-                    }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                    readonly default: () => null;
-                };
-                readonly color: {
-                    readonly type: StringConstructor;
-                    readonly default: () => string;
-                };
-                readonly size: {
-                    readonly type: PropType<string | number>;
-                    readonly default: () => string;
-                };
-            }>> & {
-                onClick?: ((evt: MouseEvent) => any) | undefined;
-            }>>;
-            emit: (event: "click", evt: MouseEvent) => void;
-            handleClick: HandleEventInterface;
-            styleList: ComputedRef<CSSProperties>;
-        }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-            readonly click: (evt: MouseEvent) => MouseEvent;
-        }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }, {
-            readonly color: string;
-            readonly size: string | number;
-            readonly icon: VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-        }>;
-        VIconCrossVue: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly click: (evt: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly disabled: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }, {
-        readonly round: boolean;
-        readonly color: string;
-        readonly size: string | number;
-        readonly disabled: boolean;
-        readonly icon: VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    }>;
-    VPopup: DefineComponent<{
-        readonly visible: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-            readonly required: true;
-        };
-        readonly appendToBody: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly showMask: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly maskClose: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly maskBlur: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly zIndex: {
-            readonly type: NumberConstructor;
-            readonly default: () => Number;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly maskBackground: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly maskOpacity: {
-            readonly type: NumberConstructor;
-            readonly default: () => null;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly direction: {
-            readonly type: PropType<PopupDirectionType>;
-            readonly default: () => PopupDirectionType;
-            readonly validator: (val: PopupDirectionType) => boolean;
-        };
-        readonly popupSize: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly padding: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly visible: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-                readonly required: true;
-            };
-            readonly appendToBody: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly showMask: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly maskClose: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly maskBlur: {
-                readonly type: BooleanConstructor;
-                readonly default: () => boolean;
-            };
-            readonly zIndex: {
-                readonly type: NumberConstructor;
-                readonly default: () => Number;
-                readonly validator: (val: number) => boolean;
-            };
-            readonly maskBackground: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly maskOpacity: {
-                readonly type: NumberConstructor;
-                readonly default: () => null;
-                readonly validator: (val: number) => boolean;
-            };
-            readonly direction: {
-                readonly type: PropType<PopupDirectionType>;
-                readonly default: () => PopupDirectionType;
-                readonly validator: (val: PopupDirectionType) => boolean;
-            };
-            readonly popupSize: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-            readonly padding: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            "onClose-end"?: ((event: MouseEvent) => any) | undefined;
-            "onUpdate:visible"?: ((visible: boolean) => any) | undefined;
-            onClose?: ((event: MouseEvent) => any) | undefined;
-            onOpen?: ((event: MouseEvent) => any) | undefined;
-            "onOpen-end"?: ((event: MouseEvent) => any) | undefined;
-        }>>;
-        emit: ((event: "close-end", event: MouseEvent) => void) & ((event: "close", event: MouseEvent) => void) & ((event: "update:visible", visible: boolean) => void) & ((event: "open", event: MouseEvent) => void) & ((event: "open-end", event: MouseEvent) => void);
-        closePopup: a;
-        handleOpen: PopupHandleChangeInterface;
-        handleOpenEnd: PopupHandleChangeInterface;
-        handleClose: PopupHandleChangeInterface;
-        handleCloseEnd: PopupHandleChangeInterface;
-        wrapperStyleList: ComputedRef<CSSProperties>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly 'update:visible': (visible: boolean) => boolean;
-        readonly open: (event: MouseEvent) => MouseEvent;
-        readonly close: (event: MouseEvent) => MouseEvent;
-        readonly 'open-end': (event: MouseEvent) => MouseEvent;
-        readonly 'close-end': (event: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly visible: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-            readonly required: true;
-        };
-        readonly appendToBody: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly showMask: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly maskClose: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly maskBlur: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly zIndex: {
-            readonly type: NumberConstructor;
-            readonly default: () => Number;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly maskBackground: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly maskOpacity: {
-            readonly type: NumberConstructor;
-            readonly default: () => null;
-            readonly validator: (val: number) => boolean;
-        };
-        readonly direction: {
-            readonly type: PropType<PopupDirectionType>;
-            readonly default: () => PopupDirectionType;
-            readonly validator: (val: PopupDirectionType) => boolean;
-        };
-        readonly popupSize: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly padding: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        "onClose-end"?: ((event: MouseEvent) => any) | undefined;
-        "onUpdate:visible"?: ((visible: boolean) => any) | undefined;
-        onClose?: ((event: MouseEvent) => any) | undefined;
-        onOpen?: ((event: MouseEvent) => any) | undefined;
-        "onOpen-end"?: ((event: MouseEvent) => any) | undefined;
-    }, {
-        readonly padding: string | number;
-        readonly zIndex: number;
-        readonly appendToBody: boolean;
-        readonly showMask: boolean;
-        readonly maskClose: boolean;
-        readonly maskBlur: boolean;
-        readonly maskBackground: string;
-        readonly maskOpacity: number;
-        readonly direction: PopupDirectionType;
-        readonly popupSize: string | number;
-    }>;
-    sizeChange: UtilsSizeChangeInterface;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly 'update:visible': (visible: boolean) => boolean;
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly appendToBody: BasicType<BooleanConstructor, boolean>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly fullscreen: BasicType<BooleanConstructor, boolean>;
+    readonly showMask: BasicType<BooleanConstructor, boolean>;
+    readonly maskClose: BasicType<BooleanConstructor, boolean>;
+    readonly maskBlur: BasicType<BooleanConstructor, boolean>;
+    readonly showCloseIcon: BasicType<BooleanConstructor, boolean>;
+    readonly closeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly zIndex: BasicType<NumberConstructor, number | null>;
+    readonly onOpen: BasicType<PropType<PopupCallback>, null>;
+    readonly onOpenEnd: BasicType<PropType<PopupCallback>, null>;
+    readonly onClose: BasicType<PropType<PopupCallback>, null>;
+    readonly onCloseEnd: BasicType<PropType<PopupCallback>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
+    "update:visible": (visible: boolean) => boolean;
 }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
     readonly visible: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
         readonly required: true;
-    };
-    readonly title: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly appendToBody: {
         readonly type: BooleanConstructor;
         readonly default: () => boolean;
+        readonly validator?: Validator | undefined;
     };
-    readonly width: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly fullscreen: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly showMask: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly maskClose: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly maskBlur: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly showCloseIcon: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly closeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly zIndex: {
-        readonly type: NumberConstructor;
-        readonly default: () => Number;
-        readonly validator: (val: number) => boolean;
-    };
-    readonly open: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
-    readonly openEnd: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
-    readonly close: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
-    readonly closeEnd: {
-        readonly type: PropType<DialogCallBackInterface>;
-        readonly default: () => null;
-    };
+    readonly title: BasicType<PropType<string>, string | null>;
+    readonly appendToBody: BasicType<BooleanConstructor, boolean>;
+    readonly width: BasicType<PropType<string | number>, string | number | null>;
+    readonly height: BasicType<PropType<string | number>, string | number | null>;
+    readonly fullscreen: BasicType<BooleanConstructor, boolean>;
+    readonly showMask: BasicType<BooleanConstructor, boolean>;
+    readonly maskClose: BasicType<BooleanConstructor, boolean>;
+    readonly maskBlur: BasicType<BooleanConstructor, boolean>;
+    readonly showCloseIcon: BasicType<BooleanConstructor, boolean>;
+    readonly closeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly zIndex: BasicType<NumberConstructor, number | null>;
+    readonly onOpen: BasicType<PropType<PopupCallback>, null>;
+    readonly onOpenEnd: BasicType<PropType<PopupCallback>, null>;
+    readonly onClose: BasicType<PropType<PopupCallback>, null>;
+    readonly onCloseEnd: BasicType<PropType<PopupCallback>, null>;
 }>> & {
     "onUpdate:visible"?: ((visible: boolean) => any) | undefined;
 }, {
-    readonly close: DialogCallBackInterface;
     readonly title: string;
-    readonly closeIcon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
+    readonly closeIcon: VmIcon;
+    readonly onClose: PopupCallback;
     readonly width: string | number;
     readonly zIndex: number;
     readonly appendToBody: boolean;
+    readonly height: string | number;
     readonly fullscreen: boolean;
     readonly showMask: boolean;
     readonly maskClose: boolean;
     readonly maskBlur: boolean;
     readonly showCloseIcon: boolean;
-    readonly open: DialogCallBackInterface;
-    readonly openEnd: DialogCallBackInterface;
-    readonly closeEnd: DialogCallBackInterface;
+    readonly onOpen: PopupCallback;
+    readonly onOpenEnd: PopupCallback;
+    readonly onCloseEnd: PopupCallback;
 }>;
 export default _sfc_main;

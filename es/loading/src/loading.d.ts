@@ -1,209 +1,25 @@
-import type { LooseRequired } from '@vue/shared';
-import type { DefineComponent, PropType, VNode, RendererNode, RendererElement, Component, ComputedOptions, MethodOptions, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComputedRef,  CSSProperties } from 'vue';
-import type { HandleEventInterface as a } from '../../_interface';
+import type { BasicType, VmIcon } from '../..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
 declare const _sfc_main: DefineComponent<{
-    readonly show: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly close: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly text: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fontColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly iconColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fontSize: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly opacity: {
-        readonly type: NumberConstructor;
-        readonly default: () => number | null;
-    };
-    readonly icon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly show: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly close: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly text: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly fontColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly iconColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly fontSize: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly background: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly opacity: {
-            readonly type: NumberConstructor;
-            readonly default: () => number | null;
-        };
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-    }>> & {
-        onClose?: ((evt: MouseEvent) => any) | undefined;
-    }>>;
-    emit: (event: "close", evt: MouseEvent) => void;
-    handleClick: a;
-    styleList: ComputedRef<CSSProperties>;
-    VSvgIcon: DefineComponent<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }>>;
-        emit: (event: "click", evt: MouseEvent) => void;
-        handleClick: a;
-        styleList: ComputedRef<CSSProperties>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly click: (evt: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }, {
-        readonly color: string;
-        readonly size: string | number;
-        readonly icon: VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    }>;
-    VIconLoadingAVue: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly close: (evt: MouseEvent) => MouseEvent;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly show: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly close: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly text: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fontColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly iconColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly fontSize: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly background: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly opacity: {
-        readonly type: NumberConstructor;
-        readonly default: () => number | null;
-    };
-    readonly icon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-}>> & {
-    onClose?: ((evt: MouseEvent) => any) | undefined;
-}, {
-    readonly fontSize: string;
-    readonly close: boolean;
+    readonly visible: BasicType<BooleanConstructor, boolean>;
+    readonly text: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly fullscreen: BasicType<BooleanConstructor, boolean>;
+    readonly background: BasicType<PropType<string>, string | null>; /** 样式列表 */
+    readonly icon: BasicType<PropType<VmIcon>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly visible: BasicType<BooleanConstructor, boolean>;
+    readonly text: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly fullscreen: BasicType<BooleanConstructor, boolean>;
+    readonly background: BasicType<PropType<string>, string | null>; /** 样式列表 */
+    readonly icon: BasicType<PropType<VmIcon>, null>;
+}>>, {
     readonly background: string;
-    readonly icon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    readonly fontColor: string;
+    readonly color: string;
+    readonly icon: VmIcon;
     readonly text: string;
-    readonly show: boolean;
-    readonly iconColor: string;
-    readonly opacity: number;
+    readonly visible: boolean;
+    readonly fullscreen: boolean;
 }>;
 export default _sfc_main;

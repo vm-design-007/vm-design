@@ -1,74 +1,26 @@
-const t = {
-  type: {
-    type: String,
-    default: () => "default",
-    validator: (e) => ["primary", "success", "danger", "warning", "default"].includes(e)
-  },
-  fontSize: {
-    type: [String, Number],
-    default: () => "15px"
-  },
-  titleSize: {
-    type: [String, Number],
-    default: () => "17px"
-  },
-  bold: {
-    type: Boolean,
-    default: () => !1
-  },
-  center: {
-    type: Boolean,
-    default: () => !1
-  },
-  close: {
-    type: Boolean,
-    default: () => !1
-  },
-  simple: {
-    type: Boolean,
-    default: () => !1
-  },
-  title: {
-    type: String,
-    default: () => ""
-  },
-  round: {
-    type: Boolean,
-    default: () => !1
-  },
-  background: {
-    type: String,
-    default: () => ""
-  },
-  color: {
-    type: String,
-    default: () => ""
-  },
-  titleColor: {
-    type: String,
-    default: () => ""
-  },
-  fixed: {
-    type: Boolean,
-    default: () => !1
-  },
-  overflow: {
-    type: String,
-    default: () => "",
-    validator: (e) => ["hidden", ""].includes(e)
-  },
-  closeIcon: {
-    type: Object,
-    default: () => null
-  },
-  beforeIcon: {
-    type: Object,
-    default: () => null
-  }
-}, l = {
-  "close-end": (e) => e
+import "vue";
+import { setStringProp as e, setStringNumberProp as r, setBooleanProp as o, setObjectProp as t, setArrayProp as i, setNumberProp as l, setFunctionProp as s } from "../../_utils/props/index.js";
+import { VM_TYPE as p } from "../../_tokens/attrs/index.js";
+const m = {
+  type: e(null, (n) => p.includes(n)),
+  fontSize: r(),
+  titleSize: r(),
+  bold: o(),
+  center: o(),
+  close: o(),
+  simple: o(),
+  title: e(),
+  round: o(),
+  background: e(),
+  color: e(),
+  titleColor: e(),
+  fixed: o(),
+  closeIcon: t(),
+  beforeIcon: t(),
+  alertList: i(),
+  duration: l(),
+  onClose: s()
 };
 export {
-  l as Emits,
-  t as Props
+  m as Props
 };

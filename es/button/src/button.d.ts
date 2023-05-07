@@ -1,437 +1,87 @@
-import type { LooseRequired } from '@vue/shared';
-import type { ButtonSizeType, ButtonTargetType, ButtonType, ButtonNativeType } from './interface';
-import type { DefineComponent, PropType, VNode, RendererNode, RendererElement, Component, ComputedOptions, MethodOptions, ExtractPropTypes, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, h } from 'vue';
-import type { ComputedRef, Ref, CSSProperties } from 'vue';
-import type { HandleEventInterface as a, ClassListInterface as b } from '../../_interface';
+import type { ButtonNative } from './interface';
+import type { BasicType } from '../..';
+import type { DefineComponent, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
+import type { VmSize, VmTarget, VmType, HandleMouse, VmIcon } from '../../_interface';
 declare const _sfc_main: DefineComponent<{
-    readonly bold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly circle: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly fontSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly fontColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<ButtonSizeType>;
-        readonly default: () => ButtonSizeType;
-        readonly validator: (val: ButtonSizeType) => boolean;
-    };
-    readonly block: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly href: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly target: {
-        readonly type: PropType<ButtonTargetType>;
-        readonly default: () => ButtonTargetType;
-        readonly validator: (val: ButtonTargetType) => boolean;
-    };
-    readonly loading: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly disabled: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly loadingIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly type: {
-        readonly type: PropType<ButtonType>;
-        readonly default: () => ButtonType;
-        readonly validator: (val: ButtonType) => boolean;
-    };
-    readonly autofocus: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly name: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly shadow: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly text: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly nativeType: {
-        readonly type: PropType<ButtonNativeType>;
-        readonly default: () => ButtonNativeType;
-        readonly validator: (val: ButtonNativeType) => boolean;
-    };
-    readonly simple: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly beforeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly afterIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly ripples: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly ripplesColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}, {
-    prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-        readonly bold: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly circle: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly round: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly fontSize: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-        readonly fontColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<ButtonSizeType>;
-            readonly default: () => ButtonSizeType;
-            readonly validator: (val: ButtonSizeType) => boolean;
-        };
-        readonly block: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly href: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly target: {
-            readonly type: PropType<ButtonTargetType>;
-            readonly default: () => ButtonTargetType;
-            readonly validator: (val: ButtonTargetType) => boolean;
-        };
-        readonly loading: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly disabled: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly loadingIcon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly type: {
-            readonly type: PropType<ButtonType>;
-            readonly default: () => ButtonType;
-            readonly validator: (val: ButtonType) => boolean;
-        };
-        readonly autofocus: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly name: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly shadow: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly text: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly nativeType: {
-            readonly type: PropType<ButtonNativeType>;
-            readonly default: () => ButtonNativeType;
-            readonly validator: (val: ButtonNativeType) => boolean;
-        };
-        readonly simple: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly beforeIcon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly afterIcon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly ripples: {
-            readonly type: BooleanConstructor;
-            readonly default: () => boolean;
-        };
-        readonly ripplesColor: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }>>;
-    emit: (event: "click", evt: MouseEvent) => void;
-    VButton: Ref<HTMLButtonElement>;
-    classList: ComputedRef<b>;
-    handleClick: a;
-    styleList: ComputedRef<CSSProperties>;
-    h: typeof h;
-    VSvgIcon: DefineComponent<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }, {
-        prop: Readonly<LooseRequired<Readonly<ExtractPropTypes<{
-            readonly icon: {
-                readonly type: PropType<VNode<RendererNode, RendererElement, {
-                    [key: string]: any;
-                }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-                readonly default: () => null;
-            };
-            readonly color: {
-                readonly type: StringConstructor;
-                readonly default: () => string;
-            };
-            readonly size: {
-                readonly type: PropType<string | number>;
-                readonly default: () => string;
-            };
-        }>> & {
-            onClick?: ((evt: MouseEvent) => any) | undefined;
-        }>>;
-        emit: (event: "click", evt: MouseEvent) => void;
-        handleClick: a;
-        styleList: ComputedRef<CSSProperties>;
-    }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-        readonly click: (evt: MouseEvent) => MouseEvent;
-    }, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-        readonly icon: {
-            readonly type: PropType<VNode<RendererNode, RendererElement, {
-                [key: string]: any;
-            }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-            readonly default: () => null;
-        };
-        readonly color: {
-            readonly type: StringConstructor;
-            readonly default: () => string;
-        };
-        readonly size: {
-            readonly type: PropType<string | number>;
-            readonly default: () => string;
-        };
-    }>> & {
-        onClick?: ((evt: MouseEvent) => any) | undefined;
-    }, {
-        readonly color: string;
-        readonly size: string | number;
-        readonly icon: VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    }>;
-    VIconLoadingAVue: DefineComponent<{}, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{}>>, {}>;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    readonly click: (evt: MouseEvent) => MouseEvent;
-}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
-    readonly bold: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly circle: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly round: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly fontSize: {
-        readonly type: PropType<string | number>;
-        readonly default: () => string;
-    };
-    readonly fontColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly size: {
-        readonly type: PropType<ButtonSizeType>;
-        readonly default: () => ButtonSizeType;
-        readonly validator: (val: ButtonSizeType) => boolean;
-    };
-    readonly block: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly href: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly target: {
-        readonly type: PropType<ButtonTargetType>;
-        readonly default: () => ButtonTargetType;
-        readonly validator: (val: ButtonTargetType) => boolean;
-    };
-    readonly loading: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly disabled: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly loadingIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly type: {
-        readonly type: PropType<ButtonType>;
-        readonly default: () => ButtonType;
-        readonly validator: (val: ButtonType) => boolean;
-    };
-    readonly autofocus: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly name: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly shadow: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly text: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly nativeType: {
-        readonly type: PropType<ButtonNativeType>;
-        readonly default: () => ButtonNativeType;
-        readonly validator: (val: ButtonNativeType) => boolean;
-    };
-    readonly simple: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly beforeIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly afterIcon: {
-        readonly type: PropType<VNode<RendererNode, RendererElement, {
-            [key: string]: any;
-        }> | Component<any, any, any, ComputedOptions, MethodOptions>>;
-        readonly default: () => null;
-    };
-    readonly ripples: {
-        readonly type: BooleanConstructor;
-        readonly default: () => boolean;
-    };
-    readonly ripplesColor: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-    readonly color: {
-        readonly type: StringConstructor;
-        readonly default: () => string;
-    };
-}>> & {
-    onClick?: ((evt: MouseEvent) => any) | undefined;
-}, {
-    readonly bold: boolean;
-    readonly type: ButtonType;
+    readonly bold: BasicType<BooleanConstructor, boolean>;
+    readonly circle: BasicType<BooleanConstructor, boolean>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly spread: BasicType<BooleanConstructor, boolean>;
+    readonly fontSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly fontColor: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly block: BasicType<BooleanConstructor, boolean>;
+    readonly href: BasicType<PropType<string>, string | null>;
+    readonly target: BasicType<PropType<VmTarget>, VmTarget | null>;
+    readonly loading: BasicType<BooleanConstructor, boolean>;
+    readonly disabled: BasicType<BooleanConstructor, boolean>;
+    readonly loadingIcon: BasicType<PropType<VmIcon>, null>;
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly autofocus: BasicType<BooleanConstructor, boolean>;
+    readonly name: BasicType<PropType<string>, string | null>;
+    readonly shadow: BasicType<PropType<string>, string | null>;
+    readonly text: BasicType<BooleanConstructor, boolean>;
+    readonly nativeType: BasicType<PropType<ButtonNative>, ButtonNative | null>;
+    readonly simple: BasicType<BooleanConstructor, boolean>;
+    readonly beforeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly afterIcon: BasicType<PropType<VmIcon>, null>;
+    readonly ripples: BasicType<BooleanConstructor, boolean>;
+    readonly ripplesColor: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly onClick: BasicType<PropType<HandleMouse>, null>;
+}, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
+    readonly bold: BasicType<BooleanConstructor, boolean>;
+    readonly circle: BasicType<BooleanConstructor, boolean>;
+    readonly round: BasicType<BooleanConstructor, boolean>;
+    readonly spread: BasicType<BooleanConstructor, boolean>;
+    readonly fontSize: BasicType<PropType<string | number>, string | number | null>;
+    readonly fontColor: BasicType<PropType<string>, string | null>;
+    readonly size: BasicType<PropType<VmSize>, VmSize | null>;
+    readonly block: BasicType<BooleanConstructor, boolean>;
+    readonly href: BasicType<PropType<string>, string | null>;
+    readonly target: BasicType<PropType<VmTarget>, VmTarget | null>;
+    readonly loading: BasicType<BooleanConstructor, boolean>;
+    readonly disabled: BasicType<BooleanConstructor, boolean>;
+    readonly loadingIcon: BasicType<PropType<VmIcon>, null>;
+    readonly type: BasicType<PropType<VmType>, VmType | null>;
+    readonly autofocus: BasicType<BooleanConstructor, boolean>;
+    readonly name: BasicType<PropType<string>, string | null>;
+    readonly shadow: BasicType<PropType<string>, string | null>;
+    readonly text: BasicType<BooleanConstructor, boolean>;
+    readonly nativeType: BasicType<PropType<ButtonNative>, ButtonNative | null>;
+    readonly simple: BasicType<BooleanConstructor, boolean>;
+    readonly beforeIcon: BasicType<PropType<VmIcon>, null>;
+    readonly afterIcon: BasicType<PropType<VmIcon>, null>;
+    readonly ripples: BasicType<BooleanConstructor, boolean>;
+    readonly ripplesColor: BasicType<PropType<string>, string | null>;
+    readonly color: BasicType<PropType<string>, string | null>;
+    readonly onClick: BasicType<PropType<HandleMouse>, null>;
+}>>, {
+    readonly type: VmType;
     readonly fontSize: string | number;
+    readonly bold: boolean;
     readonly simple: boolean;
     readonly round: boolean;
     readonly color: string;
-    readonly beforeIcon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
-    readonly size: ButtonSizeType;
-    readonly disabled: boolean;
+    readonly beforeIcon: VmIcon;
+    readonly size: VmSize;
     readonly fontColor: string;
     readonly text: boolean;
     readonly circle: boolean;
+    readonly spread: boolean;
     readonly block: boolean;
     readonly href: string;
-    readonly target: ButtonTargetType;
+    readonly target: VmTarget;
     readonly loading: boolean;
-    readonly loadingIcon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
+    readonly disabled: boolean;
+    readonly loadingIcon: VmIcon;
     readonly autofocus: boolean;
     readonly name: string;
     readonly shadow: string;
-    readonly nativeType: ButtonNativeType;
-    readonly afterIcon: VNode<RendererNode, RendererElement, {
-        [key: string]: any;
-    }> | Component<any, any, any, ComputedOptions, MethodOptions>;
+    readonly nativeType: ButtonNative;
+    readonly afterIcon: VmIcon;
     readonly ripples: boolean;
     readonly ripplesColor: string;
+    readonly onClick: HandleMouse;
 }>;
 export default _sfc_main;

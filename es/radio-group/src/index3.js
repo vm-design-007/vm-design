@@ -1,40 +1,22 @@
-import { isString as t, isNumber as o, isBoolean as r } from "../../_utils/index3.js";
-const a = {
-  disabled: {
-    type: Boolean,
-    default: () => !1
-  },
+import "vue";
+import { setBooleanProp as o, setStringNumberProp as r, setStringProp as t, setFunctionProp as n } from "../../_utils/props/index.js";
+import { VM_SIZE as p } from "../../_tokens/attrs/index.js";
+const m = {
   modelValue: {
     type: [String, Number, Boolean],
-    default: () => ""
+    default: () => null
   },
-  vertical: {
-    type: Boolean,
-    default: () => !1
-  },
-  columnGap: {
-    type: [String, Number],
-    default: () => ""
-  },
-  rowGap: {
-    type: [String, Number],
-    default: () => ""
-  },
-  border: {
-    type: Boolean,
-    default: () => !1
-  },
-  size: {
-    type: String,
-    default: () => "middle",
-    validator: (e) => ["large", "middle", "small", "mini"].includes(e)
-  }
-}, d = {
-  "update:modelValue": (e) => t(e) || o(e) || r(e),
-  change: (e) => t(e) || o(e) || r(e)
-}, i = Symbol("");
+  disabled: o(),
+  vertical: o(),
+  columnGap: r(),
+  rowGap: r(),
+  background: o(),
+  size: t("middle", (e) => p.includes(e)),
+  onChange: n()
+}, s = Symbol(
+  "radio-group-props-key"
+);
 export {
-  d as Emits,
-  a as Props,
-  i as RadioGroupPropsKey
+  m as Props,
+  s as RADIO_GROUP_PROPS_kEY
 };

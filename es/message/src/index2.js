@@ -1,118 +1,79 @@
-import { defineComponent as S, ref as m, computed as n, onMounted as C, nextTick as I, openBlock as t, createBlock as a, Transition as R, unref as l, withCtx as d, withDirectives as O, createElementVNode as A, normalizeClass as F, normalizeStyle as H, isVNode as T, resolveDynamicComponent as g, createCommentVNode as M, createElementBlock as p, toDisplayString as V, Fragment as P, createTextVNode as j, vShow as q } from "vue";
-import { VSvgIcon as x } from "../../svg-icon/index.js";
-import { VCloseBtn as G } from "../../close-btn/index.js";
-import { Props as J, Emits as K } from "./index3.js";
-import { isString as Q } from "../../_utils/index3.js";
-import { massageManage as h } from "../../_model/message/index.js";
-const U = {
+import { defineComponent as c, openBlock as s, createBlock as i, Transition as N, unref as e, withCtx as _, withDirectives as z, createElementVNode as M, normalizeClass as T, normalizeStyle as b, createElementBlock as r, createVNode as w, createCommentVNode as f, isVNode as A, resolveDynamicComponent as D, toDisplayString as p, Fragment as E, createTextVNode as P, vShow as h } from "vue";
+import { Props as F } from "./index3.js";
+import { isString as I } from "../../_utils/is/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+import { useMessageWork as W } from "../../_hooks/use-message-work/index.js";
+import { VSvgIcon as j } from "../../svg-icon/index.js";
+import { VCloseBtn as q } from "../../close-btn/index.js";
+const G = {
+  key: 0,
+  class: "v-message__before_icon"
+}, H = {
   key: 2,
   class: "v-message__text"
-}, W = S({
+}, J = c({
   name: "VMessage"
-}), oe = /* @__PURE__ */ S({
-  ...W,
-  props: J,
-  emits: K,
-  setup(z, { expose: E }) {
-    const s = z, y = m(), _ = m(0), r = m(!1), k = n(
-      () => s.placement.includes("top")
-    ), L = n(
-      () => h.getSiblingOffset(s.placement, s.id, !k.value)
-    ), c = n(
-      () => s.offset + L.value
-    ), N = n(
-      () => _.value + c.value
-    );
-    C(() => {
-      I(() => {
-        _.value = y.value.getBoundingClientRect().height;
-      });
-    });
-    const $ = n(() => {
-      const { type: e, round: o, placement: i } = s;
-      return [
-        "v-message",
-        {
-          [`v-message__${e}`]: e,
-          [`v-message__${i}`]: i,
-          "v-message__round": o
-        }
-      ];
-    }), w = n(() => {
-      const { color: e, background: o, zIndex: i } = s, v = {
-        color: e,
-        background: o,
-        zIndex: i
-      };
-      return s.placement.includes("bottom") ? v.bottom = c.value + "px" : v.top = c.value + "px", v;
-    }), u = m(), B = () => {
-      !u.value || clearTimeout(u.value);
-    }, f = () => {
-      B(), r.value = !1;
-    }, D = () => {
-      h.removeInstance(s.placement, s.id);
-    }, b = () => {
-      !s.duration || (u.value = setTimeout(() => {
-        f();
-      }, s.duration));
-    };
-    return C(() => {
-      b(), r.value = !0;
-    }), E({
-      visible: r,
-      bottom: N,
-      close: f
-    }), (e, o) => (t(), a(R, {
+}), $ = /* @__PURE__ */ c({
+  ...J,
+  props: F,
+  setup(v, { expose: d }) {
+    const u = v, {
+      classList: g,
+      styleList: y,
+      visible: k,
+      isPosition: B,
+      offsetStyle: V,
+      offsetVal: C,
+      onBeforeLeave: L,
+      onAfterLeave: S,
+      clearTimer: a,
+      startTime: l,
+      handelClose: m
+    } = W(u, "message");
+    return d({ offsetVal: C }), (o, t) => (s(), i(N, {
       mode: "out-in",
-      name: "v-message-fade" + (l(k) ? "-top" : "-bottom"),
-      onBeforeLeave: D,
-      onAfterLeave: o[0] || (o[0] = (i) => e.$emit("destroy"))
+      appear: "",
+      name: "v-message-fade" + (e(B) ? "-top" : "-bottom"),
+      onBeforeLeave: e(L),
+      onAfterLeave: e(S)
     }, {
-      default: d(() => [
-        O(A("div", {
-          ref_key: "messageRef",
-          ref: y,
-          class: F(l($)),
-          style: H(l(w)),
-          onMouseleave: b,
-          onMouseenter: B
+      default: _(() => [
+        z(M("div", {
+          class: T(e(g)),
+          style: b([e(V), e(y)]),
+          onMouseleave: t[1] || (t[1] = (...n) => e(l) && e(l)(...n)),
+          onMouseenter: t[2] || (t[2] = (...n) => e(a) && e(a)(...n))
         }, [
-          T(e.icon) ? (t(), a(l(x), {
-            key: 0,
-            size: 24,
-            class: "v-message__icon"
-          }, {
-            default: d(() => [
-              (t(), a(g(e.icon)))
-            ]),
-            _: 1
-          })) : M("", !0),
-          T(e.message) ? (t(), a(g(e.message), { key: 1 })) : (t(), p("div", U, V(e.message), 1)),
-          s.close ? (t(), p("div", {
+          o.icon ? (s(), r("div", G, [
+            w(e(j), {
+              icon: o.icon,
+              size: 16
+            }, null, 8, ["icon"])
+          ])) : f("", !0),
+          A(o.message) ? (s(), i(D(o.message), { key: 1 })) : (s(), r("div", H, p(o.message), 1)),
+          o.close ? (s(), r("div", {
             key: 3,
             class: "v-message__close",
-            onClick: f
+            onClick: t[0] || (t[0] = (...n) => e(m) && e(m)(...n))
           }, [
-            l(Q)(e.closeBtn) ? (t(), p(P, { key: 0 }, [
-              j(V(e.closeBtn), 1)
-            ], 64)) : (t(), a(l(G), {
+            e(I)(o.closeBtn) ? (s(), r(E, { key: 0 }, [
+              P(p(o.closeBtn), 1)
+            ], 64)) : (s(), i(e(q), {
               key: 1,
-              size: 16
-            }, {
-              default: d(() => [
-                (t(), a(g(e.closeBtn)))
-              ]),
-              _: 1
-            }))
-          ])) : M("", !0)
+              icon: o.closeBtn,
+              size: 15,
+              color: "#a4a4a4"
+            }, null, 8, ["icon"]))
+          ])) : f("", !0)
         ], 38), [
-          [q, r.value]
+          [h, e(k)]
         ])
       ]),
       _: 1
-    }, 8, ["name"]));
+    }, 8, ["name", "onBeforeLeave", "onAfterLeave"]));
   }
 });
 export {
-  oe as default
+  $ as default
 };

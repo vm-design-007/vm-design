@@ -1,44 +1,39 @@
-import { defineComponent as l, computed as s, openBlock as m, createElementBlock as p, normalizeStyle as f, unref as r, renderSlot as _, withDirectives as v, createElementVNode as g, normalizeClass as b, toDisplayString as y, vShow as $ } from "vue";
-import { Props as h } from "./index3.js";
-import { isNumber as c } from "../../_utils/index3.js";
-const S = l({
+import { defineComponent as l, computed as a, openBlock as c, createElementBlock as i, normalizeClass as y, unref as s, normalizeStyle as b, renderSlot as v, createVNode as h, Transition as k, withCtx as C, toDisplayString as S, createCommentVNode as w } from "vue";
+import { Props as x } from "./index3.js";
+import { isNumber as r } from "../../_utils/is/index.js";
+import { useList as B } from "../../_hooks/use-list/index.js";
+import "../../loading/src/index2.js";
+import "../../_hooks/use-message/index.js";
+const L = {
+  key: 0,
+  class: "v-badge__content"
+}, N = l({
   name: "VBadge"
-}), C = /* @__PURE__ */ l({
-  ...S,
-  props: h,
-  setup(d) {
-    const n = d, i = s(() => {
-      const { type: e, dot: t } = n;
-      return [
-        "v-badge__content",
-        {
-          [`v-badge__${e}`]: e,
-          "v-badge__dot": t
-        }
-      ];
-    }), a = s(() => {
-      const { dot: e, max: t, value: o } = n;
-      return e ? "" : c(t) && c(o) ? t > o ? `${o}` : `${t}+` : `${o}`;
-    }), u = s(() => {
-      const { color: e, textColor: t } = n;
-      return {
-        "--v-badge-background": e,
-        "--v-badge-text-color": t
-      };
+}), $ = /* @__PURE__ */ l({
+  ...N,
+  props: x,
+  setup(m) {
+    const n = m, { classes: u, styles: d } = B(n, "badge"), p = u(["type", "dot"], "v-badge"), f = d(["background", "color"]), _ = a(() => {
+      const { dot: t, max: e, value: o } = n;
+      return t ? "" : r(e) && r(o) && o > e ? e + "+" : o;
+    }), g = a(() => {
+      const { value: t, show: e } = n;
+      return !r(t) && e ? !0 : e && r(t) && t > 0;
     });
-    return (e, t) => (m(), p("div", {
-      class: "v-badge",
-      style: f(r(u))
+    return (t, e) => (c(), i("div", {
+      class: y(s(p)),
+      style: b(s(f))
     }, [
-      _(e.$slots, "default"),
-      v(g("sup", {
-        class: b(r(i))
-      }, y(r(a)), 3), [
-        [$, !e.show && (r(a) || e.dot)]
-      ])
-    ], 4));
+      v(t.$slots, "default"),
+      h(k, { name: "v-badge" }, {
+        default: C(() => [
+          s(g) ? (c(), i("sup", L, S(s(_)), 1)) : w("", !0)
+        ]),
+        _: 1
+      })
+    ], 6));
   }
 });
 export {
-  C as default
+  $ as default
 };

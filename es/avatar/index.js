@@ -1,8 +1,8 @@
-import o from "./src/index2.js";
-import { default as p } from "./src/index2.js";
-import { install as r } from "../_utils/index.js";
-const a = r(o);
+import t from "./src/index2.js";
+import { install as o } from "../_utils/install/index.js";
+import "vue";
+const i = o(t);
 export {
-  a as VAvatar,
-  p as default
+  i as VAvatar,
+  i as default
 };
